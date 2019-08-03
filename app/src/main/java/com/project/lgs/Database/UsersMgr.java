@@ -7,6 +7,7 @@ import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class UsersMgr {
@@ -59,9 +60,9 @@ public class UsersMgr {
             return res;
         }
 
-        public ArrayList<Document> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting){
+        public List<Document> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
-            return operations.findDocument(collection,values,sorting);
+            return operations.findDocument(collection,values,sorting, limit);
 
         }
 }

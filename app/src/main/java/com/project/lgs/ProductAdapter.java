@@ -32,10 +32,10 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         proTitle.setText(currentProduct.getTitle());
 
         TextView proRat  = (TextView) productView.findViewById(R.id.product_rating);
-        proRat.setText(currentProduct.getRating().toString());
+        proRat.setText(currentProduct.getRating());
 
         TextView proPrice  = (TextView) productView.findViewById(R.id.product_price);
-        proPrice.setText(currentProduct.getPrice().toString());
+        proPrice.setText(currentProduct.getPrice());
 
         TextView proDesc  = (TextView) productView.findViewById(R.id.product_description);
         proDesc.setText(currentProduct.getDescription());

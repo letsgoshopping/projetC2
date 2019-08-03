@@ -3,25 +3,29 @@ package com.project.lgs.Database;
 import android.util.Log;
 
 import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.mongodb.stitch.android.core.auth.StitchUser;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteFindIterable;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
-import com.mongodb.stitch.core.services.mongodb.remote.RemoteDeleteResult;
+
 
 import org.bson.Document;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map.Entry;
-import java.util.concurrent.ExecutionException;
 
 
-public class MongoOperations {
+
+
+public class MongoOperations{
 
         private RemoteMongoClient mongoClient;
         private String databaseName;
+        ArrayList<Document> result = new ArrayList<>();
 
 
         MongoOperations(String databaseName,  RemoteMongoClient mongoClient){
@@ -92,7 +96,7 @@ public class MongoOperations {
             });;
         }
 
-        public ArrayList<Document> findDocument (String collection, HashMap<String,String> values, HashMap<String,Integer> sorting) {
+        public ArrayList<Document> findDocument (String collection, HashMap<String,String> values, HashMap<String,Integer> sorting,int limit) {
 
             RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
 
@@ -118,14 +122,24 @@ public class MongoOperations {
             }
 
             RemoteFindIterable findResults = mongoCollection
-                    .find(searchDoc);
-                  //  .sort(sortingDoc);
+                    .find(searchDoc)
+                    .limit(limit)
+                    .sort(sortingDoc);
 
-            ArrayList<Document> res = new ArrayList<Document>();
-            Log.d("maya array size",Integer.toString(res.size()));
-            findResults.into(res);
 
-            return res;
+            Task <List<Document>> itemsTask = findResults.into(result).addOnCompleteListener(new OnCompleteListener <List<Document>> () {
+                @Override
+                public void onComplete(Task<List<Document>> task) {
+                    if (task.isSuccessful()) {
+                    } else {
+                        Log.e("app", "failed to find documents with: ", task.getException());
+                    }
+                }
+            });
+
+            while (!itemsTask.isComplete()){};
+            return  result;
 
         }
+
 }

@@ -1,18 +1,20 @@
 package com.project.lgs;
 
-public class Product {
+public class Product{
 
     private String title;
     private String description;
-    private Double rating;
-    private Double price;
+    private String rating;
+    private String price;
     private String user;
     private String publishDate;
     private String category;
     private int imageRessource;
 
 
-    public Product(String title, String description, Double rating, Double price, int img, String user,String pDate){
+    public Product(){}
+
+    public Product(String title, String description, String rating, String price, int img, String user,String pDate, String category){
         this.title = title;
         this.description = description;
         this.rating = rating;
@@ -20,37 +22,50 @@ public class Product {
         this.imageRessource = img;
         this.user = user;
         this.publishDate = pDate;
+        this.category = category;
     }
 
     public String getTitle() {
-        return title;
+
+        if (title != null)
+            return title;
+        else return "No Title";
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescription()
+    {
+        if (description != null)
+            return description;
+        else return "No description is provided";
     }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public Double getRating() {
-        return rating;
+    public String getRating() {
+
+        if (rating != null)
+            return rating;
+        else return "No Rating";
     }
 
-    public void setRating(Double rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
-    public Double getPrice() {
-        return price;
+    public String getPrice() {
+
+        if (price != null)
+            return price;
+        else return "0";
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -63,7 +78,10 @@ public class Product {
     }
 
     public String getUser() {
-        return user;
+
+        if (user != null)
+            return user;
+        else return "No User";
     }
 
     public void setUser(String user) {
@@ -71,10 +89,24 @@ public class Product {
     }
 
     public String getPublishDate() {
-        return publishDate;
+
+        if (publishDate != null)
+            return publishDate;
+        else return "No Date";
     }
 
     public void setPublishDate(String publishDate) {
-        publishDate = publishDate;
+        this.publishDate = publishDate;
+    }
+
+    public String getCategory() {
+
+        if (category != null)
+            return category;
+        else return "No Category";
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }
