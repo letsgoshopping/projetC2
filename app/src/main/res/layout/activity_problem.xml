@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ProblemActivity">
+
+    <ImageView
+        android:src="@drawable/problemsmiley"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:paddingBottom="16dp"
+        android:paddingTop="25dp"
+        android:scaleType="fitCenter"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:textSize="20dp"
+        android:text="Oops, Something went wrong \nDon't worry we are working on it"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"/>
+
+</LinearLayout>

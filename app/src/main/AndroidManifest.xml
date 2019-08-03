@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchUserActivity"
+        <activity android:name=".ProblemActivity"></activity>
+        <activity
+            android:name=".SearchUserActivity"
             android:label="Users"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".SearchProductActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SearchProductActivity"
             android:label="Products"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

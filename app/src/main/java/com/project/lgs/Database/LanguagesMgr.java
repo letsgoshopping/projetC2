@@ -15,7 +15,7 @@ public class LanguagesMgr {
         String collection  = "Languages";
 
 
-        LanguagesMgr(String databaseName, RemoteMongoClient mongoClient){
+        public LanguagesMgr(String databaseName, RemoteMongoClient mongoClient){
 
             this.operations = new MongoOperations(databaseName, mongoClient);
         }
@@ -23,21 +23,43 @@ public class LanguagesMgr {
 
         public String insertDocument (HashMap<String,String> values){
 
-            return operations.insertDocument(collection,values);
+            String res = "1";
+            try{
+                operations.insertDocument(collection,values);
+            }catch (Exception e){
+                res = "-1";
+            }
+
+            return res;
         }
 
 
         public String updateDoument (HashMap<String,String> values, String id){
 
-            return operations.updateDoument(collection,values,id);
+            String res = "1";
+
+            try {
+                operations.updateDoument(collection, values, id);
+            }catch(Exception e){
+                res = "-1";
+            }
+
+            return res;
         }
 
         public String deleteDocument (String id){
 
-            return operations.deleteDocument(collection,id);
+            String res = "1";
+            try{
+                operations.deleteDocument(collection,id);
+            }catch(Exception e){
+                res = "-1";
+            }
+
+            return res;
         }
 
-        public ArrayList<Document> findDocument (HashMap<String,String> values, HashMap<String,String> sorting){
+        public ArrayList<Document> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting){
 
             return operations.findDocument(collection,values,sorting);
 
