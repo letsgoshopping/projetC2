@@ -2,4 +2,7 @@
     <string name="app_name">LGS</string>
     <string name="stitch_client_app_id">mystitchapp-cqkna</string>
     <string name="database_name">LGS</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

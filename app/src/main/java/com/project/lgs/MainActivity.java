@@ -1,9 +1,14 @@
 package com.project.lgs;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TableLayout;
+
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.Database.MongoConnect;
 
@@ -11,7 +16,10 @@ import com.project.lgs.Database.MongoConnect;
 public class MainActivity extends AppCompatActivity{
 
     public static RemoteMongoClient mongoClient;
-    public static final String MyPREFERENCES = "MyPrefs" ;
+    private Toolbar toolbar;
+    private ViewPager viewPager;
+    private ViewPagerAdapter viewPagerAdapter;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,17 +35,17 @@ public class MainActivity extends AppCompatActivity{
         } else {
 
             setContentView(R.layout.activity_main);
+            toolbar = findViewById(R.id.toolBar);
+            setSupportActionBar(toolbar);
+
+            viewPager = findViewById(R.id.pager);
+            viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+            viewPager.setAdapter(viewPagerAdapter);
+
+            tabLayout = findViewById(R.id.tabs);
+            tabLayout.setupWithViewPager(viewPager);
+
         }
     }
 
-    public void searchProduct(View view) {
-
-        startActivity(new Intent(this,SearchProductActivity.class));
-
-    }
-
-    public void searchUser(View view) {
-        startActivity(new Intent(this,SearchUserActivity.class));
-
-    }
 }

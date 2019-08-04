@@ -1,6 +1,8 @@
 package com.project.lgs;
 
 import android.app.Activity;
+import android.content.Context;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +16,10 @@ import java.util.ArrayList;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
 
-    public ProductAdapter(Activity context, ArrayList<Product> products){
+    public ProductAdapter(Context context, ArrayList<Product> products){
         super(context,0,products);
     }
+
 
     @Override
     public View getView(int position,  View convertView,  ViewGroup parent) {
