@@ -35,7 +35,7 @@ public class ProductFragment extends Fragment {
         HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
         prodSort.put("PDate", 1);
 
-        ArrayList<Product> products = productMgr.findDocument(prodIns, prodSort, 1000);
+        ArrayList<Product> products = productMgr.findDocument(prodIns, prodSort, 500);
         ProductAdapter itemsAdapter = new ProductAdapter(MainActivity.mcontext, products);
 
         ListView listView = (ListView) view.findViewById(R.id.list);
