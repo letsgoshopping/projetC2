@@ -1155,6 +1155,7 @@ id pin
 id product_date
 id product_description
 id product_image
+id product_layout
 id product_price
 id product_rating
 id product_title
@@ -1295,8 +1296,6 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_problem
-layout activity_search_product
-layout activity_search_user
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1329,6 +1328,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout product_fragment
 layout product_list
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

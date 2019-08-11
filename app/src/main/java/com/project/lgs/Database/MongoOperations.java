@@ -121,10 +121,19 @@ public class MongoOperations{
                 }
             }
 
-            RemoteFindIterable findResults = mongoCollection
-                    .find(searchDoc)
-                    .limit(limit)
-                    .sort(sortingDoc);
+            RemoteFindIterable findResults;
+
+            if(limit != 0) {
+                findResults = mongoCollection
+                        .find(searchDoc)
+                        .limit(limit)
+                        .sort(sortingDoc);
+            }
+            else{
+                findResults = mongoCollection
+                        .find(searchDoc)
+                        .sort(sortingDoc);
+            }
 
 
             Task <List<Document>> itemsTask = findResults.into(result).addOnCompleteListener(new OnCompleteListener <List<Document>> () {

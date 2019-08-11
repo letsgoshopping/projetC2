@@ -22,11 +22,7 @@
         android:theme="@style/AppTheme" >
         <activity android:name="com.project.lgs.ProblemActivity" />
         <activity
-            android:name="com.project.lgs.SearchUserActivity"
-            android:label="Users"
-            android:parentActivityName="com.project.lgs.MainActivity" />
-        <activity
-            android:name="com.project.lgs.ProductFragment"
+            android:name="com.project.lgs.ProductClasses.ProductFragment"
             android:label="Products"
             android:parentActivityName="com.project.lgs.MainActivity" />
         <activity android:name="com.project.lgs.MainActivity" >

@@ -4,12 +4,11 @@ package com.project.lgs.Database;
 import android.util.Log;
 
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
-import com.project.lgs.Product;
+import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
 
 import org.bson.Document;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -74,8 +73,8 @@ public class ProductsMgr {
                 Product pro = new Product((String)doc.get("Title"),
                         (String)doc.get("Description"),
                         (String)doc.get("Rating"),
-                        (String)doc.get("Price"), R.drawable.prodsample,
-
+                        (String)doc.get("Price"),
+                        R.drawable.prodsample,
                         (String)doc.get("User"),
                         (String)doc.get("PDate"),
                         (String)doc.get("Category"));
@@ -84,7 +83,6 @@ public class ProductsMgr {
 
             }
 
-            Log.d("searchArray",Integer.toString(product.size()));
             return product;
 
         }

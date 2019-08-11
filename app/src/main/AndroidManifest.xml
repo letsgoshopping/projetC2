@@ -11,11 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ProblemActivity"></activity>
         <activity
-            android:name=".SearchUserActivity"
-            android:label="Users"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ProductFragment"
+            android:name=".ProductClasses.ProductFragment"
             android:label="Products"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">

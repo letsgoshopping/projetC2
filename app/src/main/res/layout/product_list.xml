@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="3dp"
-    android:paddingTop="10dp">
+    android:paddingTop="10dp"
+    android:id="@+id/product_layout">
 
     <TextView
         android:id="@+id/product_title"

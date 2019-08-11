@@ -860,10 +860,6 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c42f9032f7e5838340b904a3d5cba357\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_product.xml.flat",
-        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_search_product.xml"
-    },
-    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c42f9032f7e5838340b904a3d5cba357\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
@@ -1392,10 +1388,6 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a431c6a2045de83b8e70ba7518213166\\res\\drawable-xhdpi-v4\\design_ic_visibility_off.png"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_search_user.xml.flat",
-        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_search_user.xml"
-    },
-    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_snackbar_out.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\a431c6a2045de83b8e70ba7518213166\\res\\anim\\design_snackbar_out.xml"
     },
@@ -1686,6 +1678,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\c42f9032f7e5838340b904a3d5cba357\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_product_fragment.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\product_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
