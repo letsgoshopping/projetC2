@@ -1,6 +1,8 @@
 package com.project.lgs.ProductClasses;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +44,15 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         proDesc.setText(currentProduct.getDescription());
 
         ImageView proImg  = (ImageView) productView.findViewById(R.id.product_image);
-        proImg.setImageResource(currentProduct.getImageRessource());
+        byte[] img = currentProduct.getImage();
+        if (img == null){
+            proImg.setImageResource(R.drawable.nopic);
+        }
+        else {
+            Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
+            proImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, proImg.getWidth(),
+                    proImg.getHeight(), false));
+        }
 
         TextView proUser = (TextView) productView.findViewById(R.id.product_user);
         proUser.setText(currentProduct.getUser());

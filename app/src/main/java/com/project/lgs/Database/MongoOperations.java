@@ -35,6 +35,40 @@ public class MongoOperations{
         }
 
 
+        public void insertDocument (String collection, HashMap<String,String> values, HashMap<String,byte[]> pics)throws Exception{
+
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+            Document newDoc = new Document();
+
+
+            for (Entry<String, String> entry : values.entrySet()) {
+                String key = entry.getKey();
+                String val = entry.getValue();
+
+                newDoc.append(key, val);
+            }
+
+            for (Entry<String, byte[]> entry : pics.entrySet()) {
+                String key = entry.getKey();
+                byte[] val = entry.getValue();
+
+                newDoc.append(key, val);
+            }
+
+            mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
+                @Override
+                public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw new Exception("Insertion failed");
+                    }
+
+                    return task;
+                }
+            });
+
+
+        }
         public void insertDocument (String collection, HashMap<String,String> values)throws Exception{
 
                 RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
@@ -58,6 +92,8 @@ public class MongoOperations{
                     return task;
                 }
             });
+
+
         }
 
         public void updateDoument (String collection, HashMap<String,String> values, String id)throws Exception{

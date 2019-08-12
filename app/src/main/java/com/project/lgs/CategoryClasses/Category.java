@@ -1,13 +1,15 @@
 package com.project.lgs.CategoryClasses;
 
-public class Category {
+public class Category{
 
     private String name;
     private String display;
+    private String CatId;
 
-    public Category (String name, String display){
+    public Category (String id, String name, String display){
         this.name = name;
         this.display = display;
+        this.CatId = id;
     }
 
     public String getCatName() {
@@ -24,5 +26,18 @@ public class Category {
 
     public void setDisplay(String display) {
         this.display = display;
+    }
+
+    public String getCatId() {
+        return CatId;
+    }
+
+    public void setCatId(String catId) {
+        CatId = catId;
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }

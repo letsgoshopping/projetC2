@@ -1,17 +1,21 @@
 package com.project.lgs;
 
+import android.app.SearchManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.widget.SearchView;
+
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.Database.MongoConnect;
-import com.project.lgs.Database.SupplierMgr;
-import java.util.HashMap;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -53,8 +57,22 @@ public class MainActivity extends AppCompatActivity{
             tabLayout = findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
 
-
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the options menu from XML
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.promenu, menu);
+
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.itemmenu).getActionView();
+        ComponentName componentName = new ComponentName(this,SearchActivity.class);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName));
+
+        return true;
+    }
+
 
 }

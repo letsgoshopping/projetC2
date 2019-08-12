@@ -997,6 +997,7 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable addpic
 drawable avd_hide_password
 drawable avd_show_password
 drawable design_bottom_navigation_item_background
@@ -1010,9 +1011,11 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_search_black_24dp
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable nopic
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1067,6 +1070,7 @@ id blocking
 id bottom
 id buttonPanel
 id cancel_action
+id categoryList
 id center
 id center_horizontal
 id center_vertical
@@ -1120,6 +1124,7 @@ id info
 id invisible
 id italic
 id item_touch_helper_previous_elevation
+id itemmenu
 id labeled
 id largeLabel
 id left
@@ -1152,6 +1157,10 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id proPhotoIns
+id prodDescIns
+id prodNameIns
+id prodPriceIns
 id product_date
 id product_description
 id product_image
@@ -1162,6 +1171,7 @@ id product_title
 id product_user
 id progress_circular
 id progress_horizontal
+id promenu
 id radio
 id right
 id right_icon
@@ -1181,6 +1191,7 @@ id search_button
 id search_close_btn
 id search_edit_frame
 id search_go_btn
+id search_list
 id search_mag_icon
 id search_plate
 id search_src_text
@@ -1208,6 +1219,7 @@ id start
 id status_bar_latest_event_content
 id stretch
 id submenuarrow
+id submitProduct
 id submit_area
 id supplier_description
 id supplier_email
@@ -1300,8 +1312,10 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_product
 layout activity_main
 layout activity_problem
+layout activity_search
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1342,6 +1356,7 @@ layout supplier_fragment
 layout supplier_list
 layout support_simple_spinner_dropdown_item
 layout toolbar_layout
+menu promenu
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
@@ -1399,6 +1414,8 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string search
+string search_hint
 string search_menu_title
 string status_bar_notification_info_overflow
 string stitch_client_app_id
@@ -1980,3 +1997,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml searchable

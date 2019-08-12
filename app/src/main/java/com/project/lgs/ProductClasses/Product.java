@@ -9,17 +9,17 @@ public class Product{
     private String user;
     private String publishDate;
     private String category;
-    private int imageRessource;
+    private byte[] image;
 
 
     public Product(){}
 
-    public Product(String title, String description, String rating, String price, int img, String user,String pDate, String category){
+    public Product(String title, String description, String rating, String price, byte[] image, String user,String pDate, String category){
         this.title = title;
         this.description = description;
         this.rating = rating;
         this.price = price;
-        this.imageRessource = img;
+        this.image = image;
         this.user = user;
         this.publishDate = pDate;
         this.category = category;
@@ -69,12 +69,12 @@ public class Product{
         this.price = price;
     }
 
-    public int getImageRessource() {
-        return imageRessource;
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setImageRessource(int imageRessource) {
-        this.imageRessource = imageRessource;
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public String getUser() {

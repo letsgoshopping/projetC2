@@ -2,11 +2,30 @@
 <android.support.v7.widget.Toolbar
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="30dp"
+    android:layout_height="33dp"
     android:background="?attr/colorPrimary"
     android:id="@+id/toolBar"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LGS"
+        android:textColor="@android:color/white"
+        android:paddingRight="3dp"
+        android:textStyle="normal"
+        android:textSize="20dp"/>
+
+    <SearchView
+        android:id="@+id/proSearch"
+        android:layout_width="match_parent"
+        android:layout_height="37dp"
+        android:iconifiedByDefault="true"
+        android:queryHint="@string/search_hint"
+        android:background="@color/colorPrimary"
+        android:layoutDirection="rtl">
+    </SearchView>-->
 
 
 </android.support.v7.widget.Toolbar>

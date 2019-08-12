@@ -1,11 +1,8 @@
 package com.project.lgs.Database;
 
 
-import android.util.Log;
-
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.ProductClasses.Product;
-import com.project.lgs.R;
 
 import org.bson.Document;
 
@@ -31,6 +28,18 @@ public class ProductsMgr {
             String res = "1";
             try{
                 operations.insertDocument(collection,values);
+            }catch (Exception e){
+                res = "-1";
+            }
+
+            return res;
+        }
+
+        public String insertDocumentWPic (HashMap<String,String> values, HashMap<String,byte[]> pics){
+
+            String res = "1";
+            try{
+                operations.insertDocument(collection,values,pics);
             }catch (Exception e){
                 res = "-1";
             }
@@ -74,7 +83,7 @@ public class ProductsMgr {
                         (String)doc.get("Description"),
                         (String)doc.get("Rating"),
                         (String)doc.get("Price"),
-                        R.drawable.prodsample,
+                        (byte[])doc.get("Image"),
                         (String)doc.get("User"),
                         (String)doc.get("PDate"),
                         (String)doc.get("Category"));

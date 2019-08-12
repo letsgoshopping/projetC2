@@ -2,4 +2,7 @@
     <string name="app_name">LGS</string>
     <string name="stitch_client_app_id">mystitchapp-cqkna</string>
     <string name="database_name">LGS</string>
+    <string name="search_hint">Search Products</string>
+    <string name="search">Search</string>
+
 </resources>
