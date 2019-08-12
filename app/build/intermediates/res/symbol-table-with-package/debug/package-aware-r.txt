@@ -1209,6 +1209,13 @@ id status_bar_latest_event_content
 id stretch
 id submenuarrow
 id submit_area
+id supplier_description
+id supplier_email
+id supplier_image
+id supplier_layout
+id supplier_list
+id supplier_name
+id supplier_number
 id tabMode
 id tabs
 id tag_transition_group
@@ -1236,7 +1243,6 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id txt_display
 id uniform
 id unlabeled
 id up
@@ -1310,7 +1316,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fragment_demo
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1333,6 +1338,8 @@ layout product_list
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout supplier_fragment
+layout supplier_list
 layout support_simple_spinner_dropdown_item
 layout toolbar_layout
 mipmap ic_launcher

@@ -9,6 +9,7 @@ import com.mongodb.lang.Nullable;
 import com.project.lgs.CategoryClasses.Category;
 import com.project.lgs.Database.CategoriesMgr;
 import com.project.lgs.ProductClasses.ProductFragment;
+import com.project.lgs.SupplierClasses.SupplierFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +46,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             return fragment;
 
         }else{
-            DemoFragment fragment = new DemoFragment();
+            SupplierFragment fragment = new SupplierFragment();
             fragment.setArguments(bundle);
             i+=1;
             return fragment;
@@ -68,7 +69,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             title = catList.get(i).getCatName();
 
         }else{
-            title = "Users";
+            title = "Suppliers";
         }
 
         i +=1;

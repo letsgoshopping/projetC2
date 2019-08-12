@@ -8,12 +8,9 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
-import com.project.lgs.Database.CategoriesMgr;
 import com.project.lgs.Database.MongoConnect;
-import com.project.lgs.Database.ProductsMgr;
-
+import com.project.lgs.Database.SupplierMgr;
 import java.util.HashMap;
 
 
@@ -55,6 +52,7 @@ public class MainActivity extends AppCompatActivity{
 
             tabLayout = findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
+
 
         }
     }
