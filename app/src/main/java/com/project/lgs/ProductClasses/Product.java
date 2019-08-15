@@ -1,20 +1,24 @@
 package com.project.lgs.ProductClasses;
 
-public class Product{
+import java.io.Serializable;
 
+public class Product implements Serializable {
+
+    private String id;
     private String title;
     private String description;
     private String rating;
     private String price;
+    private byte[] image;
     private String user;
     private String publishDate;
     private String category;
-    private byte[] image;
 
 
     public Product(){}
 
-    public Product(String title, String description, String rating, String price, byte[] image, String user,String pDate, String category){
+    public Product(String id, String title, String description, String rating, String price, byte[] image, String user,String pDate, String category){
+        this.id = id;
         this.title = title;
         this.description = description;
         this.rating = rating;
@@ -109,4 +113,14 @@ public class Product{
     public void setCategory(String category) {
         this.category = category;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+
 }

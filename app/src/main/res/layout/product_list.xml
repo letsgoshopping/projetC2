@@ -10,6 +10,12 @@
     android:id="@+id/product_layout">
 
     <TextView
+        android:id="@+id/product_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
         android:id="@+id/product_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,20 +53,22 @@
                 android:id="@+id/product_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="italic"
+                android:textStyle="normal"
                 tools:text="user1"/>
 
             <TextView
-            android:id="@+id/product_rating"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="5 stars"/>
+                android:id="@+id/product_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                tools:text="5 stars"/>
 
         <TextView
             android:id="@+id/product_price"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14dp"
+            android:textStyle="normal"
             tools:text="10$"/>
 
         <TextView

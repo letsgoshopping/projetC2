@@ -1,6 +1,7 @@
 package com.project.lgs.Database;
 
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.ProductClasses.Product;
 
@@ -79,7 +80,8 @@ public class ProductsMgr {
             ArrayList <Product> product = new ArrayList<Product>();
 
             for (Document doc: res) {
-                Product pro = new Product((String)doc.get("Title"),
+                Product pro = new Product((String)doc.get("_id").toString(),
+                        (String)doc.get("Title"),
                         (String)doc.get("Description"),
                         (String)doc.get("Rating"),
                         (String)doc.get("Price"),
@@ -95,4 +97,29 @@ public class ProductsMgr {
             return product;
 
         }
+
+    public ArrayList<Product> findDocumentNonExact (BasicDBObject values, HashMap<String,Integer> sorting, int limit){
+
+        List <Document> res =  operations.findDocumentNonExact(collection,values,sorting,limit);
+        ArrayList <Product> product = new ArrayList<Product>();
+
+        for (Document doc: res) {
+            Product pro = new Product((String)doc.get("_id").toString(),
+                    (String)doc.get("Title"),
+                    (String)doc.get("Description"),
+                    (String)doc.get("Rating"),
+                    (String)doc.get("Price"),
+                    (byte[])doc.get("Image"),
+                    (String)doc.get("User"),
+                    (String)doc.get("PDate"),
+                    (String)doc.get("Category"));
+
+            product.add(pro);
+
+        }
+
+        return product;
+
+    }
+
 }

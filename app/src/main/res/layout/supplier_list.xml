@@ -10,6 +10,12 @@
     android:id="@+id/supplier_layout">
 
     <TextView
+        android:id="@+id/supplier_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+
+    <TextView
         android:id="@+id/supplier_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

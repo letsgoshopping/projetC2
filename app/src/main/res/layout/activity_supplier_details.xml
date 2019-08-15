@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SupplierClasses.SupplierDetails">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:id="@+id/sup_detail_layout">
+
+
+        <TextView
+            android:id="@+id/sup_det_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:textColor="@android:color/black"
+            tools:text="Supplier"/>
+
+        <TextView
+            android:id="@+id/sup_det_joinDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:paddingBottom="5dp"
+            tools:text="5/5/5019" />
+
+
+        <ImageView
+            android:id="@+id/sup_det_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="fitStart"
+            android:paddingBottom="25dp"/>
+
+        <TextView
+            android:id="@+id/sup_det_phnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="17dp"
+            tools:text="04555555"/>
+
+        <TextView
+            android:id="@+id/sup_det_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="normal"
+            android:textSize="17dp"
+            tools:text="supp@gmail.com"
+            android:paddingBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/sup_det_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17dp"
+            android:textStyle="italic"
+            tools:text="This is a small description"/>
+
+    </LinearLayout>
+
+</LinearLayout>

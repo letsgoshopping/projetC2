@@ -16,6 +16,7 @@ import android.widget.SearchView;
 
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.Database.MongoConnect;
+import com.project.lgs.SearchClasses.SearchActivity;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -46,9 +47,13 @@ public class MainActivity extends AppCompatActivity{
 
         } else {
 
+
             setContentView(R.layout.activity_main);
-            toolbar = findViewById(R.id.toolBar);
-            setSupportActionBar(toolbar);
+           /* toolbar = findViewById(R.id.toolBar);
+            setSupportActionBar(toolbar);*/
+            getSupportActionBar().setElevation(0);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
 
             viewPager = findViewById(R.id.pager);
             viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
@@ -56,6 +61,7 @@ public class MainActivity extends AppCompatActivity{
 
             tabLayout = findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
+
 
         }
     }
@@ -68,7 +74,7 @@ public class MainActivity extends AppCompatActivity{
 
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
         SearchView searchView = (SearchView) menu.findItem(R.id.itemmenu).getActionView();
-        ComponentName componentName = new ComponentName(this,SearchActivity.class);
+        ComponentName componentName = new ComponentName(this, SearchActivity.class);
         searchView.setSearchableInfo(searchManager.getSearchableInfo(componentName));
 
         return true;

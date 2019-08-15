@@ -1,22 +1,26 @@
 package com.project.lgs.SupplierClasses;
 
-public class Supplier{
+import java.io.Serializable;
 
+public class Supplier implements Serializable {
+
+    private String id;
     private String name;
     private String description;
     private String phoneNumber;
     private String joinDate;
-    private int imageRessource;
+    private byte[] image;
     private String email;
     private String password;
 
 
     public Supplier(){}
 
-    public Supplier(String name, String description, String phoneNumber,int img, String joinDate, String email, String pass){
+    public Supplier(String id, String name, String description, String phoneNumber,byte[] img, String joinDate, String email, String pass){
+        this.id = id;
         this.name = name;
         this.description = description;
-        this.imageRessource = img;
+        this.image = img;
         this.phoneNumber = phoneNumber;
         this.joinDate = joinDate;
         this.email = email;
@@ -58,12 +62,12 @@ public class Supplier{
     }
 
 
-    public int getImageRessource() {
-        return imageRessource;
+    public byte[] getImage() {
+        return image;
     }
 
-    public void setImageRessource(int imageRessource) {
-        this.imageRessource = imageRessource;
+    public void setImage (byte[] image) {
+        this.image = image;
     }
 
     public String getJoinDate() {
@@ -94,5 +98,13 @@ public class Supplier{
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

@@ -5,11 +5,11 @@ import android.util.Log;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.mongodb.BasicDBObject;
 import com.mongodb.stitch.android.core.auth.StitchUser;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteFindIterable;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
-
 
 import org.bson.Document;
 
@@ -186,5 +186,53 @@ public class MongoOperations{
             return  result;
 
         }
+
+    public ArrayList<Document> findDocumentNonExact (String collection, BasicDBObject values, HashMap<String,Integer> sorting, int limit) {
+
+        RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+        Document sortingDoc = new Document();
+
+        if (sorting != null) {
+
+            for (Entry<String, Integer> entry : sorting.entrySet()) {
+                String key = entry.getKey();
+                int val = entry.getValue();
+
+                sortingDoc.append(key, val);
+            }
+        }
+
+        RemoteFindIterable findResults;
+
+        if(limit != 0) {
+            findResults = mongoCollection
+                    .find(values)
+                    .limit(limit)
+                    .sort(sortingDoc);
+        }
+        else{
+            findResults = mongoCollection
+                    .find(values)
+                    .sort(sortingDoc);
+        }
+
+
+        Task <List<Document>> itemsTask = findResults.into(result).addOnCompleteListener(new OnCompleteListener <List<Document>> () {
+            @Override
+            public void onComplete(Task<List<Document>> task) {
+                if (task.isSuccessful()) {
+                } else {
+                    Log.e("app", "failed to find documents with: ", task.getException());
+                }
+            }
+        });
+
+        while (!itemsTask.isComplete()){};
+        return  result;
+
+    }
+
+
 
 }

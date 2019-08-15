@@ -2,7 +2,6 @@ package com.project.lgs.Database;
 
 
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
-import com.project.lgs.R;
 import com.project.lgs.SupplierClasses.Supplier;
 
 import org.bson.Document;
@@ -68,10 +67,11 @@ public class SupplierMgr {
             ArrayList <Supplier> user = new ArrayList<Supplier>();
 
             for (Document doc: res) {
-                Supplier u = new Supplier((String)doc.get("Name"),
+                Supplier u = new Supplier((String)doc.get("_id").toString(),
+                        (String)doc.get("Name"),
                         (String)doc.get("Description"),
                         (String)doc.get("PhoneNumber"),
-                         R.drawable.prodsample,
+                        (byte[])doc.get("Image"),
                         (String)doc.get("JoinDate"),
                         (String)doc.get("Email"),
                         (String)doc.get("Password"));

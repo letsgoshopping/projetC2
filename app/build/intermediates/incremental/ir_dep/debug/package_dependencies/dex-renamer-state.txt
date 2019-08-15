@@ -1,4 +1,4 @@
-#Sun Jun 23 18:08:53 EEST 2019
+#Sun Jul 14 17:43:59 EEST 2019
 base.0=C\:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\10
 path.0=classes.dex
 renamed.0=classes.dex

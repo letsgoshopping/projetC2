@@ -45,7 +45,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
             prodSort.put("PDate", 1);
 
-            ArrayList<Product> products = productMgr.findDocument(prodIns, prodSort, 10);
+            ArrayList<Product> products = productMgr.findDocument(prodIns, prodSort, 5);
 
             ProductFragment fragment = new ProductFragment();
             fragment.setCategoryName(catList.get(i).getCatName());
@@ -60,7 +60,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         HashMap<String, Integer> userSort = new HashMap<String, Integer>();
         userSort.put("JoinDate", 1);
 
-        suppliers = supplierMgr.findDocument(userIns, userSort, 10);
+        suppliers = supplierMgr.findDocument(userIns, userSort, 5);
     }
 
 

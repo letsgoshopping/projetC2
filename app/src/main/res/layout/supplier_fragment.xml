@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     tools:context=".SupplierClasses.SupplierFragment">
 
+    <Button
+        android:id="@+id/more_sup_button"
+        android:layout_width="65dp"
+        android:layout_height="45dp"
+        android:text="more"
+        android:textColor="@android:color/black"
+        android:textStyle="normal"
+        android:textAllCaps="false"
+        android:layout_gravity="right"
+        android:layout_marginRight="12dp"/>
+
    <ListView
         android:id="@+id/supplier_list"
         android:orientation="vertical"

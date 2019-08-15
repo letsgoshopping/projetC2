@@ -13,11 +13,16 @@ import android.widget.TextView;
 import com.project.lgs.R;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class ProductAdapter extends ArrayAdapter<Product> {
+public class ProductAdapter extends ArrayAdapter<Product> implements View.OnClickListener{
 
-    public ProductAdapter(Context context, ArrayList<Product> products){
+    ProductDetailsListener productDetailsListener;
+    HashMap<String,Integer> pos = new HashMap<>();
+
+    public ProductAdapter(Context context, ArrayList<Product> products, ProductDetailsListener productDetailsListener){
         super(context,0,products);
+        this.productDetailsListener = productDetailsListener;
     }
 
 
@@ -25,11 +30,15 @@ public class ProductAdapter extends ArrayAdapter<Product> {
     public View getView(int position,  View convertView,  ViewGroup parent) {
 
         Product currentProduct = getItem(position);
+        pos.put(currentProduct.getId(),position);
 
         View productView = convertView;
         if (productView == null){
             productView = LayoutInflater.from(getContext()).inflate(R.layout.product_list,parent,false);
         }
+
+        TextView proId  = (TextView) productView.findViewById(R.id.product_id);
+        proId.setText(currentProduct.getId());
 
         TextView proTitle  = (TextView) productView.findViewById(R.id.product_title);
         proTitle.setText(currentProduct.getTitle());
@@ -60,6 +69,21 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         TextView proDate = (TextView) productView.findViewById(R.id.product_date);
         proDate.setText(currentProduct.getPublishDate());
 
+        productView.setOnClickListener(this);
+
         return productView;
     }
+
+    @Override
+    public void onClick(View v) {
+        TextView proView = (TextView)v.findViewById(R.id.product_id);
+        String proId = proView.getText().toString();
+        productDetailsListener.ProductDetailsListener(pos.get(proId));
+    }
+
+    public interface ProductDetailsListener{
+        void ProductDetailsListener (int position);
+    }
+
+
 }
