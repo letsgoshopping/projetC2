@@ -1,250 +1,272 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
-MERGED from [com.android.support:design:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a431c6a2045de83b8e70ba7518213166\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c42f9032f7e5838340b904a3d5cba357\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\323e734488880ac5f74d0fa0cbe9038c\AndroidManifest.xml:2:1-11:12
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\198a70976c612c3de67d4616d8a88d6a\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0.aar\de35a55b4f706703f526c63c6e44195d\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\54b700b215fda962be84915a6c703283\AndroidManifest.xml:2:1-11:12
 MERGED from [org.mongodb:stitch-android-sdk:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-sdk-4.0.5.aar\7a74c65646cc79bcd77e6b5a080c4045\AndroidManifest.xml:2:1-11:12
-MERGED from [org.mongodb:stitch-android-services-mongodb-remote:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-services-mongodb-remote-4.0.5.aar\8749a0641e5e2f795f88922cea43f5fc\AndroidManifest.xml:2:1-11:12
-MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:2:1-26:12
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\bf952f906abd3738cb004760c52c079a\AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\9e1cf428598e5b48f8aff6b9c695b573\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\62398184d25490c4557bd5bd4c7e483d\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\11335e2e8d00eac53e65ecbbcc2f8fa2\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\15aed5f918e25b6f986042efee71a0cb\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\6434f208687fae3ebe87fb1768fe0a44\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\abb95f12acd3d1774b67b96036eb5027\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\a9b9e4321bfc8a28275170cfa92ef783\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\e35fe3b7efdf0e16a95dd05f64348ac8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c710f9d909be3dca509126cd9ba54aeb\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\24dcb12a5d578c46c6da558ad76a0cea\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\7a1562f542e6b33b89f174f0a9ca5803\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\bb7993907aeb535267607d4fcfe39023\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\7a86a9de8ce5a6621d196e953408c792\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\33bb5b2d2e6b4a078dadb9b1a1846a08\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\613c65ffbed4969cc6ff237e39cd4ce0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\12257de330ac0ea36571a1ab5edaf3ef\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\42ef7a21a53a8742be0e4d609488c64b\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ed73fd043e002dd80120aa240688446a\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6448ca2522c4c1ad13f8237dc1abe403\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\a89cb896cab7aee4496a17f803077b05\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\28ffc053db1309c42f33b3dd0e60bcea\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\ba5ec0225a61fd612202a7671a52dbe8\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\85f7fc7f65b358347934c5e8d11e2c97\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\ac50101d8b0f8f3f7149a75f156092c9\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\de47e4fb96e414d0e12909c056b87b18\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\e07ae10bff141debfe94e34f1e6be4b6\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\73d989b3e249341e08fc9bfe33d01f24\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9a7d6656bed182cf0ed716eb9c218b1c\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\4f171701077af5c0de52c130c9bfbd73\AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\92d12f029e72eb738e6084fed3876c03\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
-INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
+MERGED from [org.mongodb:stitch-android-services-mongodb-remote:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-services-mongodb-remote-4.0.5.aar\41d1e127dfc2056f1cc7f81b2f113c2b\AndroidManifest.xml:2:1-11:12
+MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:2:1-26:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-v4-1.0.0.aar\296a41a629f1801ace801dc2f100fbeb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\recyclerview-1.0.0.aar\ecf7cbbdefb32a7f7472ecaa8de773f9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:17:1-39:12
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-17.0.0.aar\29a755ed7d1f0fd77944f33a0c58078e\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-17.0.0.aar\b6eed25076a0084c686a9d000160588d\AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\f20a3be234d7938b46783dac86c1d8d7\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0.aar\3b5d41c286fe907ae3e15dca2699e59c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0.aar\a7907018933f02b51c7970489e227481\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0.aar\ea4d7f634f254b1c944542c863775e10\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0.aar\d83f959de395e407e957055eb9a91bea\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0.aar\16d06aef6d5aa1084d9c2c6ce6c6d741\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.media:media:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\media-1.0.0.aar\faf45e6dccd23297c76f5218a54af339\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\transition-1.0.0.aar\cf70813760f84c9cbd1a3424486fcf8a\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\cad0c639d12b04b8150a8dfef01d4d2f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\f6074cac0f4c8720a9548b45728d5faf\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0.aar\cf920f5f1dbd5ae5bc2127ba2c44d9ec\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0.aar\b06248a711bb6f88e358edb110faceb4\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0.aar\e2941d69c4cf936f1cda03e5f8bdcf3a\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\43491fa2bd0dcd1c48c54bc767bbde38\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0.aar\36264a8e14b8a3c6ad0cdda13df35de6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0.aar\6bda87e9c3b15420997e270bb3fcb7db\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\65f577ccf23f9203768e02518aecf81c\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c723e8ef4696ca5fd672c5aa896a71c\AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0.aar\21d32587d74dfcd536f3965171af879c\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cardview-1.0.0.aar\d756657ac83a6898c2151de4b8d59346\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\6facc43d08eef78250ea2417cf6903eb\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0.aar\1bb87e779d0cfbe262bbaf73d8220de6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0.aar\ae03fe7352844c10f0300787a2ae7d3a\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\print-1.0.0.aar\9a2b2e546d4c231816e50e0e0becdf53\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0.aar\ae374f914e3aa8650071ae8a2f60c679\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\ce2c6177917ba96c04c318ccdf0011f3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\50c736d6e90e041d4b235f5eea6a8931\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\b0754a00005766083cdb116ef796e626\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\45544b3ee7c4f58581b2148aad8f1d22\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
+INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
 	package
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:3:5-30
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:4:5-30
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-47:12
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:1-49:12
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:5:5-80
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:6:5-80
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:5:22-77
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:6:22-77
 application
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:7:5-45:19
-MERGED from [com.android.support:design:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a431c6a2045de83b8e70ba7518213166\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a431c6a2045de83b8e70ba7518213166\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\323e734488880ac5f74d0fa0cbe9038c\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\323e734488880ac5f74d0fa0cbe9038c\AndroidManifest.xml:9:5-20
-MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:13:5-24:19
-MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:13:5-24:19
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\bf952f906abd3738cb004760c52c079a\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\bf952f906abd3738cb004760c52c079a\AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ed73fd043e002dd80120aa240688446a\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ed73fd043e002dd80120aa240688446a\AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6448ca2522c4c1ad13f8237dc1abe403\AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6448ca2522c4c1ad13f8237dc1abe403\AndroidManifest.xml:22:5-23:19
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:8:5-47:19
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\198a70976c612c3de67d4616d8a88d6a\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\198a70976c612c3de67d4616d8a88d6a\AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\54b700b215fda962be84915a6c703283\AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\54b700b215fda962be84915a6c703283\AndroidManifest.xml:9:5-20
+MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:13:5-24:19
+MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:13:5-24:19
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:22:5-37:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\f20a3be234d7938b46783dac86c1d8d7\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\f20a3be234d7938b46783dac86c1d8d7\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\65f577ccf23f9203768e02518aecf81c\AndroidManifest.xml:22:5-89
+MERGED from [androidx.core:core:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\65f577ccf23f9203768e02518aecf81c\AndroidManifest.xml:22:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c723e8ef4696ca5fd672c5aa896a71c\AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c723e8ef4696ca5fd672c5aa896a71c\AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ed73fd043e002dd80120aa240688446a\AndroidManifest.xml:22:18-91
+		ADDED from [androidx.core:core:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\65f577ccf23f9203768e02518aecf81c\AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:12:9-35
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:10:9-41
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:11:9-41
 	android:roundIcon
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:11:9-47
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:12:9-47
 	android:icon
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:9:9-36
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:10:9-36
 	android:allowBackup
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:8:9-35
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:13:9-40
-activity#com.project.lgs.AllSuppliersClasses.AllSuppliersAdapter
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:14:9-86
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:14:9-40
+activity#com.project.lgs.Login
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:15:9-20:20
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:14:19-74
-activity#com.project.lgs.AllSuppliersClasses.AllSuppliers
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:15:9-70
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:15:19-67
-activity#com.project.lgs.AllProductsClasses.AllProducts
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:9-68
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:19-65
-activity#com.project.lgs.SupplierClasses.SupplierDetails
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:9-69
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:19-66
-activity#com.project.lgs.ProductDetails
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:9-52
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:19-49
-activity#com.project.lgs.add_product
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:19:9-49
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:19:19-46
-activity#com.project.lgs.ProblemActivity
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:20:9-53
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:20:19-50
-activity#com.project.lgs.ProductClasses.ProductFragment
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:9-23:40
-	android:label
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:13-37
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:13-59
-activity#com.project.lgs.MainActivity
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:9-30:20
-	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:19-47
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:15:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:25:13-29:29
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:26:17-69
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:26:25-66
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:28:17-77
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:28:27-74
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:27-74
+activity#com.project.lgs.AllSuppliersClasses.AllSuppliersAdapter
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:9-77
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:19-74
+activity#com.project.lgs.AllSuppliersClasses.AllSuppliers
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:9-70
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:19-67
+activity#com.project.lgs.AllProductsClasses.AllProducts
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:9-68
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:19-65
+activity#com.project.lgs.SupplierClasses.SupplierDetails
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:9-69
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:19-66
+activity#com.project.lgs.ProductDetails
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:25:9-52
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:25:19-49
+activity#com.project.lgs.add_product
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:26:9-49
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:26:19-46
+activity#com.project.lgs.ProblemActivity
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:27:9-53
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:27:19-50
+activity#com.project.lgs.ProductClasses.ProductFragment
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:28:9-30:40
+	android:label
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:29:13-59
+activity#com.project.lgs.MainActivity
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:31:9-32:20
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:31:19-47
 activity#com.project.lgs.SearchClasses.NoResults
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:31:9-33:58
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:33:9-35:58
 	android:parentActivityName
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:33:13-55
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:35:13-55
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:32:13-52
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:34:13-52
 activity#com.project.lgs.SearchClasses.SearchActivity
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:34:9-44:20
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:36:9-46:20
 	android:parentActivityName
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:36:13-55
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:38:13-55
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:35:13-57
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:37:13-57
 intent-filter#action:name:android.intent.action.SEARCH
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:37:13-39:29
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:39:13-41:29
 action#android.intent.action.SEARCH
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:38:17-71
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:40:17-71
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:38:25-68
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:40:25-68
 meta-data#android.app.searchable
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:41:13-43:54
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:43:13-45:54
 	android:resource
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:43:17-51
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:45:17-51
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:42:17-54
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:44:17-54
 uses-sdk
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a431c6a2045de83b8e70ba7518213166\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:design:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\design-28.0.0.aar\a431c6a2045de83b8e70ba7518213166\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c42f9032f7e5838340b904a3d5cba357\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\c42f9032f7e5838340b904a3d5cba357\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\323e734488880ac5f74d0fa0cbe9038c\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\323e734488880ac5f74d0fa0cbe9038c\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\198a70976c612c3de67d4616d8a88d6a\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\material-1.0.0.aar\198a70976c612c3de67d4616d8a88d6a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0.aar\de35a55b4f706703f526c63c6e44195d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\appcompat-1.0.0.aar\de35a55b4f706703f526c63c6e44195d\AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\54b700b215fda962be84915a6c703283\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.2] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\constraintlayout-1.1.2.aar\54b700b215fda962be84915a6c703283\AndroidManifest.xml:5:5-7:41
 MERGED from [org.mongodb:stitch-android-sdk:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-sdk-4.0.5.aar\7a74c65646cc79bcd77e6b5a080c4045\AndroidManifest.xml:7:5-9:41
 MERGED from [org.mongodb:stitch-android-sdk:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-sdk-4.0.5.aar\7a74c65646cc79bcd77e6b5a080c4045\AndroidManifest.xml:7:5-9:41
-MERGED from [org.mongodb:stitch-android-services-mongodb-remote:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-services-mongodb-remote-4.0.5.aar\8749a0641e5e2f795f88922cea43f5fc\AndroidManifest.xml:7:5-9:41
-MERGED from [org.mongodb:stitch-android-services-mongodb-remote:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-services-mongodb-remote-4.0.5.aar\8749a0641e5e2f795f88922cea43f5fc\AndroidManifest.xml:7:5-9:41
-MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:7:5-9:41
-MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\bf952f906abd3738cb004760c52c079a\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-15.0.1.aar\bf952f906abd3738cb004760c52c079a\AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\9e1cf428598e5b48f8aff6b9c695b573\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-v4-28.0.0.aar\9e1cf428598e5b48f8aff6b9c695b573\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\62398184d25490c4557bd5bd4c7e483d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-28.0.0.aar\62398184d25490c4557bd5bd4c7e483d\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\11335e2e8d00eac53e65ecbbcc2f8fa2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-fragment-28.0.0.aar\11335e2e8d00eac53e65ecbbcc2f8fa2\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\15aed5f918e25b6f986042efee71a0cb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-28.0.0.aar\15aed5f918e25b6f986042efee71a0cb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\6434f208687fae3ebe87fb1768fe0a44\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-core-ui-28.0.0.aar\6434f208687fae3ebe87fb1768fe0a44\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\abb95f12acd3d1774b67b96036eb5027\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-core-utils-28.0.0.aar\abb95f12acd3d1774b67b96036eb5027\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\a9b9e4321bfc8a28275170cfa92ef783\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-28.0.0.aar\a9b9e4321bfc8a28275170cfa92ef783\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\e35fe3b7efdf0e16a95dd05f64348ac8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-media-compat-28.0.0.aar\e35fe3b7efdf0e16a95dd05f64348ac8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c710f9d909be3dca509126cd9ba54aeb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\transition-28.0.0.aar\c710f9d909be3dca509126cd9ba54aeb\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\24dcb12a5d578c46c6da558ad76a0cea\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\loader-28.0.0.aar\24dcb12a5d578c46c6da558ad76a0cea\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\7a1562f542e6b33b89f174f0a9ca5803\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewpager-28.0.0.aar\7a1562f542e6b33b89f174f0a9ca5803\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\bb7993907aeb535267607d4fcfe39023\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-28.0.0.aar\bb7993907aeb535267607d4fcfe39023\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\7a86a9de8ce5a6621d196e953408c792\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\drawerlayout-28.0.0.aar\7a86a9de8ce5a6621d196e953408c792\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\33bb5b2d2e6b4a078dadb9b1a1846a08\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-28.0.0.aar\33bb5b2d2e6b4a078dadb9b1a1846a08\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\613c65ffbed4969cc6ff237e39cd4ce0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\customview-28.0.0.aar\613c65ffbed4969cc6ff237e39cd4ce0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\12257de330ac0ea36571a1ab5edaf3ef\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-28.0.0.aar\12257de330ac0ea36571a1ab5edaf3ef\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\42ef7a21a53a8742be0e4d609488c64b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-28.0.0.aar\42ef7a21a53a8742be0e4d609488c64b\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ed73fd043e002dd80120aa240688446a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\ed73fd043e002dd80120aa240688446a\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6448ca2522c4c1ad13f8237dc1abe403\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-28.0.0.aar\6448ca2522c4c1ad13f8237dc1abe403\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\a89cb896cab7aee4496a17f803077b05\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cursoradapter-28.0.0.aar\a89cb896cab7aee4496a17f803077b05\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\28ffc053db1309c42f33b3dd0e60bcea\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cardview-v7-28.0.0.aar\28ffc053db1309c42f33b3dd0e60bcea\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\ba5ec0225a61fd612202a7671a52dbe8\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\ba5ec0225a61fd612202a7671a52dbe8\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\85f7fc7f65b358347934c5e8d11e2c97\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\documentfile-28.0.0.aar\85f7fc7f65b358347934c5e8d11e2c97\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\ac50101d8b0f8f3f7149a75f156092c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-28.0.0.aar\ac50101d8b0f8f3f7149a75f156092c9\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\de47e4fb96e414d0e12909c056b87b18\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\print-28.0.0.aar\de47e4fb96e414d0e12909c056b87b18\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\e07ae10bff141debfe94e34f1e6be4b6\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.1.aar\e07ae10bff141debfe94e34f1e6be4b6\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\73d989b3e249341e08fc9bfe33d01f24\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\interpolator-28.0.0.aar\73d989b3e249341e08fc9bfe33d01f24\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9a7d6656bed182cf0ed716eb9c218b1c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\9a7d6656bed182cf0ed716eb9c218b1c\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\4f171701077af5c0de52c130c9bfbd73\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\4f171701077af5c0de52c130c9bfbd73\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\92d12f029e72eb738e6084fed3876c03\AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\92d12f029e72eb738e6084fed3876c03\AndroidManifest.xml:20:5-44
+MERGED from [org.mongodb:stitch-android-services-mongodb-remote:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-services-mongodb-remote-4.0.5.aar\41d1e127dfc2056f1cc7f81b2f113c2b\AndroidManifest.xml:7:5-9:41
+MERGED from [org.mongodb:stitch-android-services-mongodb-remote:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-services-mongodb-remote-4.0.5.aar\41d1e127dfc2056f1cc7f81b2f113c2b\AndroidManifest.xml:7:5-9:41
+MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:7:5-9:41
+MERGED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:7:5-9:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-v4-1.0.0.aar\296a41a629f1801ace801dc2f100fbeb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-v4-1.0.0.aar\296a41a629f1801ace801dc2f100fbeb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\recyclerview-1.0.0.aar\ecf7cbbdefb32a7f7472ecaa8de773f9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\recyclerview-1.0.0.aar\ecf7cbbdefb32a7f7472ecaa8de773f9\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-17.0.0.aar\29a755ed7d1f0fd77944f33a0c58078e\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-17.0.0.aar\29a755ed7d1f0fd77944f33a0c58078e\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-17.0.0.aar\b6eed25076a0084c686a9d000160588d\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-17.0.0.aar\b6eed25076a0084c686a9d000160588d\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\f20a3be234d7938b46783dac86c1d8d7\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\f20a3be234d7938b46783dac86c1d8d7\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0.aar\3b5d41c286fe907ae3e15dca2699e59c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\fragment-1.0.0.aar\3b5d41c286fe907ae3e15dca2699e59c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0.aar\a7907018933f02b51c7970489e227481\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.0.0.aar\a7907018933f02b51c7970489e227481\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0.aar\ea4d7f634f254b1c944542c863775e10\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-core-ui-1.0.0.aar\ea4d7f634f254b1c944542c863775e10\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0.aar\d83f959de395e407e957055eb9a91bea\AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\legacy-support-core-utils-1.0.0.aar\d83f959de395e407e957055eb9a91bea\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0.aar\16d06aef6d5aa1084d9c2c6ce6c6d741\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.0.0.aar\16d06aef6d5aa1084d9c2c6ce6c6d741\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\media-1.0.0.aar\faf45e6dccd23297c76f5218a54af339\AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\media-1.0.0.aar\faf45e6dccd23297c76f5218a54af339\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\transition-1.0.0.aar\cf70813760f84c9cbd1a3424486fcf8a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\transition-1.0.0.aar\cf70813760f84c9cbd1a3424486fcf8a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\cad0c639d12b04b8150a8dfef01d4d2f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\cad0c639d12b04b8150a8dfef01d4d2f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\f6074cac0f4c8720a9548b45728d5faf\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\f6074cac0f4c8720a9548b45728d5faf\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0.aar\cf920f5f1dbd5ae5bc2127ba2c44d9ec\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\coordinatorlayout-1.0.0.aar\cf920f5f1dbd5ae5bc2127ba2c44d9ec\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0.aar\b06248a711bb6f88e358edb110faceb4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0.aar\b06248a711bb6f88e358edb110faceb4\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0.aar\e2941d69c4cf936f1cda03e5f8bdcf3a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\slidingpanelayout-1.0.0.aar\e2941d69c4cf936f1cda03e5f8bdcf3a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\43491fa2bd0dcd1c48c54bc767bbde38\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\43491fa2bd0dcd1c48c54bc767bbde38\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0.aar\36264a8e14b8a3c6ad0cdda13df35de6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\swiperefreshlayout-1.0.0.aar\36264a8e14b8a3c6ad0cdda13df35de6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0.aar\6bda87e9c3b15420997e270bb3fcb7db\AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\asynclayoutinflater-1.0.0.aar\6bda87e9c3b15420997e270bb3fcb7db\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\65f577ccf23f9203768e02518aecf81c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-1.0.0.aar\65f577ccf23f9203768e02518aecf81c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c723e8ef4696ca5fd672c5aa896a71c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.0.0.aar\4c723e8ef4696ca5fd672c5aa896a71c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0.aar\21d32587d74dfcd536f3965171af879c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0.aar\21d32587d74dfcd536f3965171af879c\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cardview-1.0.0.aar\d756657ac83a6898c2151de4b8d59346\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\cardview-1.0.0.aar\d756657ac83a6898c2151de4b8d59346\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\6facc43d08eef78250ea2417cf6903eb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.0.0.aar\6facc43d08eef78250ea2417cf6903eb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0.aar\1bb87e779d0cfbe262bbaf73d8220de6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\documentfile-1.0.0.aar\1bb87e779d0cfbe262bbaf73d8220de6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0.aar\ae03fe7352844c10f0300787a2ae7d3a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\localbroadcastmanager-1.0.0.aar\ae03fe7352844c10f0300787a2ae7d3a\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\print-1.0.0.aar\9a2b2e546d4c231816e50e0e0becdf53\AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\print-1.0.0.aar\9a2b2e546d4c231816e50e0e0becdf53\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0.aar\ae374f914e3aa8650071ae8a2f60c679\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.0.0.aar\ae374f914e3aa8650071ae8a2f60c679\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\ce2c6177917ba96c04c318ccdf0011f3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\ce2c6177917ba96c04c318ccdf0011f3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\50c736d6e90e041d4b235f5eea6a8931\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\50c736d6e90e041d4b235f5eea6a8931\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\b0754a00005766083cdb116ef796e626\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\b0754a00005766083cdb116ef796e626\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\45544b3ee7c4f58581b2148aad8f1d22\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\45544b3ee7c4f58581b2148aad8f1d22\AndroidManifest.xml:20:5-44
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
@@ -256,20 +278,46 @@ INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:11:5-67
+ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:11:5-67
 	android:name
-		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:11:22-64
+		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:11:22-64
 provider#com.mongodb.stitch.android.core.internal.StitchInitProvider
-ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:20:9-23:40
+ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:20:9-23:40
 	android:authorities
-		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:22:13-70
+		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:22:13-70
 	android:exported
-		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:23:13-37
+		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:23:13-37
 	android:name
-		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\stitch-android-core-4.0.5.aar\2abff0ae642308a61114063b7c0f4469\AndroidManifest.xml:21:13-87
+		ADDED from [org.mongodb:stitch-android-core:4.0.5] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-stitch-android-core-4.0.5.aar\432c70b2718b235b33b835bc7823f431\AndroidManifest.xml:21:13-87
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:23:9-27:75
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:25:13-46
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:26:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:27:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:24:13-93
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:33:9-36:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:35:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:36:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-auth-17.0.0.aar\6de6f760f070bed2ab6a0c66011a970e\AndroidManifest.xml:34:13-89
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\dfbca0729b3a99eb4fa63707f525c363\AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:15.0.1] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\play-services-basement-15.0.1.aar\96c7e01032fcba2e4ced6c1d72f26ad8\AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\Maya\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\6b64831d5580112a3ca3edf0199176b8\AndroidManifest.xml:24:13-58
