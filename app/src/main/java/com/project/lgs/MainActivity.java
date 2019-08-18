@@ -3,16 +3,26 @@ package com.project.lgs;
 import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.SearchView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
+import com.project.lgs.CartClasses.UserProfile;
 import com.project.lgs.Database.MongoConnect;
+import com.project.lgs.Database.SupplierMgr;
+import com.project.lgs.Database.UsersMgr;
 import com.project.lgs.SearchClasses.SearchActivity;
+import com.project.lgs.SupplierClasses.Supplier;
+import com.project.lgs.UsersClasses.User;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -25,6 +35,9 @@ public class MainActivity extends AppCompatActivity{
     public static RemoteMongoClient mongoClient;
     public static Context mcontext;
     public static final String dbName = "LGS";
+    public static User userLogin;
+    public static Supplier supplierLogin;
+    public static boolean isSupp;
     private Toolbar toolbar;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
@@ -48,6 +61,8 @@ public class MainActivity extends AppCompatActivity{
 
         } else {
 
+            String email = (String) getIntent().getStringExtra("Email");
+            getLoginInfo(email);
 
             setContentView(R.layout.activity_main);
            /* toolbar = findViewById(R.id.toolBar);
@@ -69,7 +84,6 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the options menu from XML
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.promenu, menu);
 
@@ -81,5 +95,65 @@ public class MainActivity extends AppCompatActivity{
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (item.getItemId() == R.id.profilemenu) {
+            if (isSupp ==true && supplierLogin != null){
+
+            }else{
+                if(isSupp == false && userLogin != null){
+
+                    Intent i = new Intent(this, UserProfile.class);
+                    this.startActivity(i);
+                    return true;
+                }else
+                {
+                    Intent i = new Intent(this, ProblemActivity.class);
+                    this.startActivity(i);
+                    return true;
+                }
+            }
+        }
+
+        return true;
+    }
+
+    private void getLoginInfo (String email){
+        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+
+        HashMap<String, String> prodIns = new HashMap<String, String>();
+        prodIns.put("Email", email);
+
+        HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
+
+        ArrayList<Supplier> sup = supplierMgr.findDocument(prodIns, prodSort, 1);
+        if (sup.size()>0) {
+
+            supplierLogin = sup.get(0);
+            userLogin = null;
+            isSupp = true;
+
+        }else {
+
+            UsersMgr userMgr = new UsersMgr(MainActivity.dbName, MainActivity.mongoClient);
+
+            HashMap<String, String> usIns = new HashMap<String, String>();
+            usIns.put("Email", email);
+
+            HashMap<String, Integer> usSort = new HashMap<String, Integer>();
+
+            ArrayList<User> user = userMgr.findDocument(usIns, usSort, 1);
+            if (user.size() == 0) {
+                userMgr.insertDocument(usIns);
+            }
+
+            user = userMgr.findDocument(usIns, usSort, 1);
+
+            userLogin = user.get(0);
+            supplierLogin = null;
+            isSupp = false;
+        }
+    }
 
 }

@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-large-v4\\values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\0937293717bb45d9397b31c895673343\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\906f94bb9782f3eb5fb494131d07c8e3\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

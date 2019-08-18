@@ -76,5 +76,53 @@
             android:textStyle="italic"
             tools:text="This is a small description"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="20dp"
+            android:id="@+id/cartLayout"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/cartAdd"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="-"
+                android:textStyle="normal"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:onClick="cartMinus"/>
+
+            <TextView
+                android:id="@+id/cartNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"/>
+
+            <Button
+                android:id="@+id/cartMinus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:text="+"
+                android:textStyle="normal"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                android:onClick="cartAdd"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/addToCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add To Cart"
+            android:textStyle="normal"
+            android:textSize="13dp"
+            android:textColor="@android:color/black"
+            android:onClick="addToCart"
+            android:visibility="invisible"/>
     </LinearLayout>
 </LinearLayout>

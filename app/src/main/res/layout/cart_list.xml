@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingLeft="3dp"
+    android:paddingTop="10dp"
+    android:id="@+id/cart_layout">
+
+    <TextView
+        android:id="@+id/cart_pr_name"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="15dp"
+        tools:text="Product 1"/>
+
+    <TextView
+        android:id="@+id/cart_pr_qtity"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        android:textColor="@android:color/black"
+        tools:text="1pc"/>
+
+    <TextView
+        android:id="@+id/cart_pr_price"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        tools:text="5$"/>
+
+    <TextView
+        android:id="@+id/cart_pr_total"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        tools:text="5$"/>
+
+</LinearLayout>

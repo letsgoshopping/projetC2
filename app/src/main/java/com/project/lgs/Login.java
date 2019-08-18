@@ -42,6 +42,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         if (account != null){
             Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("Email", account.getEmail());
             this.startActivity(i);
         }
         else {
@@ -83,8 +84,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-
             Intent i = new Intent(this, MainActivity.class);
+            i.putExtra("Email", account.getEmail());
             this.startActivity(i);
 
         } catch (ApiException e) {
@@ -92,6 +93,10 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
             Intent i = new Intent(this, ProblemActivity.class);
             this.startActivity(i);
+
         }
     }
+
+
+
 }

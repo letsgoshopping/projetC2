@@ -3,6 +3,8 @@ package com.project.lgs.Database;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.CategoryClasses.Category;
 import org.bson.Document;
+import org.bson.types.ObjectId;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,12 +35,12 @@ public class CategoriesMgr {
         }
 
 
-        public String updateDoument (HashMap<String,String> values, String id){
+        public String updateDoument (HashMap<String,String> values, HashMap<String, ObjectId> filter){
 
             String res = "1";
 
             try {
-                operations.updateDoument(collection, values, id);
+                operations.updateDoument(collection, values, filter);
             }catch(Exception e){
                 res = "-1";
             }
@@ -46,7 +48,7 @@ public class CategoriesMgr {
             return res;
         }
 
-        public String deleteDocument (String id){
+        public String deleteDocument (ObjectId id){
 
             String res = "1";
             try{

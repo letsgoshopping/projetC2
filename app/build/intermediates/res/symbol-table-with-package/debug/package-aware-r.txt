@@ -1053,6 +1053,7 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable ic_search_black_24dp
+drawable ic_shopping_basket_black_24dp
 drawable loginback
 drawable logo
 drawable mtrl_tabs_default_indicator
@@ -1101,6 +1102,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addToCart
 id adjust_height
 id adjust_width
 id alertTitle
@@ -1116,6 +1118,16 @@ id blocking
 id bottom
 id buttonPanel
 id cancel_action
+id cartAdd
+id cartLayout
+id cartMinus
+id cartNumber
+id cart_layout
+id cart_list
+id cart_pr_name
+id cart_pr_price
+id cart_pr_qtity
+id cart_pr_total
 id categoryList
 id center
 id center_horizontal
@@ -1228,6 +1240,7 @@ id product_price
 id product_rating
 id product_title
 id product_user
+id profilemenu
 id progress_circular
 id progress_horizontal
 id promenu
@@ -1391,6 +1404,8 @@ layout activity_problem
 layout activity_product_details
 layout activity_search
 layout activity_supplier_details
+layout activity_user_profile
+layout cart_list
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar

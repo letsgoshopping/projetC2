@@ -1,9 +1,12 @@
 package com.project.lgs.Database;
 
-
+import com.mongodb.BasicDBObject;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
+import com.project.lgs.CategoryClasses.Category;
+import com.project.lgs.UsersClasses.User;
 
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,57 +15,69 @@ import java.util.List;
 
 public class UsersMgr {
 
-        MongoOperations operations;
-        String collection  = "Users";
+    MongoOperations operations;
+    String collection  = "User";
 
 
-        public UsersMgr(String databaseName, RemoteMongoClient mongoClient){
+    public UsersMgr(String databaseName, RemoteMongoClient mongoClient){
 
-            this.operations = new MongoOperations(databaseName, mongoClient);
+        this.operations = new MongoOperations(databaseName, mongoClient);
+    }
+
+
+    public String insertDocument (HashMap<String,String> values){
+
+        String res = "1";
+        try{
+            operations.insertDocument(collection,values);
+        }catch (Exception e){
+            res = "-1";
         }
 
+        return res;
+    }
 
-        public String insertDocument (HashMap<String,String> values){
 
-            String res = "1";
-            try{
-                operations.insertDocument(collection,values);
-            }catch (Exception e){
-                res = "-1";
-            }
+    public String updateDocument (HashMap<String,String> values, HashMap<String, ObjectId> filter){
 
-            return res;
+        String res = "1";
+
+        try {
+            operations.updateDoument(collection, values, filter);
+        }catch(Exception e){
+            res = "-1";
         }
 
+        return res;
+    }
 
-        public String updateDoument (HashMap<String,String> values, String id){
+    public String deleteDocument (ObjectId id){
 
-            String res = "1";
-
-            try {
-                operations.updateDoument(collection, values, id);
-            }catch(Exception e){
-                res = "-1";
-            }
-
-            return res;
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,id);
+        }catch(Exception e){
+            res = "-1";
         }
 
-        public String deleteDocument (String id){
+        return res;
+    }
 
-            String res = "1";
-            try{
-                operations.deleteDocument(collection,id);
-            }catch(Exception e){
-                res = "-1";
-            }
+    public ArrayList<User> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
-            return res;
-        }
+        List <Document> res =  operations.findDocument(collection,values,sorting,limit);
+        ArrayList <User> user = new ArrayList<User>();
 
-        public List<Document> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
+        for (Document doc: res) {
+            User pro = new User((String)doc.get("_id").toString(),
+                    (String)doc.get("Email"));
 
-            return operations.findDocument(collection,values,sorting, limit);
+            user.add(pro);
 
         }
+
+        return user;
+
+    }
+
 }

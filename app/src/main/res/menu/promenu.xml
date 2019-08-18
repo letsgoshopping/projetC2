@@ -10,4 +10,11 @@
         app:showAsAction="always"
         app:actionViewClass="android.widget.SearchView"
         />
+
+    <item
+        android:id="@+id/profilemenu"
+        android:title="profile"
+        android:icon="@drawable/ic_shopping_basket_black_24dp"
+        app:showAsAction="always"
+        />
 </menu>

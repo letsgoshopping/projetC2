@@ -12,12 +12,7 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
         <activity android:name=".AllSuppliersClasses.AllSuppliersAdapter" />
         <activity android:name=".AllSuppliersClasses.AllSuppliers" />
         <activity android:name=".AllProductsClasses.AllProducts" />
@@ -25,11 +20,12 @@
         <activity android:name=".ProductDetails" />
         <activity android:name=".add_product" />
         <activity android:name=".ProblemActivity" />
+        <activity android:name=".MainActivity"></activity>
+
         <activity
             android:name=".ProductClasses.ProductFragment"
             android:label="Products" />
-        <activity android:name=".MainActivity">
-        </activity>
+
         <activity
             android:name=".SearchClasses.NoResults"
             android:parentActivityName=".MainActivity" />
@@ -44,6 +40,17 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+        <activity
+            android:name=".CartClasses.UserProfile"
+            android:parentActivityName=".MainActivity"/>
+
+        <activity android:name=".Login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

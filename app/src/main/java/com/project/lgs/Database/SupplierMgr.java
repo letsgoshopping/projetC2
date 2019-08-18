@@ -5,6 +5,7 @@ import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.SupplierClasses.Supplier;
 
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,12 +37,12 @@ public class SupplierMgr {
         }
 
 
-        public String updateDoument (HashMap<String,String> values, String id){
+        public String updateDocument (HashMap<String,String> values, HashMap<String, ObjectId> filter){
 
             String res = "1";
 
             try {
-                operations.updateDoument(collection, values, id);
+                operations.updateDoument(collection, values, filter);
             }catch(Exception e){
                 res = "-1";
             }
@@ -49,7 +50,7 @@ public class SupplierMgr {
             return res;
         }
 
-        public String deleteDocument (String id){
+        public String deleteDocument (ObjectId id){
 
             String res = "1";
             try{

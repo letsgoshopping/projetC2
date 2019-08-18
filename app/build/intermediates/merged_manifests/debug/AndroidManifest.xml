@@ -21,13 +21,6 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.project.lgs.Login" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name="com.project.lgs.AllSuppliersClasses.AllSuppliersAdapter" />
         <activity android:name="com.project.lgs.AllSuppliersClasses.AllSuppliers" />
         <activity android:name="com.project.lgs.AllProductsClasses.AllProducts" />
@@ -35,11 +28,10 @@
         <activity android:name="com.project.lgs.ProductDetails" />
         <activity android:name="com.project.lgs.add_product" />
         <activity android:name="com.project.lgs.ProblemActivity" />
+        <activity android:name="com.project.lgs.MainActivity" />
         <activity
             android:name="com.project.lgs.ProductClasses.ProductFragment"
             android:label="Products" />
-        <activity android:name="com.project.lgs.MainActivity" >
-        </activity>
         <activity
             android:name="com.project.lgs.SearchClasses.NoResults"
             android:parentActivityName="com.project.lgs.MainActivity" />
@@ -54,6 +46,17 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
+        <activity
+            android:name="com.project.lgs.CartClasses.UserProfile"
+            android:parentActivityName="com.project.lgs.MainActivity" />
+        <activity android:name="com.project.lgs.Login" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <!--
           StitchInitProvider is a ContentProvider that will associate the application's Context
           with Stitch. It also will look for resource values such as stitch_client_app_id to register

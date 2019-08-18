@@ -10,15 +10,16 @@ import com.mongodb.stitch.android.core.auth.StitchUser;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteFindIterable;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
+import com.mongodb.stitch.core.services.mongodb.remote.RemoteDeleteResult;
+import com.mongodb.stitch.core.services.mongodb.remote.RemoteUpdateResult;
 
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
-
-
 
 
 public class MongoOperations{
@@ -96,14 +97,70 @@ public class MongoOperations{
 
         }
 
-        public void updateDoument (String collection, HashMap<String,String> values, String id)throws Exception{
+        public void insertDocumentMulti (String collection, Document values,HashMap<String,String> values2)throws Exception {
 
-            String res;
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+
+            for (Entry<String, String> entry : values2.entrySet()) {
+                String key = entry.getKey();
+                String val = entry.getValue();
+
+                values.append(key, val);
+            }
+
+
+            mongoCollection.insertOne(values).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
+                @Override
+                public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw new Exception("Insertion failed");
+                    }
+
+                    return task;
+                }
+            });
+        }
+
+        public void updateDoument (String collection, HashMap<String,String> values,  HashMap<String, ObjectId> filter)throws Exception{
+
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+            Document filterDoc = new Document();
+            Document cond = new Document();
+
+            for (Entry<String, String> entry : values.entrySet()) {
+                String key = entry.getKey();
+                String val = entry.getValue();
+
+                cond.append(key, val);
+            }
+
+            for (Entry<String, ObjectId> entry : filter.entrySet()) {
+                String key = entry.getKey();
+                ObjectId val = entry.getValue();
+
+                filterDoc.append(key, val);
+            }
+
+            Document updateDoc = new Document().append("$push",cond);
 
             try {
 
-                this.deleteDocument(collection, id);
-                this.insertDocument(collection, values);
+                final Task <RemoteUpdateResult> updateTask =
+                        mongoCollection.updateOne(filterDoc, updateDoc);
+                updateTask.addOnCompleteListener(new OnCompleteListener <RemoteUpdateResult> () {
+                    @Override
+                    public void onComplete(Task <RemoteUpdateResult> task) {
+                        if (task.isSuccessful()) {
+                            long numMatched = task.getResult().getMatchedCount();
+                            long numModified = task.getResult().getModifiedCount();
+                            Log.d("app", String.format("successfully matched %d and modified %d documents",
+                                    numMatched, numModified));
+                        } else {
+                            Log.e("app", "failed to update document with: ", task.getException());
+                        }
+                    }
+                });
 
             } catch (Exception e){
 
@@ -113,23 +170,77 @@ public class MongoOperations{
 
         }
 
-        public void deleteDocument (String collection, String id) throws Exception{
+        public void updateDocumentMulti (String collection, Document values,HashMap<String,String> values2,HashMap<String,ObjectId> filter)throws Exception {
+
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+            Document filterDoc = new Document();
+
+
+            for (Entry<String, String> entry : values2.entrySet()) {
+                String key = entry.getKey();
+                String val = entry.getValue();
+
+                values.append(key, val);
+            }
+
+
+
+            for (Entry<String, ObjectId> entry : filter.entrySet()) {
+                String key = entry.getKey();
+                ObjectId val = entry.getValue();
+
+                filterDoc.append(key, val);
+            }
+
+
+            Document updateDoc = new Document().append("$set",values);
+
+            try {
+
+                final Task <RemoteUpdateResult> updateTask =
+                        mongoCollection.updateOne(filterDoc, updateDoc);
+                updateTask.addOnCompleteListener(new OnCompleteListener <RemoteUpdateResult> () {
+                    @Override
+                    public void onComplete(Task <RemoteUpdateResult> task) {
+                        if (task.isSuccessful()) {
+                            long numMatched = task.getResult().getMatchedCount();
+                            long numModified = task.getResult().getModifiedCount();
+                            Log.d("app", String.format("successfully matched %d and modified %d documents",
+                                    numMatched, numModified));
+                        } else {
+                            Log.e("app", "failed to update document with: ", task.getException());
+                        }
+                    }
+                });
+
+            } catch (Exception e){
+
+                throw new Exception("Update failed");
+
+            }
+        }
+
+        public void deleteDocument (String collection, ObjectId id) throws Exception{
 
             String res;
 
             RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
 
-            Document filterDoc = new Document().append("id", id);
+            Document filterDoc = new Document().append("_id", id);
 
-            mongoCollection.deleteOne(filterDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
+            final Task<RemoteDeleteResult> deleteTask = mongoCollection.deleteMany(filterDoc);
+            deleteTask.addOnCompleteListener(new OnCompleteListener <RemoteDeleteResult> () {
                 @Override
-                public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
-                    if (!task.isSuccessful()) {
-                        throw new Exception("Deletion failed");
+                public void onComplete(Task <RemoteDeleteResult> task) {
+                    if (task.isSuccessful()) {
+                        long numDeleted = task.getResult().getDeletedCount();
+                        Log.d("app", String.format("successfully deleted %d documents", numDeleted));
+                    } else {
+                        Log.e("app", "failed to delete document with: ", task.getException());
                     }
-                    return task;
                 }
-            });;
+            });
         }
 
         public ArrayList<Document> findDocument (String collection, HashMap<String,String> values, HashMap<String,Integer> sorting,int limit) {
@@ -187,9 +298,18 @@ public class MongoOperations{
 
         }
 
-    public ArrayList<Document> findDocumentNonExact (String collection, BasicDBObject values, HashMap<String,Integer> sorting, int limit) {
+    public ArrayList<Document> findDocumentById (String collection, HashMap<String,ObjectId> values, HashMap<String,Integer> sorting,int limit) {
 
         RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+        Document searchDoc = new Document();
+
+        for (Entry<String, ObjectId> entry : values.entrySet()) {
+            String key = entry.getKey();
+            ObjectId val = entry.getValue();
+
+            searchDoc.append(key, val);
+        }
 
         Document sortingDoc = new Document();
 
@@ -207,13 +327,13 @@ public class MongoOperations{
 
         if(limit != 0) {
             findResults = mongoCollection
-                    .find(values)
+                    .find(searchDoc)
                     .limit(limit)
                     .sort(sortingDoc);
         }
         else{
             findResults = mongoCollection
-                    .find(values)
+                    .find(searchDoc)
                     .sort(sortingDoc);
         }
 
@@ -233,6 +353,49 @@ public class MongoOperations{
 
     }
 
+        public ArrayList<Document> findDocumentNonExact (String collection, BasicDBObject values, HashMap<String,Integer> sorting, int limit) {
+
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+            Document sortingDoc = new Document();
+
+            if (sorting != null) {
+
+                for (Entry<String, Integer> entry : sorting.entrySet()) {
+                    String key = entry.getKey();
+                    int val = entry.getValue();
+
+                    sortingDoc.append(key, val);
+                }
+            }
+
+            RemoteFindIterable findResults;
+
+            if(limit != 0) {
+                findResults = mongoCollection
+                        .find(values)
+                        .limit(limit)
+                        .sort(sortingDoc);
+            }
+            else{
+                findResults = mongoCollection
+                        .find(values)
+                        .sort(sortingDoc);
+            }
 
 
+            Task <List<Document>> itemsTask = findResults.into(result).addOnCompleteListener(new OnCompleteListener <List<Document>> () {
+                @Override
+                public void onComplete(Task<List<Document>> task) {
+                    if (task.isSuccessful()) {
+                    } else {
+                        Log.e("app", "failed to find documents with: ", task.getException());
+                    }
+                }
+            });
+
+            while (!itemsTask.isComplete()){};
+            return  result;
+
+        }
 }

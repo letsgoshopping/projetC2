@@ -6,6 +6,7 @@ import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.ProductClasses.Product;
 
 import org.bson.Document;
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,12 +50,12 @@ public class ProductsMgr {
         }
 
 
-        public String updateDoument (HashMap<String,String> values, String id){
+        public String updateDoument (HashMap<String,String> values, HashMap<String, ObjectId> filter){
 
             String res = "1";
 
             try {
-                operations.updateDoument(collection, values, id);
+                operations.updateDoument(collection, values, filter);
             }catch(Exception e){
                 res = "-1";
             }
@@ -62,7 +63,7 @@ public class ProductsMgr {
             return res;
         }
 
-        public String deleteDocument (String id){
+        public String deleteDocument (ObjectId id){
 
             String res = "1";
             try{
@@ -97,6 +98,30 @@ public class ProductsMgr {
             return product;
 
         }
+
+    public ArrayList<Product> findDocumentById (HashMap<String,ObjectId> values, HashMap<String,Integer> sorting, int limit){
+
+        List <Document> res =  operations.findDocumentById(collection,values,sorting,limit);
+        ArrayList <Product> product = new ArrayList<Product>();
+
+        for (Document doc: res) {
+            Product pro = new Product((String)doc.get("_id").toString(),
+                    (String)doc.get("Title"),
+                    (String)doc.get("Description"),
+                    (String)doc.get("Rating"),
+                    (String)doc.get("Price"),
+                    (byte[])doc.get("Image"),
+                    (String)doc.get("User"),
+                    (String)doc.get("PDate"),
+                    (String)doc.get("Category"));
+
+            product.add(pro);
+
+        }
+
+        return product;
+
+    }
 
     public ArrayList<Product> findDocumentNonExact (BasicDBObject values, HashMap<String,Integer> sorting, int limit){
 
