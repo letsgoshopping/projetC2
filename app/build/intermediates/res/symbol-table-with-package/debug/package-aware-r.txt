@@ -1052,6 +1052,8 @@ drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_power_settings_new_black_24dp
+drawable ic_remove_circle_outline_black_24dp
 drawable ic_search_black_24dp
 drawable ic_shopping_basket_black_24dp
 drawable loginback
@@ -1122,11 +1124,14 @@ id cartAdd
 id cartLayout
 id cartMinus
 id cartNumber
+id cartTotal
 id cart_layout
 id cart_list
+id cart_pr_delete
 id cart_pr_name
 id cart_pr_price
 id cart_pr_qtity
+id cart_pr_rowId
 id cart_pr_total
 id categoryList
 id center
@@ -1201,6 +1206,8 @@ id line3
 id list
 id listMode
 id list_item
+id logout
+id logoutMenu
 id masked
 id media_actions
 id message
@@ -1445,6 +1452,7 @@ layout supplier_fragment
 layout supplier_list
 layout support_simple_spinner_dropdown_item
 layout toolbar_layout
+menu logoutmenu
 menu promenu
 mipmap ic_launcher
 mipmap ic_launcher_foreground
@@ -1531,6 +1539,7 @@ string status_bar_notification_info_overflow
 string stitch_client_app_id
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
+style AlertDialogStyle
 style Animation_AppCompat_Dialog
 style Animation_AppCompat_DropDownUp
 style Animation_AppCompat_Tooltip

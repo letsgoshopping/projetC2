@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -13,13 +14,17 @@ import android.widget.SearchView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
+import com.project.lgs.CartClasses.Cart;
 import com.project.lgs.CartClasses.UserProfile;
+import com.project.lgs.Database.CartMgr;
 import com.project.lgs.Database.MongoConnect;
 import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.Database.UsersMgr;
 import com.project.lgs.SearchClasses.SearchActivity;
 import com.project.lgs.SupplierClasses.Supplier;
 import com.project.lgs.UsersClasses.User;
+
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -63,6 +68,19 @@ public class MainActivity extends AppCompatActivity{
 
             String email = (String) getIntent().getStringExtra("Email");
             getLoginInfo(email);
+
+            if (isSupp == false){
+
+                UsersMgr userMgr = new UsersMgr(MainActivity.dbName, MainActivity.mongoClient);
+
+                HashMap<String, String> usIns = new HashMap<String, String>();
+                usIns.put("Email", email);
+
+                ArrayList<User> user = userMgr.findDocument(usIns, new HashMap<String, Integer>(), 1);
+
+                userLogin = user.get(0);
+                supplierLogin = null;
+            }
 
             setContentView(R.layout.activity_main);
            /* toolbar = findViewById(R.id.toolBar);
@@ -145,13 +163,9 @@ public class MainActivity extends AppCompatActivity{
 
             ArrayList<User> user = userMgr.findDocument(usIns, usSort, 1);
             if (user.size() == 0) {
-                userMgr.insertDocument(usIns);
+                userMgr.insertDocumentWait(usIns);
             }
 
-            user = userMgr.findDocument(usIns, usSort, 1);
-
-            userLogin = user.get(0);
-            supplierLogin = null;
             isSupp = false;
         }
     }

@@ -13,11 +13,12 @@ public class Product implements Serializable {
     private String user;
     private String publishDate;
     private String category;
+    private String code;
 
 
     public Product(){}
 
-    public Product(String id, String title, String description, String rating, String price, byte[] image, String user,String pDate, String category){
+    public Product(String id, String title, String description, String rating, String price, byte[] image, String user,String pDate, String category, String code){
         this.id = id;
         this.title = title;
         this.description = description;
@@ -27,6 +28,7 @@ public class Product implements Serializable {
         this.user = user;
         this.publishDate = pDate;
         this.category = category;
+        this.code = code;
     }
 
     public String getTitle() {
@@ -120,6 +122,14 @@ public class Product implements Serializable {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getCode() {
+        return (code ==  null? "0":code);
+    }
+
+    public void setCode(String id) {
+        this.code = code;
     }
 
 

@@ -1,10 +1,7 @@
 package com.project.lgs.Database;
 
-import android.util.Log;
-
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.CartClasses.Cart;
-import com.project.lgs.OrdersClasses.Order;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -76,6 +73,18 @@ public class CartMgr {
         return res;
     }
 
+    public String deleteDocument (HashMap<String,String> filter){
+
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,filter);
+        }catch(Exception e){
+            res = "-1";
+        }
+
+        return res;
+    }
+
     public ArrayList<Cart> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
         List <Document> res =  operations.findDocument(collection,values,sorting,limit);
@@ -87,7 +96,9 @@ public class CartMgr {
                     (String)doc.get("InvoiceNumber"),
                     (String)doc.get("Date"),
                     (String)doc.get("User"),
-                    (Document) doc.get("Products"));
+                    (Document) doc.get("Products"),
+                    (String)doc.get("Seq"),
+                    (String)doc.get("Total"));
 
             ordder.add(pro);
 

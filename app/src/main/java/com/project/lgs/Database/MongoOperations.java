@@ -11,6 +11,7 @@ import com.mongodb.stitch.android.services.mongodb.remote.RemoteFindIterable;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteDeleteResult;
+import com.mongodb.stitch.core.services.mongodb.remote.RemoteInsertOneResult;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteUpdateResult;
 
 import org.bson.Document;
@@ -57,7 +58,7 @@ public class MongoOperations{
                 newDoc.append(key, val);
             }
 
-            mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
+             mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
                 @Override
                 public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
                     if (!task.isSuccessful()) {
@@ -70,11 +71,13 @@ public class MongoOperations{
 
 
         }
+
         public void insertDocument (String collection, HashMap<String,String> values)throws Exception{
 
                 RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
 
                 Document newDoc = new Document();
+                int a;
 
                 for (Entry<String, String> entry : values.entrySet()) {
                     String key = entry.getKey();
@@ -93,7 +96,6 @@ public class MongoOperations{
                     return task;
                 }
             });
-
 
         }
 
@@ -116,11 +118,41 @@ public class MongoOperations{
                     if (!task.isSuccessful()) {
                         throw new Exception("Insertion failed");
                     }
-
                     return task;
                 }
             });
+
         }
+
+    public void insertDocumentWait (String collection, HashMap<String,String> values)throws Exception{
+
+        RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+        Document newDoc = new Document();
+
+        for (Entry<String, String> entry : values.entrySet()) {
+            String key = entry.getKey();
+            String val = entry.getValue();
+
+            newDoc.append(key, val);
+        }
+
+        final Task <RemoteInsertOneResult> insertTask = mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
+            @Override
+            public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
+                if (!task.isSuccessful()) {
+                    throw new Exception("Insertion failed");
+                }
+
+                return task;
+            }
+        });
+
+       /* while (!insertTask.isComplete()){
+            Log.d("lala", "insertDocumentWait: ");
+        }*/
+
+    }
 
         public void updateDoument (String collection, HashMap<String,String> values,  HashMap<String, ObjectId> filter)throws Exception{
 
@@ -161,6 +193,8 @@ public class MongoOperations{
                         }
                     }
                 });
+
+                while(!updateTask.isComplete()){}
 
             } catch (Exception e){
 
@@ -214,6 +248,8 @@ public class MongoOperations{
                     }
                 });
 
+                while (!updateTask.isComplete()){}
+
             } catch (Exception e){
 
                 throw new Exception("Update failed");
@@ -241,6 +277,37 @@ public class MongoOperations{
                     }
                 }
             });
+
+            while(!deleteTask.isComplete()){}
+        }
+
+        public void deleteDocument (String collection, HashMap<String,String> filter) throws Exception{
+
+            Document filterDoc =  new Document();
+
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+
+            for (Entry<String, String> entry : filter.entrySet()) {
+                String key = entry.getKey();
+                String val = entry.getValue();
+
+                filterDoc.append(key, val);
+            }
+
+            final Task<RemoteDeleteResult> deleteTask = mongoCollection.deleteMany(filterDoc);
+            deleteTask.addOnCompleteListener(new OnCompleteListener <RemoteDeleteResult> () {
+                @Override
+                public void onComplete(Task <RemoteDeleteResult> task) {
+                    if (task.isSuccessful()) {
+                        long numDeleted = task.getResult().getDeletedCount();
+                        Log.d("app", String.format("successfully deleted %d documents", numDeleted));
+                    } else {
+                        Log.e("app", "failed to delete document with: ", task.getException());
+                    }
+                }
+            });
+
+            while(!deleteTask.isComplete()){}
         }
 
         public ArrayList<Document> findDocument (String collection, HashMap<String,String> values, HashMap<String,Integer> sorting,int limit) {

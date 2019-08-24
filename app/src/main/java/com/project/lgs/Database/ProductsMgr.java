@@ -89,7 +89,8 @@ public class ProductsMgr {
                         (byte[])doc.get("Image"),
                         (String)doc.get("User"),
                         (String)doc.get("PDate"),
-                        (String)doc.get("Category"));
+                        (String)doc.get("Category"),
+                        (String)doc.get("Code"));
 
                 product.add(pro);
 
@@ -113,7 +114,8 @@ public class ProductsMgr {
                     (byte[])doc.get("Image"),
                     (String)doc.get("User"),
                     (String)doc.get("PDate"),
-                    (String)doc.get("Category"));
+                    (String)doc.get("Category"),
+                    (String)doc.get("Code"));
 
             product.add(pro);
 
@@ -137,7 +139,8 @@ public class ProductsMgr {
                     (byte[])doc.get("Image"),
                     (String)doc.get("User"),
                     (String)doc.get("PDate"),
-                    (String)doc.get("Category"));
+                    (String)doc.get("Category"),
+                    (String)doc.get("Code"));
 
             product.add(pro);
 

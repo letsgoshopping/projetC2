@@ -1,5 +1,7 @@
 package com.project.lgs.OrdersClasses;
 
+import org.bson.Document;
+
 import java.util.HashMap;
 
 public class Order {
@@ -8,21 +10,26 @@ public class Order {
     private String invoiceNumber;
     private String date;
     private String userId;
-    private HashMap<String,HashMap<String, HashMap<String,String>>> products;
+    private String total;
+    private Document products;
+    private String status;
 
-    public Order (String id,String invoiceNumber, String date, String userId){
+    public Order (String invoiceNumber, String date, String userId, String total,String status){
         this.invoiceNumber = invoiceNumber;
         this.date = date;
-        this.id = id;
         this.userId =  userId;
+        this.total = total;
+        this.status = status;
     }
 
-    public Order (String id,String invoiceNumber, String date, String userId, HashMap<String,HashMap<String, HashMap<String,String>>> products){
+    public Order (String id,String invoiceNumber, String date, String userId, Document products, String total, String status){
         this.invoiceNumber = invoiceNumber;
         this.date = date;
         this.id = id;
         this.products = products;
         this.userId = userId;
+        this.total = total;
+        this.status = status;
     }
 
     public String getDate() {
@@ -49,11 +56,11 @@ public class Order {
         id = id;
     }
 
-    public HashMap<String, HashMap<String, HashMap<String, String>>> getProducts() {
+    public Document getProducts() {
         return products;
     }
 
-    public void setProducts(HashMap<String, HashMap<String, HashMap<String, String>>> products) {
+    public void setProducts(Document products) {
         this.products = products;
     }
 
@@ -65,9 +72,25 @@ public class Order {
         this.userId = userId;
     }
 
+    public String getTotal() {
+        return (total==null? "0":total);
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
     @Override
     public String toString() {
         return invoiceNumber;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 }

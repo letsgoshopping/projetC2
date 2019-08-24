@@ -84,4 +84,27 @@ public class SupplierMgr {
             return user;
 
         }
+
+    public ArrayList<Supplier> findDocumentById (HashMap<String,ObjectId> values, HashMap<String,Integer> sorting, int limit){
+
+        List <Document> res =  operations.findDocumentById(collection,values,sorting,limit);
+        ArrayList <Supplier> product = new ArrayList<Supplier>();
+
+        for (Document doc: res) {
+            Supplier u = new Supplier((String)doc.get("_id").toString(),
+                    (String)doc.get("Name"),
+                    (String)doc.get("Description"),
+                    (String)doc.get("PhoneNumber"),
+                    (byte[])doc.get("Image"),
+                    (String)doc.get("JoinDate"),
+                    (String)doc.get("Email"),
+                    (String)doc.get("Password"));
+
+            product.add(u);
+
+        }
+
+        return product;
+
+    }
 }

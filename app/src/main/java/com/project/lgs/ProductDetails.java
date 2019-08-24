@@ -51,7 +51,7 @@ public class ProductDetails extends AppCompatActivity {
         proTitle.setText(currentProduct.getTitle());
 
         TextView proRat  = (TextView) this.findViewById(R.id.detail_rating);
-        proRat.setText(currentProduct.getRating());
+        proRat.setText(currentProduct.getCode());
 
         TextView proPrice  = (TextView) this.findViewById(R.id.detail_price);
         proPrice.setText(currentProduct.getPrice());
@@ -108,55 +108,68 @@ public class ProductDetails extends AppCompatActivity {
             CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
             HashMap<String, String> cartIns = new HashMap<>();
-            cartIns.put("User", MainActivity.userLogin.getId());
+            cartIns.put("User", MainActivity.userLogin.getEmail());
             HashMap<String, Integer> cartSort = new HashMap<>();
             cartSort.put("User",1);
 
-            ArrayList<Cart> cart = cartMgr.findDocument(cartIns, cartSort, 1);
+            ArrayList<Cart> cart = cartMgr.findDocument(cartIns, cartSort, 500);
 
-            if (cart.size() > 0) {
+            if (cart.size() == 1) {
 
                 Cart c = cart.get(0);
+                Log.d("cartid", c.getId());
                 Document d = c.getProducts();
 
                 Document h1 = new Document();
                 h1.append("_id",curPro.getId());
                 h1.append("Qtity",Integer.toString(qtity));
 
-                int proNum = d.size()+1;
+                int proNum = Integer.parseInt(c.getProductSequence())+1;
 
                 d.append("product" + proNum, h1);
-
                 Document upd = new Document();
                 upd.append("Products",d);
+
+                HashMap<String,String>values = new HashMap<>();
+                values.put("Seq",Integer.toString(proNum));
+
+                int total = Integer.parseInt(c.getTotal()) + (Integer.parseInt(curPro.getPrice().replace("$","")) * qtity);
+                values.put("Total",Integer.toString(total));
+
 
                 HashMap<String, ObjectId>filter = new HashMap<>();
                 filter.put("_id",new ObjectId(c.getId()));
 
-
-                cartMgr.updateDocumentMulti(upd,new HashMap<String, String>(),filter);
+                cartMgr.updateDocumentMulti(upd,values,filter);
 
             } else {
 
-                String invoiceNum = MainActivity.userLogin.getId() + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+                if (cart.size() == 0) {
 
-                HashMap<String, String> values2 = new HashMap<>();
-                values2.put("InvoiceNumber",invoiceNum);
-                values2.put("Date",new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));
-                values2.put("User", MainActivity.userLogin.getId());
+                    String invoiceNum = MainActivity.userLogin.getId() + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
-                Document productsIns = new Document();
+                    HashMap<String, String> values2 = new HashMap<>();
+                    values2.put("InvoiceNumber", invoiceNum);
+                    values2.put("Date", new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));
+                    values2.put("User", MainActivity.userLogin.getEmail());
+                    values2.put("Seq", "1");
 
-                Document h1 = new Document();
-                h1.append("_id",curPro.getId());
-                h1.append("Qtity",Integer.toString(qtity));
+                    int total = Integer.parseInt(curPro.getPrice().replace("$","")) * qtity;
+                    values2.put("Total",Integer.toString(total));
 
-                productsIns.append("product1", h1);
+                    Document productsIns = new Document();
 
-                Document values = new Document();
-                values.append("Products",productsIns);
+                    Document h1 = new Document();
+                    h1.append("_id", curPro.getId());
+                    h1.append("Qtity", Integer.toString(qtity));
 
-                cartMgr.insertDocument(values,values2);
+                    productsIns.append("product1", h1);
+
+                    Document values = new Document();
+                    values.append("Products", productsIns);
+
+                    cartMgr.insertDocument(values, values2);
+                }
 
             }
 

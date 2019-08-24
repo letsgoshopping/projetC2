@@ -13,70 +13,99 @@ import java.util.List;
 
 public class OrdersMgr {
 
-        MongoOperations operations;
-        String collection  = "Order";
+    MongoOperations operations;
+    String collection  = "Order";
 
 
-        public OrdersMgr(String databaseName, RemoteMongoClient mongoClient){
+    public OrdersMgr(String databaseName, RemoteMongoClient mongoClient){
 
-            this.operations = new MongoOperations(databaseName, mongoClient);
+        this.operations = new MongoOperations(databaseName, mongoClient);
+    }
+
+
+    public String insertDocument (Document values,HashMap<String,String> values2){
+
+        String res = "1";
+        try{
+            operations.insertDocumentMulti(collection,values,values2);
+        }catch (Exception e){
+            res = "-1";
         }
 
+        return res;
+    }
 
-        public String insertDocument (Document values,HashMap<String,String> values2){
+    public String updateDocument (HashMap<String,String> values, HashMap<String,ObjectId> filter){
 
-            String res = "1";
-            try{
-                operations.insertDocumentMulti(collection,values,values2);
-            }catch (Exception e){
-                res = "-1";
-            }
+        String res = "1";
 
-            return res;
+        try {
+            operations.updateDoument(collection, values, filter);
+        }catch(Exception e){
+            res = "-1";
         }
 
-        public String updateDocument (HashMap<String,String> values, HashMap<String, ObjectId> filter){
+        return res;
+    }
 
-            String res = "1";
+    public String updateDocumentMulti (Document values,HashMap<String,String> values2,HashMap<String, ObjectId> filter){
 
-            try {
-                operations.updateDoument(collection, values, filter);
-            }catch(Exception e){
-                res = "-1";
-            }
+        String res = "1";
 
-            return res;
+        try {
+            operations.updateDocumentMulti(collection, values, values2, filter);
+        }catch(Exception e){
+            res = "-1";
         }
 
-        public String deleteDocument (ObjectId id){
+        return res;
+    }
 
-            String res = "1";
-            try{
-                operations.deleteDocument(collection,id);
-            }catch(Exception e){
-                res = "-1";
-            }
+    public String deleteDocument (ObjectId id){
 
-            return res;
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,id);
+        }catch(Exception e){
+            res = "-1";
         }
 
-        public ArrayList<Order> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
+        return res;
+    }
 
-            List <Document> res =  operations.findDocument(collection,values,sorting,limit);
-            ArrayList <Order> ordder = new ArrayList<Order>();
+    public String deleteDocument (HashMap<String,String> filter){
 
-            for (Document doc: res) {
-                Order pro = new Order((String)doc.get("_id").toString(),
-                        (String)doc.get("InvoiceNumber"),
-                        (String)doc.get("Date"),
-                        (String)doc.get("User"),
-                        (HashMap<String,HashMap<String, HashMap<String,String>>>) doc.get("Products"));
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,filter);
+        }catch(Exception e){
+            res = "-1";
+        }
 
-                ordder.add(pro);
+        return res;
+    }
 
-            }
+    public ArrayList<Order> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
-            return ordder;
+        List <Document> res =  operations.findDocument(collection,values,sorting,limit);
+        ArrayList <Order> ordder = new ArrayList<Order>();
+
+
+        for (Document doc: res) {
+            Order pro = new Order((String)doc.get("_id").toString(),
+                    (String)doc.get("InvoiceNumber"),
+                    (String)doc.get("Date"),
+                    (String)doc.get("User"),
+                    (Document) doc.get("Products"),
+                    (String)doc.get("Total"),
+                    (String)doc.get("Status"));
+
+            ordder.add(pro);
+
 
         }
+
+        return ordder;
+
+    }
 }

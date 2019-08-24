@@ -19,7 +19,7 @@ import androidx.core.content.ContextCompat;
 
 public class Login extends AppCompatActivity implements View.OnClickListener {
 
-    GoogleSignInClient mGoogleSignInClient;
+    public static  GoogleSignInClient mGoogleSignInClient;
     final int RC_SIGN_IN = 1;
 
     @Override
@@ -43,6 +43,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         if (account != null){
             Intent i = new Intent(this, MainActivity.class);
             i.putExtra("Email", account.getEmail());
+            finish();
             this.startActivity(i);
         }
         else {
@@ -86,12 +87,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             Intent i = new Intent(this, MainActivity.class);
             i.putExtra("Email", account.getEmail());
+            finish();
             this.startActivity(i);
 
         } catch (ApiException e) {
             Log.w("SignIn", "signInResult:failed code=" + e.getStatusCode());
 
             Intent i = new Intent(this, ProblemActivity.class);
+            finish();
             this.startActivity(i);
 
         }

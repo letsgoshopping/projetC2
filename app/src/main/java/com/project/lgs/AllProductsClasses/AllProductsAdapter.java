@@ -46,7 +46,7 @@ public class AllProductsAdapter extends ArrayAdapter<Product> implements View.On
         proTitle.setText(currentProduct.getTitle());
 
         TextView proRat  = (TextView) searchView.findViewById(R.id.product_rating);
-        proRat.setText(currentProduct.getRating());
+        proRat.setText(currentProduct.getCode());
 
         TextView proPrice  = (TextView) searchView.findViewById(R.id.product_price);
         proPrice.setText(currentProduct.getPrice());

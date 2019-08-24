@@ -1,5 +1,9 @@
 [
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_remove_circle_outline_black_24dp.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\drawable\\ic_remove_circle_outline_black_24dp.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xhdpi-v4\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
@@ -10,6 +14,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_bottom.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\anim\\abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_power_settings_new_black_24dp.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\drawable\\ic_power_settings_new_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_light.png.flat",
@@ -36,16 +44,16 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\75decbc6bfe20ffbf0050bc39518c12c\\res\\drawable-mdpi-v4\\notification_bg_low_normal.9.png"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
-        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\74c7dfc6913e6516a71f29cb82ca42bf\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_supplier_list.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\supplier_list.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_switch_thumb_material.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable\\abc_switch_thumb_material.xml"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_supplier_list.xml.flat",
-        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\supplier_list.xml"
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\74c7dfc6913e6516a71f29cb82ca42bf\\res\\drawable-xxhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_share_mtrl_alpha.png.flat",
@@ -664,6 +672,10 @@
         "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_product_details.xml"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\menu_logoutmenu.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\menu\\logoutmenu.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\74c7dfc6913e6516a71f29cb82ca42bf\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
@@ -1056,16 +1068,16 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
-        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable\\abc_item_background_holo_dark.xml"
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_16dp.png"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-xxxhdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-ldrtl-xxxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_item_background_holo_dark.xml.flat",
+        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
@@ -1160,12 +1172,12 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
     },
     {
-        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
-        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
-    },
-    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_cart_list.xml.flat",
         "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\cart_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_star_half_black_16dp.png.flat",
+        "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
