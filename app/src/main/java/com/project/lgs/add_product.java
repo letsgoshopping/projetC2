@@ -2,13 +2,17 @@ package com.project.lgs;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,7 +20,13 @@ import android.widget.TextView;
 import com.project.lgs.CategoryClasses.Category;
 import com.project.lgs.Database.CategoriesMgr;
 import com.project.lgs.Database.ProductsMgr;
+import com.project.lgs.Database.SupplierMgr;
+import com.project.lgs.MainActivity;
+import com.project.lgs.R;
 
+import org.bson.types.ObjectId;
+
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -27,62 +37,40 @@ import java.util.Date;
 import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
-public class add_product extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    byte[] img;
-    Category selectedCat;
+
+public class add_product extends AppCompatActivity {
+    byte[] img = null;
     final int MAX_FILE_SIZE = 10;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_sup_profile);
 
-        CategoriesMgr catMgr = new CategoriesMgr(MainActivity.dbName, MainActivity.mongoClient);
-        HashMap<String, String> catIns = new HashMap<String, String>();
-        catIns.put("Display","1");
-        HashMap<String, Integer> catSort = new HashMap<String, Integer>();
-        catSort.put("Name", 1);
+        if (Build.VERSION.SDK_INT >= 21) {
+            getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
+        }
 
-        ArrayList<Category> catList = catMgr.findDocument(catIns,catSort);
+        EditText name = (EditText) findViewById(R.id.supNameIns);
+        name.setText(MainActivity.supplierLogin.getName());
 
-        Spinner spinner = (Spinner) findViewById(R.id.categoryList);
-        spinner.setOnItemSelectedListener(this);
-        ArrayAdapter<Category> adapter =
-        new ArrayAdapter<Category>(this,  android.R.layout.simple_spinner_dropdown_item, catList);
-        adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item);
+        EditText number = (EditText) findViewById(R.id.supPhoneIns);
+        number.setText(MainActivity.supplierLogin.getPhoneNumber().replaceFirst("961",""));
 
-        spinner.setAdapter(adapter);
-    }
+        EditText desc = (EditText) findViewById(R.id.supDescIns);
+        desc.setText(MainActivity.supplierLogin.getDescription());
 
-    public void SubmitProduct(View view) {
-
-
-        HashMap<String,String> prod = new HashMap<>();
-        HashMap<String,byte[]> prodImage = new HashMap<>();
-
-        TextView proTxtV  = (TextView) findViewById(R.id.prodNameIns);
-        prod.put("Title",(String)proTxtV.getText());
-
-        proTxtV  = (TextView) findViewById(R.id.prodDescIns);
-        prod.put("Description",(String)proTxtV.getText());
-
-        prod.put("Rating","0");
-
-        proTxtV  = (TextView) findViewById(R.id.prodPriceIns);
-        prod.put("Price",(String)proTxtV.getText());
-
-        prod.put("User","user1");
-
-        prod.put("PDate",new SimpleDateFormat("dd/mm/yyyy").format(new Date()));
-
-        prod.put("Category",selectedCat.getCatId());
-
-        prodImage.put("Image",img);
-
-        ProductsMgr productsMgr = new ProductsMgr(MainActivity.dbName,MainActivity.mongoClient);
-        productsMgr.insertDocumentWPic(prod,prodImage);
+        ImageView imageView = (ImageView) findViewById(R.id.supPhotoIns);
+        byte[] supImage = MainActivity.supplierLogin.getImage();
+        if (supImage == null){
+            imageView.setImageResource(R.drawable.nopic);
+        }
+        else {
+            Bitmap bmp = BitmapFactory.decodeByteArray(supImage, 0, supImage.length);
+            imageView.setImageBitmap(bmp);
+        }
 
     }
 
@@ -105,10 +93,21 @@ public class add_product extends AppCompatActivity implements AdapterView.OnItem
                     if (path != null) {
                         File f = new File(path);
                         selectedImageUri = Uri.fromFile(f);
-                        img = this.read(f);
+
                     }
+
+                    InputStream iStream =   getContentResolver().openInputStream(selectedImageUri);
+                    try {
+                        img = getBytes(iStream);
+                    } finally {
+                        // close the stream
+                        try {
+                            iStream.close();
+                        } catch (IOException ignored) { }
+                    }
+
                     // Set the image in ImageView
-                    ImageView imageView = (ImageView) findViewById(R.id.proPhotoIns);
+                    ImageView imageView = (ImageView) findViewById(R.id.supPhotoIns);
                     imageView.setImageURI(selectedImageUri);
                 }
             }
@@ -129,37 +128,70 @@ public class add_product extends AppCompatActivity implements AdapterView.OnItem
         return res;
     }
 
-    public void onItemSelected(AdapterView<?> parent, View view,
-                               int pos, long id) {
+    public byte[] getBytes(InputStream inputStream) throws IOException {
 
-        selectedCat = (Category)parent.getItemAtPosition(pos);
-    }
-
-    public void onNothingSelected(AdapterView<?> parent) {
-        selectedCat = (Category)parent.getItemAtPosition(1);
-    }
-
-    public byte[] read(File file) throws IOException{
-        if (file.length() > MAX_FILE_SIZE) {
-            throw new IOException("File too big");
-        }
-
-        byte[] buffer = new byte[(int) file.length()];
-        InputStream ios = null;
+        byte[] bytesResult = null;
+        ByteArrayOutputStream byteBuffer = new ByteArrayOutputStream();
+        int bufferSize = 1024;
+        byte[] buffer = new byte[bufferSize];
         try {
-            ios = new FileInputStream(file);
-            if (ios.read(buffer) == -1) {
-                throw new IOException(
-                        "EOF reached while trying to read the whole file");
+            int len;
+            while ((len = inputStream.read(buffer)) != -1) {
+                byteBuffer.write(buffer, 0, len);
             }
+            bytesResult = byteBuffer.toByteArray();
         } finally {
-            try {
-                if (ios != null)
-                    ios.close();
-            } catch (IOException e) {
-            }
+            // close the stream
+            try{ byteBuffer.close(); } catch (IOException ignored){ }
         }
-        return buffer;
+        return bytesResult;
     }
 
+    public void submitProduct(View v){
+
+        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+
+        EditText name = (EditText) findViewById(R.id.supNameIns);
+        String supName = name.getText().toString();
+
+        EditText number = (EditText) findViewById(R.id.supPhoneIns);
+        String supNumber = "961" + number.getText().toString();
+
+        EditText desc = (EditText) findViewById(R.id.supDescIns);
+        String supDesc = desc.getText().toString();
+
+        MainActivity.supplierLogin.setName(supName);
+        MainActivity.supplierLogin.setPhoneNumber(supNumber);
+        MainActivity.supplierLogin.setDescription(supDesc);
+
+        HashMap<String,String> supUpd = new HashMap<>();
+        supUpd.put("Name",supName);
+        supUpd.put("PhoneNumber", supNumber);
+        supUpd.put("Description",supDesc);
+
+        HashMap<String, ObjectId>filter = new HashMap<>();
+        filter.put("_id", new ObjectId(MainActivity.supplierLogin.getId()));
+
+        if (img !=null){
+
+            HashMap<String, byte[]> supImg = new HashMap<>();
+            supImg.put("Image", img);
+
+            supplierMgr.updateDocumentWPic(supUpd,filter,supImg);
+            MainActivity.supplierLogin.setImage(img);
+
+        }else{
+
+            supplierMgr.updateDocument(supUpd,filter);
+        }
+
+        finish();
+        startActivity(getIntent());
+
+    }
+
+    public void cancelProduct(View v){
+        finish();
+        startActivity(getIntent());
+    }
 }

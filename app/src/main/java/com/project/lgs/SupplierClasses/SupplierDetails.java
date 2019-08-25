@@ -40,8 +40,7 @@ public class SupplierDetails extends AppCompatActivity {
         }
         else {
             Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
-            supImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, supImg.getWidth(),
-                    supImg.getHeight(), false));
+            supImg.setImageBitmap(bmp);
         }
 
         TextView supEmail = (TextView) this.findViewById(R.id.sup_det_email);

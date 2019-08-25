@@ -62,8 +62,7 @@ public class SearchAdapter extends ArrayAdapter<Product> implements View.OnClick
         }
         else {
             Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
-            proImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, proImg.getWidth(),
-                    proImg.getHeight(), false));
+            proImg.setImageBitmap(bmp);
         }
 
         TextView proUser = (TextView) searchView.findViewById(R.id.product_user);

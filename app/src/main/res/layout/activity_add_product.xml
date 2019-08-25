@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".add_product">
+    android:focusableInTouchMode="true"
+    tools:context=".SupplierClasses.SupProfile">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,79 +15,108 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Insert a Product"
+            android:text="Edit your profile"
             android:textSize="16dp"
             android:textColor="@android:color/black"
             android:paddingBottom="20dp"
             android:textStyle="bold"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:paddingBottom="10dp"
+            android:text="Change your photo:"/>
+
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:id="@+id/proPhotoIns"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/supPhotoIns"
             android:scaleType="centerCrop"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/addpic"
+            android:src="@drawable/ic_add_to_photos_black_24dp"
             android:onClick="insertPic"/>
-
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
             android:text="Name:"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/prodNameIns"
+            android:id="@+id/supNameIns"
+            android:textColor="#757575"
             android:inputType="text"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
-            android:text="Price: ($)"/>
+            android:textColor="@android:color/black"
+            android:text="Phone Number:"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/prodPriceIns"
-            android:inputType="number"/>
+            android:orientation="horizontal">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#757575"
+                android:text="961"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#757575"
+                android:id="@+id/supPhoneIns"
+                android:inputType="phone"/>
+
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="16dp"
-            android:text="Category"/>
-
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/categoryList">
-        </Spinner>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
             android:paddingTop="16dp"
             android:text="Description:"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/prodDescIns"
+            android:id="@+id/supDescIns"
+            android:textColor="#757575"
             android:inputType="textMultiLine"/>
 
-        <Button
-            android:id="@+id/submitProduct"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Save"
-            android:layout_marginTop="50dp"
             android:layout_gravity="center"
-            android:onClick="SubmitProduct"/>
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/cancelProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:textColor="@android:color/black"
+                android:onClick="cancelProduct"/>
+
+            <Button
+                android:id="@+id/submitProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Save"
+                android:textColor="@android:color/black"
+                android:onClick="submitProduct"/>
+
+
+        </LinearLayout>
 
     </LinearLayout>
 

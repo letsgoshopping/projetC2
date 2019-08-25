@@ -1,10 +1,13 @@
 package com.project.lgs.Database;
 
 
+import android.util.Log;
+
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.SupplierClasses.Supplier;
 
 import org.bson.Document;
+import org.bson.types.Binary;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
@@ -36,6 +39,18 @@ public class SupplierMgr {
             return res;
         }
 
+        public String insertDocumentWPic (HashMap<String,String> values, HashMap<String,byte[]> pics){
+
+            String res = "1";
+            try{
+                operations.insertDocument(collection,values,pics);
+            }catch (Exception e){
+                res = "-1";
+            }
+
+            return res;
+        }
+
 
         public String updateDocument (HashMap<String,String> values, HashMap<String, ObjectId> filter){
 
@@ -43,6 +58,19 @@ public class SupplierMgr {
 
             try {
                 operations.updateDoument(collection, values, filter);
+            }catch(Exception e){
+                res = "-1";
+            }
+
+            return res;
+        }
+
+        public String updateDocumentWPic (HashMap<String,String> values, HashMap<String, ObjectId> filter, HashMap<String,byte[]> pics){
+
+            String res = "1";
+
+            try {
+                operations.updateDocument(collection, values, filter,pics);
             }catch(Exception e){
                 res = "-1";
             }
@@ -72,12 +100,13 @@ public class SupplierMgr {
                         (String)doc.get("Name"),
                         (String)doc.get("Description"),
                         (String)doc.get("PhoneNumber"),
-                        (byte[])doc.get("Image"),
+                        (doc.get("Image", Binary.class)==null?null:doc.get("Image", Binary.class).getData()),
                         (String)doc.get("JoinDate"),
-                        (String)doc.get("Email"),
-                        (String)doc.get("Password"));
+                        (String)doc.get("Email"));
 
                 user.add(u);
+
+                //Log.d("image", doc.get("_id").toString());
 
             }
 
@@ -97,8 +126,7 @@ public class SupplierMgr {
                     (String)doc.get("PhoneNumber"),
                     (byte[])doc.get("Image"),
                     (String)doc.get("JoinDate"),
-                    (String)doc.get("Email"),
-                    (String)doc.get("Password"));
+                    (String)doc.get("Email"));
 
             product.add(u);
 

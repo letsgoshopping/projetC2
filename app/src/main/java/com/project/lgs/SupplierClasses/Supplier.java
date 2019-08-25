@@ -11,12 +11,11 @@ public class Supplier implements Serializable {
     private String joinDate;
     private byte[] image;
     private String email;
-    private String password;
 
 
     public Supplier(){}
 
-    public Supplier(String id, String name, String description, String phoneNumber,byte[] img, String joinDate, String email, String pass){
+    public Supplier(String id, String name, String description, String phoneNumber,byte[] img, String joinDate, String email){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -24,7 +23,6 @@ public class Supplier implements Serializable {
         this.phoneNumber = phoneNumber;
         this.joinDate = joinDate;
         this.email = email;
-        this.password = pass;
 
     }
 
@@ -63,7 +61,7 @@ public class Supplier implements Serializable {
 
 
     public byte[] getImage() {
-        return image;
+        return (image==null? null:image);
     }
 
     public void setImage (byte[] image) {
@@ -90,14 +88,6 @@ public class Supplier implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getId() {

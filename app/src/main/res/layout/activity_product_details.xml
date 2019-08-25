@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:scrollbars="vertical"
     tools:context=".ProductDetails"
     android:orientation="vertical">
-
-    <!--<include
-        layout="@layout/toolbar_layout"/>-->
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -17,6 +15,8 @@
         android:orientation="vertical"
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="50dp"
         android:id="@+id/detail_layout">
 
 
@@ -39,10 +39,10 @@
 
         <ImageView
             android:id="@+id/detail_image"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="fitStart"
-            android:paddingBottom="25dp"/>
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="25dp"/>
 
         <TextView
             android:id="@+id/detail_user"
@@ -125,4 +125,4 @@
             android:onClick="addToCart"
             android:visibility="invisible"/>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

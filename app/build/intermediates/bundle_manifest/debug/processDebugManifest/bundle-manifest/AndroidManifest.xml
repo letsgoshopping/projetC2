@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.project.lgs.SupplierClasses.ProductList" />
+        <activity android:name="com.project.lgs.SupplierClasses.SupProfile" />
+        <activity android:name="com.project.lgs.SupplierClasses.SupplierMenu" />
         <activity android:name="com.project.lgs.AllSuppliersClasses.AllSuppliersAdapter" />
         <activity android:name="com.project.lgs.AllSuppliersClasses.AllSuppliers" />
         <activity android:name="com.project.lgs.AllProductsClasses.AllProducts" />
@@ -64,7 +67,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <!--
           StitchInitProvider is a ContentProvider that will associate the application's Context
           with Stitch. It also will look for resource values such as stitch_client_app_id to register

@@ -60,8 +60,22 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
 
         CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
+        String userEmail = "";
+
+        if (MainActivity.isSupp = false && MainActivity.userLogin != null){
+
+            userEmail = MainActivity.userLogin.getEmail();
+
+        }
+
+        if (MainActivity.isSupp = true && MainActivity.supplierLogin != null){
+
+            userEmail = MainActivity.supplierLogin.getEmail();
+
+        }
+
         HashMap<String, String> cartIns = new HashMap<String, String>();
-        cartIns.put("User", MainActivity.userLogin.getEmail());
+        cartIns.put("User", userEmail);
 
         ArrayList<Cart> carts = cartMgr.findDocument(cartIns, new HashMap<String, Integer>(), 5000);
 

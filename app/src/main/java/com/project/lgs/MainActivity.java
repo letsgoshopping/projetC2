@@ -14,14 +14,13 @@ import android.widget.SearchView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
-import com.project.lgs.CartClasses.Cart;
 import com.project.lgs.CartClasses.UserProfile;
-import com.project.lgs.Database.CartMgr;
 import com.project.lgs.Database.MongoConnect;
 import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.Database.UsersMgr;
 import com.project.lgs.SearchClasses.SearchActivity;
 import com.project.lgs.SupplierClasses.Supplier;
+import com.project.lgs.SupplierClasses.SupplierMenu;
 import com.project.lgs.UsersClasses.User;
 
 import org.bson.types.ObjectId;
@@ -96,7 +95,6 @@ public class MainActivity extends AppCompatActivity{
             tabLayout = findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
 
-
         }
     }
 
@@ -118,16 +116,14 @@ public class MainActivity extends AppCompatActivity{
 
         if (item.getItemId() == R.id.profilemenu) {
             if (isSupp ==true && supplierLogin != null){
+                Intent i = new Intent(this, SupplierMenu.class);
+                this.startActivity(i);
+                return true;
 
             }else{
                 if(isSupp == false && userLogin != null){
 
                     Intent i = new Intent(this, UserProfile.class);
-                    this.startActivity(i);
-                    return true;
-                }else
-                {
-                    Intent i = new Intent(this, ProblemActivity.class);
                     this.startActivity(i);
                     return true;
                 }
@@ -138,7 +134,19 @@ public class MainActivity extends AppCompatActivity{
     }
 
     private void getLoginInfo (String email){
+
         SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+
+       /* HashMap<String, String> supIns = new HashMap<String, String>();
+        supIns.put("Name", "Maya");
+        supIns.put("Description", "Welcome to my shopping palace");
+        supIns.put("PhoneNumber", "96101101101");
+        supIns.put("JoinDate", "01/01/2019");
+        supIns.put("Email", "mayaak.943@gmail.com");
+
+        HashMap<String, byte[]> p = new HashMap<>();
+        p.put("Image",null);
+        supplierMgr.insertDocumentWPic(supIns,p);*/
 
         HashMap<String, String> prodIns = new HashMap<String, String>();
         prodIns.put("Email", email);
@@ -146,6 +154,7 @@ public class MainActivity extends AppCompatActivity{
         HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
 
         ArrayList<Supplier> sup = supplierMgr.findDocument(prodIns, prodSort, 1);
+
         if (sup.size()>0) {
 
             supplierLogin = sup.get(0);

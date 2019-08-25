@@ -1016,7 +1016,6 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
-drawable addpic
 drawable avd_hide_password
 drawable avd_show_password
 drawable common_full_open_on_phone
@@ -1046,9 +1045,11 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_add_to_photos_black_24dp
 drawable ic_arrow_back_black_24dp
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_launcher_icon
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
@@ -1104,6 +1105,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addProButton
 id addToCart
 id adjust_height
 id adjust_width
@@ -1119,6 +1121,7 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id cancelProduct
 id cancel_action
 id cartAdd
 id cartLayout
@@ -1301,6 +1304,10 @@ id stretch
 id submenuarrow
 id submitProduct
 id submit_area
+id supDescIns
+id supNameIns
+id supPhoneIns
+id supPhotoIns
 id sup_det_description
 id sup_det_email
 id sup_det_image
@@ -1409,8 +1416,11 @@ layout activity_main
 layout activity_no_results
 layout activity_problem
 layout activity_product_details
+layout activity_product_list
 layout activity_search
+layout activity_sup_profile
 layout activity_supplier_details
+layout activity_supplier_menu
 layout activity_user_profile
 layout cart_list
 layout design_bottom_navigation_item
@@ -1460,6 +1470,8 @@ mipmap ic_launcher_round
 mipmap logo
 mipmap logo_foreground
 mipmap logo_round
+mipmap nopic
+mipmap nopic_round
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

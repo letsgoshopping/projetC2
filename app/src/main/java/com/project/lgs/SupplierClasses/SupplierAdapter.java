@@ -3,6 +3,7 @@ package com.project.lgs.SupplierClasses;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -59,8 +60,7 @@ public class SupplierAdapter extends ArrayAdapter<Supplier> implements View.OnCl
         }
         else {
             Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
-            SupplierImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, SupplierImg.getWidth(),
-                    SupplierImg.getHeight(), false));
+            SupplierImg.setImageBitmap(bmp);
         }
 
         SupplierView.setOnClickListener(this);

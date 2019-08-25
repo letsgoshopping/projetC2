@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/product_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="3dp"
     android:paddingTop="10dp"
-    android:id="@+id/product_layout">
+    android:paddingBottom="10dp">
 
     <TextView
         android:id="@+id/product_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/product_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18dp"
         android:textColor="@android:color/black"
-        tools:text="Product1"/>
+        android:textSize="18dp"
+        tools:text="Product1" />
 
     <TextView
         android:id="@+id/product_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="10dp"
         android:paddingBottom="3dp"
-        tools:text="5/5/5019"/>
+        android:textSize="10dp"
+        tools:text="5/5/5019" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:maxWidth="125dp"
-            android:scaleType="fitStart"/>
+            android:scaleType="centerCrop" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -54,30 +54,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="normal"
-                tools:text="user1"/>
+                tools:text="user1" />
 
             <TextView
                 android:id="@+id/product_rating"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="normal"
-                tools:text="5 stars"/>
+                tools:text="5 stars" />
 
-        <TextView
-            android:id="@+id/product_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14dp"
-            android:textStyle="normal"
-            tools:text="10$"/>
+            <TextView
+                android:id="@+id/product_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                android:textStyle="normal"
+                tools:text="10$" />
 
-        <TextView
-            android:id="@+id/product_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:textStyle="italic"
-            tools:text="This is a small description"/>
+            <TextView
+                android:id="@+id/product_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:textStyle="italic"
+                tools:text="This is a small description" />
 
         </LinearLayout>
 

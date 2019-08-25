@@ -7,6 +7,7 @@
     android:orientation="vertical"
     android:paddingLeft="3dp"
     android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:id="@+id/supplier_layout">
 
     <TextView
@@ -26,6 +27,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="10dp"
         android:orientation="horizontal">
 
         <ImageView
@@ -33,7 +35,7 @@
             android:layout_width="125dp"
             android:layout_height="125dp"
             android:maxWidth="125dp"
-            android:scaleType="fitStart"/>
+            android:scaleType="centerCrop"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -42,16 +44,16 @@
             android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/supplier_number"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:text="supplier1"/>
-
-            <TextView
                 android:id="@+id/supplier_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="7dp"
+                tools:text="supplier1"/>
+
+            <TextView
+                android:id="@+id/supplier_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 tools:text="supplier1"/>
 
 

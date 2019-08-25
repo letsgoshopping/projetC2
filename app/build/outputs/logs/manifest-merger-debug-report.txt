@@ -103,44 +103,56 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\Ma
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:14:9-40
+activity#com.project.lgs.SupplierClasses.ProductList
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:15:9-74
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:15:19-62
+activity#com.project.lgs.SupplierClasses.SupProfile
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:9-64
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:19-61
+activity#com.project.lgs.SupplierClasses.SupplierMenu
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:9-66
+	android:name
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:19-63
 activity#com.project.lgs.AllSuppliersClasses.AllSuppliersAdapter
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:9-77
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:9-77
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:16:19-74
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:19-74
 activity#com.project.lgs.AllSuppliersClasses.AllSuppliers
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:9-70
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:19:9-70
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:17:19-67
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:19:19-67
 activity#com.project.lgs.AllProductsClasses.AllProducts
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:9-68
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:20:9-68
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:18:19-65
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:20:19-65
 activity#com.project.lgs.SupplierClasses.SupplierDetails
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:19:9-69
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:9-69
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:19:19-66
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:19-66
 activity#com.project.lgs.ProductDetails
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:20:9-52
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:9-52
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:20:19-49
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:19-49
 activity#com.project.lgs.add_product
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:9-49
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:9-49
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:21:19-46
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:19-46
 activity#com.project.lgs.ProblemActivity
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:9-53
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:9-53
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:19-50
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:19-50
 activity#com.project.lgs.MainActivity
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:9-59
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:25:9-50
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:19-47
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:25:19-47
 activity#com.project.lgs.ProductClasses.ProductFragment
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:25:9-27:40
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:26:9-28:40
 	android:label
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:27:13-37
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:28:13-37
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:26:13-59
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:27:13-59
 activity#com.project.lgs.SearchClasses.NoResults
 ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:29:9-31:58
 	android:parentActivityName
@@ -166,39 +178,39 @@ ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:39:13-41:5
 	android:name
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:40:17-54
 activity#com.project.lgs.CartClasses.UserProfile
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:43:9-52:20
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:43:9-53:20
 	android:parentActivityName
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:45:13-55
 	android:name
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:44:13-52
 intent-filter#action:name:android.intent.action.SENDTO+category:name:android.intent.category.DEFAULT+data:scheme:mailto
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:47:17-51:33
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:46:13-52:29
 action#android.intent.action.SENDTO
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:48:21-75
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:47:17-71
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:48:29-72
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:47:25-68
 data
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:49:21-53
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:49:17-49
 	android:scheme
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:49:27-50
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:49:23-46
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:50:21-80
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:51:17-76
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:50:31-77
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:51:27-73
 activity#com.project.lgs.Login
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:54:9-59:20
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:54:9-60:20
 	android:name
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:54:19-40
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:55:13-58:29
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:55:13-59:29
 action#android.intent.action.MAIN
 ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:56:17-69
 	android:name
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:56:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:57:17-77
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:58:17-77
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:57:27-74
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:58:27-74
 uses-sdk
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml

@@ -66,18 +66,15 @@ public class ProductDetails extends AppCompatActivity {
         }
         else {
             Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
-            proImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, proImg.getWidth(),
-                    proImg.getHeight(), false));
+            proImg.setImageBitmap(bmp);
         }
 
         TextView proUser = (TextView) this.findViewById(R.id.detail_user);
         proUser.setText(currentProduct.getUser());
 
-        if(MainActivity.isSupp == false && MainActivity.userLogin != null){
 
-           this.findViewById(R.id.cartLayout).setVisibility(View.VISIBLE);
-           this.findViewById(R.id.addToCart).setVisibility(View.VISIBLE);
-        }
+       this.findViewById(R.id.cartLayout).setVisibility(View.VISIBLE);
+       this.findViewById(R.id.addToCart).setVisibility(View.VISIBLE);
 
         TextView proDate = (TextView) this.findViewById(R.id.detail_date);
         proDate.setText(currentProduct.getPublishDate());
@@ -103,12 +100,29 @@ public class ProductDetails extends AppCompatActivity {
 
     public void addToCart(View view){
 
-        if(MainActivity.userLogin != null && qtity>0) {
+        if(qtity>0) {
+            String userEmail = "";
+            String userId = "";
+
+            if (MainActivity.isSupp = false && MainActivity.userLogin != null){
+
+                userEmail = MainActivity.userLogin.getEmail();
+                userId = MainActivity.userLogin.getId();
+
+            }
+
+            if (MainActivity.isSupp = true && MainActivity.supplierLogin != null){
+
+                userEmail = MainActivity.supplierLogin.getEmail();
+                userId = MainActivity.supplierLogin.getId();
+
+            }
+
 
             CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
             HashMap<String, String> cartIns = new HashMap<>();
-            cartIns.put("User", MainActivity.userLogin.getEmail());
+            cartIns.put("User", userEmail);
             HashMap<String, Integer> cartSort = new HashMap<>();
             cartSort.put("User",1);
 
@@ -146,12 +160,12 @@ public class ProductDetails extends AppCompatActivity {
 
                 if (cart.size() == 0) {
 
-                    String invoiceNum = MainActivity.userLogin.getId() + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+                    String invoiceNum = userId + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
                     HashMap<String, String> values2 = new HashMap<>();
                     values2.put("InvoiceNumber", invoiceNum);
                     values2.put("Date", new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()));
-                    values2.put("User", MainActivity.userLogin.getEmail());
+                    values2.put("User", userEmail);
                     values2.put("Seq", "1");
 
                     int total = Integer.parseInt(curPro.getPrice().replace("$","")) * qtity;

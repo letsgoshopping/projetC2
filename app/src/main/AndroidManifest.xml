@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".SupplierClasses.ProductList"></activity>
+        <activity android:name=".SupplierClasses.SupProfile" />
+        <activity android:name=".SupplierClasses.SupplierMenu" />
         <activity android:name=".AllSuppliersClasses.AllSuppliersAdapter" />
         <activity android:name=".AllSuppliersClasses.AllSuppliers" />
         <activity android:name=".AllProductsClasses.AllProducts" />
@@ -20,12 +22,10 @@
         <activity android:name=".ProductDetails" />
         <activity android:name=".add_product" />
         <activity android:name=".ProblemActivity" />
-        <activity android:name=".MainActivity"></activity>
-
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".ProductClasses.ProductFragment"
             android:label="Products" />
-
         <activity
             android:name=".SearchClasses.NoResults"
             android:parentActivityName=".MainActivity" />
@@ -43,21 +43,21 @@
         <activity
             android:name=".CartClasses.UserProfile"
             android:parentActivityName=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SENDTO" />
 
-                <intent-filter>
-                    <action android:name="android.intent.action.SENDTO" />
-                    <data android:scheme="mailto" />
-                    <category android:name="android.intent.category.DEFAULT" />
-                </intent-filter>
+                <data android:scheme="mailto" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
-
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

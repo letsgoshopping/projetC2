@@ -61,8 +61,7 @@ public class AllSuppliersAdapter extends ArrayAdapter<Supplier> implements View.
         }
         else {
             Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
-            SupplierImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, SupplierImg.getWidth(),
-                    SupplierImg.getHeight(), false));
+            SupplierImg.setImageBitmap(bmp);
         }
 
         SupplierView.setOnClickListener(this);

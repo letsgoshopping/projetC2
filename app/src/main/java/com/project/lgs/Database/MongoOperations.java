@@ -47,6 +47,7 @@ public class MongoOperations{
             for (Entry<String, String> entry : values.entrySet()) {
                 String key = entry.getKey();
                 String val = entry.getValue();
+                //Log.d("supp", key + ": " + val);
 
                 newDoc.append(key, val);
             }
@@ -154,15 +155,24 @@ public class MongoOperations{
 
     }
 
-        public void updateDoument (String collection, HashMap<String,String> values,  HashMap<String, ObjectId> filter)throws Exception{
+        public void updateDocument (String collection, HashMap<String,String> values,  HashMap<String, ObjectId> filter, HashMap<String,byte[]> pics)throws Exception{
 
             RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
-            Document filterDoc = new Document();
+
             Document cond = new Document();
+            Document filterDoc = new Document();
+
 
             for (Entry<String, String> entry : values.entrySet()) {
                 String key = entry.getKey();
                 String val = entry.getValue();
+
+                cond.append(key, val);
+            }
+
+            for (Entry<String, byte[]> entry : pics.entrySet()) {
+                String key = entry.getKey();
+                byte[] val = entry.getValue();
 
                 cond.append(key, val);
             }
@@ -174,7 +184,55 @@ public class MongoOperations{
                 filterDoc.append(key, val);
             }
 
-            Document updateDoc = new Document().append("$push",cond);
+            Document updateDoc = new Document().append("$set",cond);
+
+            try {
+
+                final Task <RemoteUpdateResult> updateTask =
+                        mongoCollection.updateOne(filterDoc, updateDoc);
+                updateTask.addOnCompleteListener(new OnCompleteListener <RemoteUpdateResult> () {
+                    @Override
+                    public void onComplete(Task <RemoteUpdateResult> task) {
+                        if (task.isSuccessful()) {
+                            long numMatched = task.getResult().getMatchedCount();
+                            long numModified = task.getResult().getModifiedCount();
+                            Log.d("app", String.format("successfully matched %d and modified %d documents",
+                                    numMatched, numModified));
+                        } else {
+                            Log.e("app", "failed to update document with: ", task.getException());
+                        }
+                    }
+                });
+
+                while(!updateTask.isComplete()){}
+
+            } catch (Exception e){
+
+                throw new Exception("Update failed");
+
+            }
+
+        }
+
+        public void updateDoument (String collection, HashMap<String,String> values,  HashMap<String, ObjectId> filter)throws Exception{
+
+            RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
+            Document filterDoc = new Document();
+            Document cond = new Document();
+
+            for (Entry<String, String> entry : values.entrySet()) {
+                String key = entry.getKey();
+                String val = entry.getValue();
+                cond.append(key, val);
+            }
+
+            for (Entry<String, ObjectId> entry : filter.entrySet()) {
+                String key = entry.getKey();
+                ObjectId val = entry.getValue();
+                filterDoc.append(key, val);
+            }
+
+            Document updateDoc = new Document().append("$set",cond);
 
             try {
 
