@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity{
             tabLayout = findViewById(R.id.tabs);
             tabLayout.setupWithViewPager(viewPager);
 
+
         }
     }
 

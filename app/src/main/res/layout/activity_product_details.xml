@@ -82,7 +82,7 @@
             android:orientation="horizontal"
             android:paddingTop="20dp"
             android:id="@+id/cartLayout"
-            android:visibility="invisible">
+            android:visibility="visible">
 
             <Button
                 android:id="@+id/cartAdd"
@@ -123,6 +123,6 @@
             android:textSize="13dp"
             android:textColor="@android:color/black"
             android:onClick="addToCart"
-            android:visibility="invisible"/>
+            android:visibility="visible"/>
     </LinearLayout>
 </ScrollView>

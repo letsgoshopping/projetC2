@@ -30,7 +30,7 @@
         <activity android:name="com.project.lgs.AllProductsClasses.AllProducts" />
         <activity android:name="com.project.lgs.SupplierClasses.SupplierDetails" />
         <activity android:name="com.project.lgs.ProductDetails" />
-        <activity android:name="com.project.lgs.add_product" />
+        <activity android:name="com.project.lgs.ProductClasses.add_product" />
         <activity android:name="com.project.lgs.ProblemActivity" />
         <activity android:name="com.project.lgs.MainActivity" />
         <activity

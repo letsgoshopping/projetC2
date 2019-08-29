@@ -66,6 +66,19 @@ public class ProductsMgr {
             return res;
         }
 
+        public String updateDocumentWPic (HashMap<String,String> values, HashMap<String, ObjectId> filter, HashMap<String,byte[]> pics){
+
+            String res = "1";
+
+            try {
+                operations.updateDocument(collection, values, filter,pics);
+            }catch(Exception e){
+                res = "-1";
+            }
+
+            return res;
+        }
+
         public String deleteDocument (ObjectId id){
 
             String res = "1";

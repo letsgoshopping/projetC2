@@ -135,10 +135,10 @@ activity#com.project.lgs.ProductDetails
 ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:9-52
 	android:name
 		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:22:19-49
-activity#com.project.lgs.add_product
-ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:9-49
+activity#com.project.lgs.ProductClasses.add_product
+ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:9-64
 	android:name
-		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:19-46
+		ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:23:19-61
 activity#com.project.lgs.ProblemActivity
 ADDED from C:\Users\Maya\Desktop\LGS\app\src\main\AndroidManifest.xml:24:9-53
 	android:name

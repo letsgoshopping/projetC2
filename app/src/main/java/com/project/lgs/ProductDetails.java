@@ -85,10 +85,10 @@ public class ProductDetails extends AppCompatActivity {
 
         if(MainActivity.isSupp == true &&
                 MainActivity.supplierLogin != null &&
-                !currentProduct.getUser().equals(MainActivity.supplierLogin.getId())){
+                currentProduct.getUser().equals(MainActivity.supplierLogin.getId())){
 
-            this.findViewById(R.id.cartLayout).setVisibility(View.VISIBLE);
-            this.findViewById(R.id.addToCart).setVisibility(View.VISIBLE);
+            this.findViewById(R.id.cartLayout).setVisibility(View.INVISIBLE);
+            this.findViewById(R.id.addToCart).setVisibility(View.INVISIBLE);
         }
 
         TextView proDate = (TextView) this.findViewById(R.id.detail_date);

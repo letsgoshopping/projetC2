@@ -20,7 +20,7 @@
         <activity android:name=".AllProductsClasses.AllProducts" />
         <activity android:name=".SupplierClasses.SupplierDetails" />
         <activity android:name=".ProductDetails" />
-        <activity android:name=".add_product" />
+        <activity android:name=".ProductClasses.add_product" />
         <activity android:name=".ProblemActivity" />
         <activity android:name=".MainActivity" />
         <activity
