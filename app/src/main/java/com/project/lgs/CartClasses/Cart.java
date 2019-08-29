@@ -53,7 +53,7 @@ public class Cart {
     }
 
     public void setId(String id) {
-        id = id;
+        this.id = id;
     }
 
     public Document getProducts() {

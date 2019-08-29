@@ -1324,6 +1324,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xxxhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_spinnerlayout.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\spinnerlayout.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\color\\abc_hint_foreground_material_dark.xml"
     },

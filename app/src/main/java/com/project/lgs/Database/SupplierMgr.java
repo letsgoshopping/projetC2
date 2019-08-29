@@ -90,6 +90,18 @@ public class SupplierMgr {
             return res;
         }
 
+    public String deleteDocument (HashMap<String,String> id){
+
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,id);
+        }catch(Exception e){
+            res = "-1";
+        }
+
+        return res;
+    }
+
         public ArrayList<Supplier> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
             List <Document> res =  operations.findDocument(collection,values,sorting,limit);
@@ -124,7 +136,7 @@ public class SupplierMgr {
                     (String)doc.get("Name"),
                     (String)doc.get("Description"),
                     (String)doc.get("PhoneNumber"),
-                    (byte[])doc.get("Image"),
+                    (doc.get("Image", Binary.class)==null?null:doc.get("Image", Binary.class).getData()),
                     (String)doc.get("JoinDate"),
                     (String)doc.get("Email"));
 

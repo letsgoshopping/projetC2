@@ -3,6 +3,7 @@ package com.project.lgs.AllProductsClasses;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.project.lgs.Database.SupplierMgr;
+import com.project.lgs.MainActivity;
 import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
+import com.project.lgs.SupplierClasses.Supplier;
 
+import org.bson.types.ObjectId;
+
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -39,6 +46,17 @@ public class AllProductsAdapter extends ArrayAdapter<Product> implements View.On
             searchView = LayoutInflater.from(getContext()).inflate(R.layout.product_list,parent,false);
         }
 
+        String supName = "No Supplier";
+
+        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+        HashMap<String, ObjectId> userIns = new HashMap<>();
+        userIns.put("_id", new ObjectId(currentProduct.getUser()));
+        ArrayList<Supplier> sup = supplierMgr.findDocumentById(userIns, new HashMap<String, Integer>(), 1);
+        if (sup.size() > 0) {
+            supName = sup.get(0).getName();
+        }
+
+
         TextView proId  = (TextView) searchView.findViewById(R.id.product_id);
         proId.setText(currentProduct.getId());
 
@@ -64,8 +82,12 @@ public class AllProductsAdapter extends ArrayAdapter<Product> implements View.On
             proImg.setImageBitmap(bmp);
         }
 
+        if (sup.size() > 0) {
+            Log.d("lala", "getView: ");
+            supName = sup.get(0).getName();
+        }
         TextView proUser = (TextView) searchView.findViewById(R.id.product_user);
-        proUser.setText(currentProduct.getUser());
+        proUser.setText(supName);
 
         TextView proDate = (TextView) searchView.findViewById(R.id.product_date);
         proDate.setText(currentProduct.getPublishDate());

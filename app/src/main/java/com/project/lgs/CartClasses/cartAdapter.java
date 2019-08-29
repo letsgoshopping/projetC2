@@ -55,6 +55,7 @@ public class cartAdapter extends ArrayAdapter<Document> implements View.OnClickL
         proSearch.put("_id",new ObjectId((String)selectedProduct.get("_id")));
 
         ArrayList<Product> p = productsMgr.findDocumentById(proSearch,new HashMap<String, Integer>(),1);
+
         Product currentProduct = p.get(0);
 
         TextView proRowId  = (TextView) searchView.findViewById(R.id.cart_pr_rowId);

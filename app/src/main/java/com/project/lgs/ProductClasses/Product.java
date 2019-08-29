@@ -85,9 +85,7 @@ public class Product implements Serializable {
 
     public String getUser() {
 
-        if (user != null)
-            return user;
-        else return "No User";
+       return user;
     }
 
     public void setUser(String user) {

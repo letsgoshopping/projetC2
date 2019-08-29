@@ -17,7 +17,9 @@ import android.widget.Toast;
 import com.project.lgs.CartClasses.Cart;
 
 import com.project.lgs.Database.CartMgr;
+import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.ProductClasses.Product;
+import com.project.lgs.SupplierClasses.Supplier;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -43,9 +45,18 @@ public class ProductDetails extends AppCompatActivity {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-
         Product currentProduct = (Product) getIntent().getSerializableExtra("Product");
         curPro = currentProduct;
+
+        String supName = "No Supplier";
+
+        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+        HashMap<String, ObjectId> userIns = new HashMap<>();
+        userIns.put("_id", new ObjectId(currentProduct.getUser()));
+        ArrayList<Supplier> sup = supplierMgr.findDocumentById(userIns, new HashMap<String, Integer>(), 1);
+        if (sup.size() > 0) {
+            supName = sup.get(0).getName();
+        }
 
         TextView proTitle  = (TextView) this.findViewById(R.id.detail_title);
         proTitle.setText(currentProduct.getTitle());
@@ -70,11 +81,15 @@ public class ProductDetails extends AppCompatActivity {
         }
 
         TextView proUser = (TextView) this.findViewById(R.id.detail_user);
-        proUser.setText(currentProduct.getUser());
+        proUser.setText(supName);
 
+        if(MainActivity.isSupp == true &&
+                MainActivity.supplierLogin != null &&
+                !currentProduct.getUser().equals(MainActivity.supplierLogin.getId())){
 
-       this.findViewById(R.id.cartLayout).setVisibility(View.VISIBLE);
-       this.findViewById(R.id.addToCart).setVisibility(View.VISIBLE);
+            this.findViewById(R.id.cartLayout).setVisibility(View.VISIBLE);
+            this.findViewById(R.id.addToCart).setVisibility(View.VISIBLE);
+        }
 
         TextView proDate = (TextView) this.findViewById(R.id.detail_date);
         proDate.setText(currentProduct.getPublishDate());
@@ -149,7 +164,6 @@ public class ProductDetails extends AppCompatActivity {
 
                 int total = Integer.parseInt(c.getTotal()) + (Integer.parseInt(curPro.getPrice().replace("$","")) * qtity);
                 values.put("Total",Integer.toString(total));
-
 
                 HashMap<String, ObjectId>filter = new HashMap<>();
                 filter.put("_id",new ObjectId(c.getId()));

@@ -1136,7 +1136,6 @@ id cart_pr_price
 id cart_pr_qtity
 id cart_pr_rowId
 id cart_pr_total
-id categoryList
 id center
 id center_horizontal
 id center_vertical
@@ -1237,10 +1236,12 @@ id parentPanel
 id parent_matrix
 id percent
 id pin
+id proCatIns
+id proCodeIns
+id proDescIns
 id proPhotoIns
-id prodDescIns
-id prodNameIns
-id prodPriceIns
+id proPriceIns
+id proTitleIns
 id product_date
 id product_description
 id product_id
@@ -1458,6 +1459,7 @@ layout product_list
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout spinnerlayout
 layout supplier_fragment
 layout supplier_list
 layout support_simple_spinner_dropdown_item

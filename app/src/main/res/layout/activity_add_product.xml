@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:focusableInTouchMode="true"
-    tools:context=".SupplierClasses.SupProfile">
+    tools:context=".add_product">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit your profile"
+            android:text="Add a new Product"
             android:textSize="16dp"
             android:textColor="@android:color/black"
             android:paddingBottom="20dp"
@@ -26,13 +26,13 @@
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:paddingBottom="10dp"
-            android:text="Change your photo:"/>
+            android:text="Photo:"/>
 
 
         <ImageView
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:id="@+id/supPhotoIns"
+            android:id="@+id/proPhotoIns"
             android:scaleType="centerCrop"
             android:layout_marginBottom="20dp"
             android:src="@drawable/ic_add_to_photos_black_24dp"
@@ -42,12 +42,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            android:text="Name:"/>
+            android:text="Title:"/>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/supNameIns"
+            android:id="@+id/proTitleIns"
             android:textColor="#757575"
             android:inputType="text"/>
 
@@ -56,7 +56,21 @@
             android:layout_height="wrap_content"
             android:paddingTop="16dp"
             android:textColor="@android:color/black"
-            android:text="Phone Number:"/>
+            android:text="Code:"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/proCodeIns"
+            android:textColor="#757575"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:textColor="@android:color/black"
+            android:text="Price:"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,16 +81,30 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#757575"
-                android:text="961"/>
+                android:text="$"/>
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#757575"
-                android:id="@+id/supPhoneIns"
-                android:inputType="phone"/>
+                android:id="@+id/proPriceIns"
+                android:inputType="number"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:textColor="@android:color/black"
+            android:text="Category:"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="16dp"
+            android:id="@+id/proCatIns"
+            android:textColor="#757575"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -88,7 +116,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/supDescIns"
+            android:id="@+id/proDescIns"
             android:textColor="#757575"
             android:inputType="textMultiLine"/>
 
@@ -111,7 +139,7 @@
                 android:id="@+id/submitProduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Save"
+                android:text="Add"
                 android:textColor="@android:color/black"
                 android:onClick="submitProduct"/>
 

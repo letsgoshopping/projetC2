@@ -65,6 +65,10 @@ public class MongoOperations{
                     if (!task.isSuccessful()) {
                         throw new Exception("Insertion failed");
                     }
+                    if(task.isSuccessful()){
+                        String numMatched = task.getResult().getId();
+                        Log.d("appp", String.format("successfully inserted", numMatched));
+                    }
 
                     return task;
                 }
@@ -432,7 +436,6 @@ public class MongoOperations{
         for (Entry<String, ObjectId> entry : values.entrySet()) {
             String key = entry.getKey();
             ObjectId val = entry.getValue();
-
             searchDoc.append(key, val);
         }
 

@@ -1,11 +1,14 @@
 package com.project.lgs.Database;
 
 
+import android.util.Log;
+
 import com.mongodb.BasicDBObject;
 import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.ProductClasses.Product;
 
 import org.bson.Document;
+import org.bson.types.Binary;
 import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
@@ -75,6 +78,18 @@ public class ProductsMgr {
             return res;
         }
 
+    public String deleteDocument (HashMap<String,String> id){
+
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,id);
+        }catch(Exception e){
+            res = "-1";
+        }
+
+        return res;
+    }
+
         public ArrayList<Product> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
             List <Document> res =  operations.findDocument(collection,values,sorting,limit);
@@ -86,7 +101,7 @@ public class ProductsMgr {
                         (String)doc.get("Description"),
                         (String)doc.get("Rating"),
                         (String)doc.get("Price"),
-                        (byte[])doc.get("Image"),
+                        (doc.get("Image", Binary.class)==null?null:doc.get("Image", Binary.class).getData()),
                         (String)doc.get("User"),
                         (String)doc.get("PDate"),
                         (String)doc.get("Category"),
@@ -111,7 +126,7 @@ public class ProductsMgr {
                     (String)doc.get("Description"),
                     (String)doc.get("Rating"),
                     (String)doc.get("Price"),
-                    (byte[])doc.get("Image"),
+                    (doc.get("Image", Binary.class)==null?null:doc.get("Image", Binary.class).getData()),
                     (String)doc.get("User"),
                     (String)doc.get("PDate"),
                     (String)doc.get("Category"),
@@ -136,7 +151,7 @@ public class ProductsMgr {
                     (String)doc.get("Description"),
                     (String)doc.get("Rating"),
                     (String)doc.get("Price"),
-                    (byte[])doc.get("Image"),
+                    (doc.get("Image", Binary.class)==null?null:doc.get("Image", Binary.class).getData()),
                     (String)doc.get("User"),
                     (String)doc.get("PDate"),
                     (String)doc.get("Category"),

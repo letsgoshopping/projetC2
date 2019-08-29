@@ -1,6 +1,8 @@
 package com.project.lgs;
 
 import android.os.Bundle;
+import android.util.Log;
+
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -40,7 +42,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             ProductsMgr productMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
             HashMap<String, String> prodIns = new HashMap<String, String>();
-            prodIns.put("Category", catList.get(i).getCatName());
+            prodIns.put("Category", catList.get(i).getCatId());
 
             HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
             prodSort.put("PDate", 1);
@@ -48,7 +50,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
             ArrayList<Product> products = productMgr.findDocument(prodIns, prodSort, 5);
 
             ProductFragment fragment = new ProductFragment();
-            fragment.setCategoryName(catList.get(i).getCatName());
+            fragment.setCategoryName(catList.get(i).getCatId());
             fragment.setProductList(products);
             productList.add(fragment);
         }

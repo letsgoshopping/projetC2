@@ -6,6 +6,7 @@ import androidx.core.content.ContextCompat;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -34,7 +35,7 @@ public class ProductList extends AppCompatActivity implements AllProductsAdapter
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        ProductsMgr productMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
+       /* ProductsMgr productMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
         HashMap<String, String> prodIns = new HashMap<String, String>();
         prodIns.put("User", MainActivity.supplierLogin.getId());
@@ -54,7 +55,7 @@ public class ProductList extends AppCompatActivity implements AllProductsAdapter
         }else{
 
             setContentView(R.layout.activity_product_list);
-        }
+        }*/
     }
 
     @Override

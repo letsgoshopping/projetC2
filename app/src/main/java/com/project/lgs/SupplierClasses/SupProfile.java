@@ -42,7 +42,6 @@ import androidx.core.content.ContextCompat;
 
 public class SupProfile extends AppCompatActivity {
     byte[] img = null;
-    final int MAX_FILE_SIZE = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

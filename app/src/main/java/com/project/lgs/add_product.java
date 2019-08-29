@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.project.lgs.CategoryClasses.Category;
 import com.project.lgs.Database.CategoriesMgr;
@@ -31,6 +33,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,38 +43,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 
-public class add_product extends AppCompatActivity {
+public class add_product extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     byte[] img = null;
-    final int MAX_FILE_SIZE = 10;
+    ArrayList<Category> catList = new ArrayList<>();
+    String selCat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sup_profile);
+        setContentView(R.layout.activity_add_product);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        EditText name = (EditText) findViewById(R.id.supNameIns);
-        name.setText(MainActivity.supplierLogin.getName());
+        CategoriesMgr categoriesMgr = new CategoriesMgr(MainActivity.dbName,MainActivity.mongoClient);
+        catList = categoriesMgr.findDocument(new HashMap<String, String>(),new HashMap<String, Integer>());
+        ArrayList<String> catName = new ArrayList<>();
 
-        EditText number = (EditText) findViewById(R.id.supPhoneIns);
-        number.setText(MainActivity.supplierLogin.getPhoneNumber().replaceFirst("961",""));
-
-        EditText desc = (EditText) findViewById(R.id.supDescIns);
-        desc.setText(MainActivity.supplierLogin.getDescription());
-
-        ImageView imageView = (ImageView) findViewById(R.id.supPhotoIns);
-        byte[] supImage = MainActivity.supplierLogin.getImage();
-        if (supImage == null){
-            imageView.setImageResource(R.drawable.nopic);
-        }
-        else {
-            Bitmap bmp = BitmapFactory.decodeByteArray(supImage, 0, supImage.length);
-            imageView.setImageBitmap(bmp);
+        for(Category c:catList){
+            catName.add(c.getCatName());
         }
 
+        Spinner spinner = (Spinner) findViewById(R.id.proCatIns);
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, catName);
+        dataAdapter.setDropDownViewResource(R.layout.spinnerlayout);
+        spinner.setAdapter(dataAdapter);
+        spinner.setOnItemSelectedListener(this);
     }
 
     public void insertPic(View view) {
@@ -107,7 +106,7 @@ public class add_product extends AppCompatActivity {
                     }
 
                     // Set the image in ImageView
-                    ImageView imageView = (ImageView) findViewById(R.id.supPhotoIns);
+                    ImageView imageView = (ImageView) findViewById(R.id.proPhotoIns);
                     imageView.setImageURI(selectedImageUri);
                 }
             }
@@ -149,49 +148,77 @@ public class add_product extends AppCompatActivity {
 
     public void submitProduct(View v){
 
-        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+        ProductsMgr productsMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-        EditText name = (EditText) findViewById(R.id.supNameIns);
-        String supName = name.getText().toString();
+        EditText title = (EditText) findViewById(R.id.proTitleIns);
+        String proTitle = title.getText().toString();
 
-        EditText number = (EditText) findViewById(R.id.supPhoneIns);
-        String supNumber = "961" + number.getText().toString();
+        EditText desc = (EditText) findViewById(R.id.proDescIns);
+        String proDesc = desc.getText().toString();
+        String proRating = "";
 
-        EditText desc = (EditText) findViewById(R.id.supDescIns);
-        String supDesc = desc.getText().toString();
+        EditText price = (EditText) findViewById(R.id.proPriceIns);
+        String proPrice = price.getText().toString();
 
-        MainActivity.supplierLogin.setName(supName);
-        MainActivity.supplierLogin.setPhoneNumber(supNumber);
-        MainActivity.supplierLogin.setDescription(supDesc);
+        String proUser = MainActivity.supplierLogin.getId();
+        Log.d("app",MainActivity.supplierLogin.getId());
 
-        HashMap<String,String> supUpd = new HashMap<>();
-        supUpd.put("Name",supName);
-        supUpd.put("PhoneNumber", supNumber);
-        supUpd.put("Description",supDesc);
+        String prodate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date());
 
-        HashMap<String, ObjectId>filter = new HashMap<>();
-        filter.put("_id", new ObjectId(MainActivity.supplierLogin.getId()));
+        EditText code = (EditText) findViewById(R.id.proCodeIns);
+        String proCode = code.getText().toString();
+
+        String proCat = selCat;
+
+        HashMap<String,String> proIns = new HashMap<>();
+        proIns.put("Title",proTitle);
+        proIns.put("Description", proDesc);
+        proIns.put("Rating",proRating);
+        proIns.put("Price",proPrice);
+        proIns.put("User",proUser);
+        proIns.put("PDate",prodate);
+        proIns.put("Category",proCat);
+        proIns.put("Code",proCode);
 
         if (img !=null){
 
-            HashMap<String, byte[]> supImg = new HashMap<>();
-            supImg.put("Image", img);
+            HashMap<String, byte[]> proImg = new HashMap<>();
+            proImg.put("Image", img);
 
-            supplierMgr.updateDocumentWPic(supUpd,filter,supImg);
-            MainActivity.supplierLogin.setImage(img);
+            productsMgr.insertDocumentWPic(proIns,proImg);
 
         }else{
 
-            supplierMgr.updateDocument(supUpd,filter);
+            HashMap<String, byte[]> proImg = new HashMap<>();
+            proImg.put("Image", null);
+            productsMgr.insertDocumentWPic(proIns,proImg);
         }
 
         finish();
         startActivity(getIntent());
+        Toast toast = Toast.makeText(this, "Product Added", Toast.LENGTH_SHORT);
+        toast.show();
 
     }
 
     public void cancelProduct(View v){
         finish();
         startActivity(getIntent());
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        String item = parent.getItemAtPosition(position).toString();
+        ((TextView) parent.getChildAt(0)).setTextColor(Color.DKGRAY);
+
+        for(Category c:catList){
+            if (item.equals(c.getCatName())){selCat = c.getCatId();}
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

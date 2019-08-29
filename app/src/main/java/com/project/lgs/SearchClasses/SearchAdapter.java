@@ -11,8 +11,13 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.project.lgs.Database.SupplierMgr;
+import com.project.lgs.MainActivity;
 import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
+import com.project.lgs.SupplierClasses.Supplier;
+
+import org.bson.types.ObjectId;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +43,19 @@ public class SearchAdapter extends ArrayAdapter<Product> implements View.OnClick
         View searchView = convertView;
         if (searchView == null){
             searchView = LayoutInflater.from(getContext()).inflate(R.layout.product_list,parent,false);
+        }
+
+        String supName = "No Supplier";
+
+        if(!currentProduct.getUser().equals("User1") && !currentProduct.getUser().equals("No User")) {
+
+            SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+            HashMap<String, ObjectId> userIns = new HashMap<>();
+            userIns.put("_id", new ObjectId(currentProduct.getUser()));
+            ArrayList<Supplier> sup = supplierMgr.findDocumentById(userIns, new HashMap<String, Integer>(), 1);
+            if (sup.size() > 0) {
+                supName = sup.get(0).getName();
+            }
         }
 
         TextView proId  = (TextView) searchView.findViewById(R.id.product_id);
@@ -66,7 +84,7 @@ public class SearchAdapter extends ArrayAdapter<Product> implements View.OnClick
         }
 
         TextView proUser = (TextView) searchView.findViewById(R.id.product_user);
-        proUser.setText(currentProduct.getUser());
+        proUser.setText(supName);
 
         TextView proDate = (TextView) searchView.findViewById(R.id.product_date);
         proDate.setText(currentProduct.getPublishDate());

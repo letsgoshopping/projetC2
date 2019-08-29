@@ -66,7 +66,7 @@ public class CategoriesMgr {
             ArrayList <Category> categories = new ArrayList<Category>();
 
             for (Document doc: res) {
-                Category cat = new Category((String)doc.get("Id"),
+                Category cat = new Category((String)doc.get("_id").toString(),
                         (String)doc.get("Name"),
                         (String)doc.get("Display"));
 
