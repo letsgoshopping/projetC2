@@ -63,7 +63,9 @@
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
                 android:textStyle="italic"
-                tools:text="This is a small description"/>
+                tools:text="This is a small description"
+                android:ellipsize="end"
+                android:singleLine="true"/>
 
         </LinearLayout>
 

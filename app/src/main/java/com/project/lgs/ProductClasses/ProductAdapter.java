@@ -62,7 +62,7 @@ public class ProductAdapter extends ArrayAdapter<Product> implements View.OnClic
         proRat.setText(currentProduct.getCode());
 
         TextView proPrice  = (TextView) productView.findViewById(R.id.product_price);
-        proPrice.setText(currentProduct.getPrice());
+        proPrice.setText(currentProduct.getPrice() + "$");
 
         TextView proDesc  = (TextView) productView.findViewById(R.id.product_description);
         proDesc.setText(currentProduct.getDescription());

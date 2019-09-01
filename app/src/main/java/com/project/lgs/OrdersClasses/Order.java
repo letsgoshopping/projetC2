@@ -2,9 +2,10 @@ package com.project.lgs.OrdersClasses;
 
 import org.bson.Document;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Order {
+public class Order implements Serializable {
 
     private String id;
     private String invoiceNumber;

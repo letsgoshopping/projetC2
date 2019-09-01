@@ -27,6 +27,7 @@ import com.project.lgs.Database.UsersMgr;
 import com.project.lgs.Login;
 import com.project.lgs.MainActivity;
 import com.project.lgs.OrdersClasses.Order;
+import com.project.lgs.OrdersClasses.OrderHistory;
 import com.project.lgs.ProblemActivity;
 import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
@@ -52,6 +53,7 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_user_profile);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
@@ -59,15 +61,15 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
 
         CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-        String userEmail = "";
+        String userEmail = "-";
 
-        if (MainActivity.isSupp = false && MainActivity.userLogin != null){
+        if (MainActivity.isSupp == false && MainActivity.userLogin != null){
 
             userEmail = MainActivity.userLogin.getEmail();
 
         }
 
-        if (MainActivity.isSupp = true && MainActivity.supplierLogin != null){
+        if (MainActivity.isSupp == true && MainActivity.supplierLogin != null){
 
             userEmail = MainActivity.supplierLogin.getEmail();
 
@@ -94,7 +96,6 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
                 products.add(key);
             }
 
-            setContentView(R.layout.activity_user_profile);
             cartAdapter proAdapter = new cartAdapter(this, arrayList,this);
             ListView listView = (ListView)findViewById(R.id.cart_list);
             listView.setAdapter(proAdapter);
@@ -102,9 +103,6 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
             TextView total = (TextView) this.findViewById(R.id.cartTotal);
             total.setText(cart.getTotal() + "$");
 
-        }else{
-
-            setContentView(R.layout.activity_no_results);
         }
     }
 
@@ -230,17 +228,20 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
-                        ProductsMgr productsMgr  = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
+                        /*ProductsMgr productsMgr  = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
                         String s = "Invoice Number: " + cart.getInvoiceNumber() + "\n";
                         s = s + "Creation Date: " + cart.getDate() + "\n";
                         s = s + "Sending Date: " + new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()) + "\n";
                         s = s + "Email: " + cart.getUserId() + "\n";
                         s = s + "Total: " + cart.getTotal() + "$ \n\n";
-                        s = s + "Products: " + "\n";
+                        s = s + "Products: " + "\n";*/
 
                         Document proList = cart.getProducts();
-                        Set<String> list = proList.keySet();
+                        Document proListDoc = new Document();
+                        proListDoc.append("Products",proList);
+
+                        /*Set<String> list = proList.keySet();
 
                         for(String pro: list){
 
@@ -249,14 +250,13 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
                             proIns.put("_id",new ObjectId((String)d.get("_id")));
                             ArrayList<Product> p = productsMgr.findDocumentById(proIns, new HashMap<String, Integer>(),1);
 
-                            Log.d("cart", p.get(0).getId());
                             s = s + "Title: " + p.get(0).getTitle() + "\n";
                             s = s + "Code: " + p.get(0).getCode() + "\n";
                             s = s + "Supplier: " + p.get(0).getUser() + "\n";
                             s = s + "Price: " + p.get(0).getPrice().replace("$","") + "$ \n";
                             s = s + "Quantity: " + d.get("Qtity") + "\n\n";
 
-                        }
+                        }*/
 
 
                         OrdersMgr ordersMgr =  new OrdersMgr(MainActivity.dbName, MainActivity.mongoClient);
@@ -266,7 +266,7 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
                         orderDetails.put("User", cart.getUserId());
                         orderDetails.put("Total", cart.getTotal());
                         orderDetails.put("Status","Pending");
-                        ordersMgr.insertDocument(proList, orderDetails);
+                        ordersMgr.insertDocument(proListDoc, orderDetails);
 
                         CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
@@ -289,10 +289,34 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
             }
         };
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
-        builder.setMessage("Submit cart?").setPositiveButton("Yes", dialogClickListener)
-                .setNegativeButton("No", dialogClickListener).show();
+        if(cart != null){
+            if (cart.getProducts()!=null){
+                if (cart.getProducts().size()>0){
+                    AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.AlertDialogStyle);
+                    builder.setMessage("Submit cart?").setPositiveButton("Yes", dialogClickListener)
+                            .setNegativeButton("No", dialogClickListener).show();
 
+                }else{
+                    Toast toast = Toast.makeText(UserProfile.this, "Empty Cart", Toast.LENGTH_SHORT);
+                    toast.show();
+                }
+            }else{
+                Toast toast = Toast.makeText(UserProfile.this, "Empty Cart", Toast.LENGTH_SHORT);
+                toast.show();
+            }
+        } else{
+            Toast toast = Toast.makeText(UserProfile.this, "Empty Cart", Toast.LENGTH_SHORT);
+            toast.show();
+
+        }
+
+
+    }
+
+    public void orderHistory (View v){
+        Intent i = new Intent(this, OrderHistory.class);
+        i.putExtra("User",MainActivity.userLogin.getEmail());
+        startActivity(i);
     }
 
 }

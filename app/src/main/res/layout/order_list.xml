@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="3dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="7dp"
+    android:id="@+id/order_layout">
+
+
+        <TextView
+            android:id="@+id/order_inv_rowId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/order_inv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="15dp"
+            android:textStyle="normal"
+            tools:text="Invoice number"
+            android:paddingRight="30dp"/>
+
+        <TextView
+            android:id="@+id/order_inv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            tools:text="25/5/2018 12:06:02"/>
+
+    <TextView
+        android:id="@+id/order_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        tools:text="user@gmail.com"/>
+
+    <TextView
+        android:id="@+id/order_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15dp"
+        tools:text="Pending"/>
+
+
+
+</LinearLayout>

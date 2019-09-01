@@ -21,6 +21,13 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.project.lgs.OrdersClasses.OrderDetails" />
+        <activity android:name="com.project.lgs.OrdersClasses.OrderHistory" />
+        <activity android:name="com.project.lgs.AdminClasses.AddSupplier" />
+        <activity android:name="com.project.lgs.AdminClasses.SuppliersManagement" />
+        <activity android:name="com.project.lgs.AdminClasses.AddCat" />
+        <activity android:name="com.project.lgs.AdminClasses.CategoriesManagement" />
+        <activity android:name="com.project.lgs.AdminClasses.AdminActivity" />
         <activity android:name="com.project.lgs.SupplierClasses.ProductList" />
         <activity android:name="com.project.lgs.SupplierClasses.SupProfile" />
         <activity android:name="com.project.lgs.SupplierClasses.SupplierMenu" />

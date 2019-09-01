@@ -17,6 +17,7 @@ import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoClient;
 import com.project.lgs.CartClasses.UserProfile;
 import com.project.lgs.Database.CartMgr;
 import com.project.lgs.Database.MongoConnect;
+import com.project.lgs.Database.OrdersMgr;
 import com.project.lgs.Database.ProductsMgr;
 import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.Database.UsersMgr;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity{
 
         } else {
 
+            setContentView(R.layout.activity_main);
             String email = (String) getIntent().getStringExtra("Email");
             getLoginInfo(email);
 
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity{
                 supplierLogin = null;
             }
 
-            setContentView(R.layout.activity_main);
+
            /* toolbar = findViewById(R.id.toolBar);
             setSupportActionBar(toolbar);*/
             getSupportActionBar().setElevation(0);
@@ -116,7 +118,6 @@ public class MainActivity extends AppCompatActivity{
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         if (item.getItemId() == R.id.profilemenu) {
             if (isSupp ==true && supplierLogin != null){
                 Intent i = new Intent(this, SupplierMenu.class);
@@ -125,7 +126,6 @@ public class MainActivity extends AppCompatActivity{
 
             }else{
                 if(isSupp == false && userLogin != null){
-
                     Intent i = new Intent(this, UserProfile.class);
                     this.startActivity(i);
                     return true;
@@ -139,17 +139,6 @@ public class MainActivity extends AppCompatActivity{
     private void getLoginInfo (String email){
 
         SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
-
-       /* HashMap<String, String> supIns = new HashMap<String, String>();
-        supIns.put("Name", "Maya");
-        supIns.put("Description", "Welcome to my shopping palace");
-        supIns.put("PhoneNumber", "96101101101");
-        supIns.put("JoinDate", "01/01/2019");
-        supIns.put("Email", "mayaak.943@gmail.com");
-
-        HashMap<String, byte[]> p = new HashMap<>();
-        p.put("Image",null);
-        supplierMgr.insertDocumentWPic(supIns,p);*/
 
         HashMap<String, String> prodIns = new HashMap<String, String>();
         prodIns.put("Email", email);

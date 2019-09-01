@@ -65,7 +65,7 @@ public class ProductDetails extends AppCompatActivity {
         proRat.setText(currentProduct.getCode());
 
         TextView proPrice  = (TextView) this.findViewById(R.id.detail_price);
-        proPrice.setText(currentProduct.getPrice());
+        proPrice.setText(currentProduct.getPrice() + "$");
 
         TextView proDesc  = (TextView) this.findViewById(R.id.detail_description);
         proDesc.setText(currentProduct.getDescription());
@@ -119,14 +119,14 @@ public class ProductDetails extends AppCompatActivity {
             String userEmail = "";
             String userId = "";
 
-            if (MainActivity.isSupp = false && MainActivity.userLogin != null){
+            if (MainActivity.isSupp == false && MainActivity.userLogin != null){
 
                 userEmail = MainActivity.userLogin.getEmail();
                 userId = MainActivity.userLogin.getId();
 
             }
 
-            if (MainActivity.isSupp = true && MainActivity.supplierLogin != null){
+            if (MainActivity.isSupp == true && MainActivity.supplierLogin != null){
 
                 userEmail = MainActivity.supplierLogin.getEmail();
                 userId = MainActivity.supplierLogin.getId();
@@ -174,7 +174,7 @@ public class ProductDetails extends AppCompatActivity {
 
                 if (cart.size() == 0) {
 
-                    String invoiceNum = userId + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+                    String invoiceNum = userId.substring(1,5) + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 
                     HashMap<String, String> values2 = new HashMap<>();
                     values2.put("InvoiceNumber", invoiceNum);

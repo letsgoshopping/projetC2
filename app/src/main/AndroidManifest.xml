@@ -12,7 +12,14 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SupplierClasses.ProductList"></activity>
+        <activity android:name=".OrdersClasses.OrderDetails"></activity>
+        <activity android:name=".OrdersClasses.OrderHistory" />
+        <activity android:name=".AdminClasses.AddSupplier" />
+        <activity android:name=".AdminClasses.SuppliersManagement" />
+        <activity android:name=".AdminClasses.AddCat" />
+        <activity android:name=".AdminClasses.CategoriesManagement" />
+        <activity android:name=".AdminClasses.AdminActivity" />
+        <activity android:name=".SupplierClasses.ProductList" />
         <activity android:name=".SupplierClasses.SupProfile" />
         <activity android:name=".SupplierClasses.SupplierMenu" />
         <activity android:name=".AllSuppliersClasses.AllSuppliersAdapter" />

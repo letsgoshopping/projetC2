@@ -68,6 +68,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\74c7dfc6913e6516a71f29cb82ca42bf\\res\\drawable-hdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_supplierlayout.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\supplierlayout.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13_design_layout_snackbar.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\layout-sw600dp-v13\\design_layout_snackbar.xml"
     },
@@ -400,6 +404,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\75decbc6bfe20ffbf0050bc39518c12c\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_supplier.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_add_supplier.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\75decbc6bfe20ffbf0050bc39518c12c\\res\\drawable-v21\\notification_action_background.xml"
     },
@@ -574,6 +582,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_check_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xxxhdpi-v4\\abc_btn_check_to_on_mtrl_000.png"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_add_cat.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_add_cat.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_design_ic_visibility_off.png.flat",
@@ -1272,6 +1284,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xxhdpi-v4\\abc_ic_menu_share_mtrl_alpha.png"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_order_list.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\order_list.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_btn_stroke_color_selector.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\color\\mtrl_btn_stroke_color_selector.xml"
     },
@@ -1334,6 +1350,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_hint_foreground_material_dark.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\color\\abc_hint_foreground_material_dark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_order_pr_list.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\order_pr_list.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_dialog_title_material.xml.flat",
@@ -1484,6 +1504,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\animator\\mtrl_fab_hide_motion_spec.xml"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_order_details.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_order_details.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_primary_text_disable_only_material_light.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
     },
@@ -1594,6 +1618,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_suppliers_management.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_suppliers_management.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_half_black_36dp.png.flat",
@@ -1800,6 +1828,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\color\\mtrl_chip_background_color.xml"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_categoryitem.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\categoryitem.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_tabs_icon_color_selector_colored.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\color\\mtrl_tabs_icon_color_selector_colored.xml"
     },
@@ -1964,6 +1996,10 @@
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-17.0.0.aar\\74c7dfc6913e6516a71f29cb82ca42bf\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal_background.9.png"
     },
     {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_admin.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_admin.xml"
+    },
+    {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_ab_share_pack_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\drawable-xhdpi-v4\\abc_ab_share_pack_mtrl_alpha.9.png"
     },
@@ -2066,6 +2102,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include_material.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\material-1.0.0-beta01.aar\\e5e896daef75e789e30af78afbda7a99\\res\\layout\\design_layout_snackbar_include_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_order_history.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_order_history.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_nopic.xml.flat",
@@ -2270,6 +2310,10 @@
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_list_menu_item_radio.xml.flat",
         "source": "C:\\Users\\Maya\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-1.0.0-beta01.aar\\37c9ebc3861d7e102d80f41d7738a0b1\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_categories_management.xml.flat",
+        "source": "C:\\Users\\Maya\\Desktop\\LGS\\app\\src\\main\\res\\layout\\activity_categories_management.xml"
     },
     {
         "merged": "C:\\Users\\Maya\\Desktop\\LGS\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_design_ic_visibility.xml.flat",

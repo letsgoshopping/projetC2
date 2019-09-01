@@ -41,47 +41,49 @@ public class cartAdapter extends ArrayAdapter<Document> implements View.OnClickL
 
         Document selectedProduct = getItem(position);
 
-        pos.put((String)selectedProduct.get("rowId"),position);
-
         View searchView = convertView;
-        if (searchView == null){
-            searchView = LayoutInflater.from(getContext()).inflate(R.layout.cart_list,parent,false);
+        if (searchView == null) {
+            searchView = LayoutInflater.from(getContext()).inflate(R.layout.cart_list, parent, false);
         }
 
-        ProductsMgr productsMgr = new ProductsMgr(MainActivity.dbName,MainActivity.mongoClient);
+        if(selectedProduct != null) {
+            if (selectedProduct.size()>0){
 
-        HashMap<String, ObjectId> proSearch = new HashMap<>();
+                pos.put((String) selectedProduct.get("rowId"), position);
 
-        proSearch.put("_id",new ObjectId((String)selectedProduct.get("_id")));
+                ProductsMgr productsMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-        ArrayList<Product> p = productsMgr.findDocumentById(proSearch,new HashMap<String, Integer>(),1);
+                HashMap<String, ObjectId> proSearch = new HashMap<>();
 
-        Product currentProduct = p.get(0);
+                proSearch.put("_id", new ObjectId((String) selectedProduct.get("_id")));
 
-        TextView proRowId  = (TextView) searchView.findViewById(R.id.cart_pr_rowId);
-        proRowId.setText((String)selectedProduct.get("rowId"));
+                ArrayList<Product> p = productsMgr.findDocumentById(proSearch, new HashMap<String, Integer>(), 1);
 
-        TextView proTitle  = (TextView) searchView.findViewById(R.id.cart_pr_name);
-        proTitle.setText(currentProduct.getTitle());
+                Product currentProduct = p.get(0);
 
-        TextView proPrice  = (TextView) searchView.findViewById(R.id.cart_pr_price);
-        proPrice.setText(currentProduct.getPrice());
+                TextView proRowId = (TextView) searchView.findViewById(R.id.cart_pr_rowId);
+                proRowId.setText((String) selectedProduct.get("rowId"));
 
-        TextView proQtity  = (TextView) searchView.findViewById(R.id.cart_pr_qtity);
-        proQtity.setText((String)selectedProduct.get("Qtity"));
+                TextView proTitle = (TextView) searchView.findViewById(R.id.cart_pr_name);
+                proTitle.setText(currentProduct.getTitle());
 
-        TextView proTotal  = (TextView) searchView.findViewById(R.id.cart_pr_total);
-        String s  = currentProduct.getPrice().replace("$","");
-        int price  = Integer.parseInt(s);
-        int qtity = Integer.parseInt((String)selectedProduct.get("Qtity"));
-        int total = price * qtity;
-        proTotal.setText(Integer.toString(total) + "$");
+                TextView proPrice = (TextView) searchView.findViewById(R.id.cart_pr_price);
+                proPrice.setText(currentProduct.getPrice());
 
-        ImageView deletepro = (ImageView) searchView.findViewById(R.id.cart_pr_delete);
-        deletepro.setOnClickListener(this);
+                TextView proQtity = (TextView) searchView.findViewById(R.id.cart_pr_qtity);
+                proQtity.setText((String) selectedProduct.get("Qtity"));
 
-        TextView proView = (TextView)searchView.findViewById(R.id.cart_pr_rowId);
-        String proId = proView.getText().toString();
+                TextView proTotal = (TextView) searchView.findViewById(R.id.cart_pr_total);
+                String s = currentProduct.getPrice().replace("$", "");
+                int price = Integer.parseInt(s);
+                int qtity = Integer.parseInt((String) selectedProduct.get("Qtity"));
+                int total = price * qtity;
+                proTotal.setText(Integer.toString(total) + "$");
+
+                ImageView deletepro = (ImageView) searchView.findViewById(R.id.cart_pr_delete);
+                deletepro.setOnClickListener(this);
+            }
+        }
 
         return searchView;
     }

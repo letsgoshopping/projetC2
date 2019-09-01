@@ -13,6 +13,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.project.lgs.AdminClasses.AdminActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -21,6 +22,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     public static  GoogleSignInClient mGoogleSignInClient;
     final int RC_SIGN_IN = 1;
+    final String ADMIN_EMAIL = "lets.go.shopping.lgs@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +43,20 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
 
         if (account != null){
-            Intent i = new Intent(this, MainActivity.class);
-            i.putExtra("Email", account.getEmail());
-            finish();
-            this.startActivity(i);
+
+            if (account.getEmail().equals(ADMIN_EMAIL)){
+
+                Intent i = new Intent(this, AdminActivity.class);
+                finish();
+                this.startActivity(i);
+
+            }else {
+
+                Intent i = new Intent(this, MainActivity.class);
+                i.putExtra("Email", account.getEmail());
+                finish();
+                this.startActivity(i);
+            }
         }
         else {
             setContentView(R.layout.activity_login);
@@ -85,10 +97,17 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
-            Intent i = new Intent(this, MainActivity.class);
-            i.putExtra("Email", account.getEmail());
-            finish();
-            this.startActivity(i);
+            if (account.getEmail().equals(ADMIN_EMAIL)){
+                Intent i = new Intent(this, AdminActivity.class);
+                finish();
+                this.startActivity(i);
+
+            }else {
+                Intent i = new Intent(this, MainActivity.class);
+                i.putExtra("Email", account.getEmail());
+                finish();
+                this.startActivity(i);
+            }
 
         } catch (ApiException e) {
             Log.w("SignIn", "signInResult:failed code=" + e.getStatusCode());

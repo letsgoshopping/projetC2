@@ -14,7 +14,7 @@
         android:id="@+id/addProButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add a new Product"
+        android:text="Insert Product"
         android:textColor="@android:color/black"
         android:layout_marginBottom="10dp"
         android:onClick="addPro"/>

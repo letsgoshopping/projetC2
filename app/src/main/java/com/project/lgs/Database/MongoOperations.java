@@ -47,7 +47,6 @@ public class MongoOperations{
             for (Entry<String, String> entry : values.entrySet()) {
                 String key = entry.getKey();
                 String val = entry.getValue();
-                //Log.d("supp", key + ": " + val);
 
                 newDoc.append(key, val);
             }
