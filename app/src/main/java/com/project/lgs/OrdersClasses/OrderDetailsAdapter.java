@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.project.lgs.AdminClasses.AdminActivity;
@@ -44,6 +45,7 @@ public class OrderDetailsAdapter extends ArrayAdapter<Document> {
 
         if (isAdmin == true){
             productsMgr = new ProductsMgr(AdminActivity.dbName,AdminActivity.mongoClient);
+
         }else{
             productsMgr = new ProductsMgr(MainActivity.dbName,MainActivity.mongoClient);
         }

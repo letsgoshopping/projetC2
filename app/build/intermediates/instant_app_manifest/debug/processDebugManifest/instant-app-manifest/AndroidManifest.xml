@@ -22,6 +22,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.project.lgs.menu_user" />
+        <activity android:name="com.project.lgs.UsersClasses.UserAddress" />
+        <activity android:name="com.project.lgs.LoadingMainA" />
         <activity android:name="com.project.lgs.OrdersClasses.OrderDetails" />
         <activity android:name="com.project.lgs.OrdersClasses.OrderHistory" />
         <activity android:name="com.project.lgs.AdminClasses.AddSupplier" />

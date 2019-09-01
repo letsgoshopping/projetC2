@@ -52,6 +52,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
             }else {
 
+                //Intent i = new Intent(this, MainActivity.class);
                 Intent i = new Intent(this, MainActivity.class);
                 i.putExtra("Email", account.getEmail());
                 finish();

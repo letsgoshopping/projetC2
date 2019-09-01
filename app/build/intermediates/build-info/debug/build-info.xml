@@ -5,58 +5,36 @@
     build-mode="COLD"
     density="xxhdpi"
     format="10"
+    ir-eligibility="COMPATIBLE"
     plugin-version="3.3.1"
-    timestamp="1566065923108"
+    timestamp="1566120666072"
     token="4577407193147379388"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="0" />
+        duration="969" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="0" />
+        duration="74" />
     <task
         name="verifier"
-        duration="0" />
+        duration="11" />
 
     <artifact
-        location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+        location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
 
     <build
         build-mode="FULL"
-        timestamp="1566056941583"
-        verifier="FULL_BUILD_REQUESTED" >
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1566117583564"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
@@ -65,40 +43,7 @@
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="CLASS_ADDED"
-        timestamp="1566059532877"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
-            type="SPLIT" />
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1566061342953"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
-            type="SPLIT" />
-    </build>
-    <build
-        build-mode="COLD"
-        ir-eligibility="R_CLASS_CHANGE"
-        timestamp="1566064560336"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
@@ -107,22 +52,58 @@
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
     <build
         build-mode="COLD"
-        ir-eligibility="COMPATIBLE"
-        timestamp="1566065460154"
+        ir-eligibility="CLASS_ADDED"
+        timestamp="1566120486989"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+            type="SPLIT" />
+        <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+            type="SPLIT" />
+        <artifact
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
         <artifact
             location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
@@ -130,10 +111,11 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1566065923108"
+        ir-eligibility="COMPATIBLE"
+        timestamp="1566120666072"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\resources\instant-run\debug\resources-debug.apk"
+            location="C:\Users\Maya\Desktop\LGS\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
     </build>
 

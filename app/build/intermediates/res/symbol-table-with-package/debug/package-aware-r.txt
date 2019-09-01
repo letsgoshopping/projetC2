@@ -1130,6 +1130,7 @@ id cartAdd
 id cartLayout
 id cartMinus
 id cartNumber
+id cartProBar
 id cartTotal
 id cart_layout
 id cart_list
@@ -1149,12 +1150,14 @@ id center_vertical
 id chains
 id checkbox
 id chronometer
+id city
 id clip_horizontal
 id clip_vertical
 id collapseActionView
 id container
 id content
 id contentPanel
+id contract_name
 id coordinator
 id custom
 id customPanel
@@ -1190,6 +1193,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id fixed
+id floor
 id forever
 id ghost_view
 id gone
@@ -1238,7 +1242,9 @@ id notification_background
 id notification_main_column
 id notification_main_column_container
 id orderDetailTotal
+id orderProBar
 id order_detail_list
+id order_email
 id order_inv_date
 id order_inv_name
 id order_inv_rowId
@@ -1251,6 +1257,7 @@ id order_pr_qtity
 id order_pr_rowId
 id order_pr_total
 id order_status
+id order_sts
 id order_user
 id outline
 id packed
@@ -1260,6 +1267,8 @@ id parent
 id parentPanel
 id parent_matrix
 id percent
+id phone_code
+id phone_num
 id pin
 id proCatIns
 id proCodeIns
@@ -1326,6 +1335,7 @@ id src_over
 id standard
 id start
 id status_bar_latest_event_content
+id street
 id stretch
 id submenuarrow
 id submitCategory
@@ -1362,6 +1372,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView1
+id textView14
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1444,8 +1456,10 @@ layout activity_admin
 layout activity_all_products
 layout activity_all_suppliers
 layout activity_categories_management
+layout activity_loading_main
 layout activity_login
 layout activity_main
+layout activity_menu_user
 layout activity_no_results
 layout activity_order_details
 layout activity_order_history
@@ -1457,6 +1471,7 @@ layout activity_sup_profile
 layout activity_supplier_details
 layout activity_supplier_menu
 layout activity_suppliers_management
+layout activity_user_address
 layout activity_user_profile
 layout cart_list
 layout categoryitem

@@ -4,12 +4,15 @@ import android.app.SearchManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 import android.widget.SearchView;
 
 import com.google.android.material.tabs.TabLayout;
@@ -53,12 +56,13 @@ public class MainActivity extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_loading_main);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        MongoConnect mongo = new MongoConnect();
+        final MongoConnect mongo = new MongoConnect();
         mongoClient = mongo.connect();
         mcontext = this;
 
@@ -68,37 +72,30 @@ public class MainActivity extends AppCompatActivity{
 
         } else {
 
-            setContentView(R.layout.activity_main);
-            String email = (String) getIntent().getStringExtra("Email");
-            getLoginInfo(email);
-
-            if (isSupp == false){
-
-                UsersMgr userMgr = new UsersMgr(MainActivity.dbName, MainActivity.mongoClient);
-
-                HashMap<String, String> usIns = new HashMap<String, String>();
-                usIns.put("Email", email);
-
-                ArrayList<User> user = userMgr.findDocument(usIns, new HashMap<String, Integer>(), 1);
-
-                userLogin = user.get(0);
-                supplierLogin = null;
-            }
-
-
-           /* toolbar = findViewById(R.id.toolBar);
-            setSupportActionBar(toolbar);*/
             getSupportActionBar().setElevation(0);
             getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
+            Runnable runnable = new Runnable() {
 
-            viewPager = findViewById(R.id.pager);
-            viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-            viewPager.setAdapter(viewPagerAdapter);
+                public void run() {
 
-            tabLayout = findViewById(R.id.tabs);
-            tabLayout.setupWithViewPager(viewPager);
+                    setContentView(R.layout.activity_main);
 
+                    String email = (String) getIntent().getStringExtra("Email");
+                    getLoginInfo(email);
+                    viewPager = findViewById(R.id.pager);
+                    viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+                    viewPager.setAdapter(viewPagerAdapter);
+
+                    tabLayout = findViewById(R.id.tabs);
+                    tabLayout.setupWithViewPager(viewPager);
+
+
+                }
+            };
+
+            Handler handler =  new Handler();
+            handler.postDelayed(runnable, 2000);
 
         }
     }
@@ -126,7 +123,7 @@ public class MainActivity extends AppCompatActivity{
 
             }else{
                 if(isSupp == false && userLogin != null){
-                    Intent i = new Intent(this, UserProfile.class);
+                    Intent i = new Intent(this, menu_user.class);
                     this.startActivity(i);
                     return true;
                 }
@@ -165,9 +162,12 @@ public class MainActivity extends AppCompatActivity{
             ArrayList<User> user = userMgr.findDocument(usIns, usSort, 1);
             if (user.size() == 0) {
                 userMgr.insertDocumentWait(usIns);
+            }else{
+                userLogin = user.get(0);
             }
 
             isSupp = false;
+            supplierLogin = null;
         }
     }
 

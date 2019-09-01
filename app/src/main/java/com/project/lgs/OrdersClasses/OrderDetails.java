@@ -4,11 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -16,6 +19,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,14 +35,17 @@ import com.project.lgs.CategoryClasses.Category;
 import com.project.lgs.Database.CartMgr;
 import com.project.lgs.Database.OrdersMgr;
 import com.project.lgs.Database.ProductsMgr;
+import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.Login;
 import com.project.lgs.MainActivity;
 import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
+import com.project.lgs.SupplierClasses.Supplier;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -50,6 +57,7 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
     Order order;
     Boolean isAdmin;
     String orderStatus;
+    static Context orderDetContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,57 +68,80 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
+        orderDetContext = this;
+        Runnable runnable = new Runnable() {
 
-        order = (Order) getIntent().getSerializableExtra("Order");
-        isAdmin = (Boolean)getIntent().getBooleanExtra("isAdmin",false);
+            public void run() {
+
+                order = (Order) getIntent().getSerializableExtra("Order");
+                isAdmin = (Boolean)getIntent().getBooleanExtra("isAdmin",false);
+
+                if (isAdmin ==  true){
+                    Button sendOrder = (Button) findViewById(R.id.order_sts);
+                    sendOrder.setVisibility(View.VISIBLE);
+
+                    Button orderemail = (Button)findViewById(R.id.order_email);
+                    orderemail.setVisibility(View.VISIBLE);
+                }
 
 
-        Document productList  = order.getProducts();
-        ArrayList<Document> arrayList = new ArrayList<>();
+                Document productList  = order.getProducts();
+                ArrayList<Document> arrayList = new ArrayList<>();
 
-        if (productList != null){
+                if (productList != null){
 
-            Set<String> s = productList.keySet();
+                    Set<String> s = productList.keySet();
 
-            for ( String key :s){
-                Document d = (Document)productList.get(key);
-                d.append("rowId", key);
-                arrayList.add(d);
+                    for ( String key :s){
+                        Document d = (Document)productList.get(key);
+                        d.append("rowId", key);
+                        arrayList.add(d);
+                    }
+                }
+
+                TextView textView = findViewById(R.id.orderProBar);
+                textView.setVisibility(View.GONE);
+
+                ListView cartList = findViewById(R.id.order_detail_list);
+                cartList.setVisibility(View.VISIBLE);
+
+                OrderDetailsAdapter orderDetailsAdapter = new OrderDetailsAdapter(OrderDetails.orderDetContext, arrayList,isAdmin);
+                ListView listView = (ListView)findViewById(R.id.order_detail_list);
+                listView.setAdapter(orderDetailsAdapter);
+
+                TextView total = (TextView) findViewById(R.id.orderDetailTotal);
+                total.setText(order.getTotal()==null?"0":order.getTotal() + "$");
+
+                TextView invNum = (TextView) findViewById(R.id.inv_number);
+                invNum.setText(order.getInvoiceNumber());
+
+                TextView invDate = (TextView) findViewById(R.id.inv_date);
+                invDate.setText(order.getDate());
+
+                orderStatus = order.getStatus();
+
+                Spinner spinner = (Spinner) findViewById(R.id.inv_status);
+                spinner.setOnItemSelectedListener(OrderDetails.this);
+
+                ArrayList<String> list = new ArrayList<String>();
+                list.add("Pending");
+                list.add("Submitted");
+                list.add("Cancelled");
+                list.add("Delivered");
+                ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(OrderDetails.orderDetContext,
+                        android.R.layout.simple_spinner_item, list);
+                dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                spinner.setAdapter(dataAdapter);
+                if (orderStatus!= null) {
+                    spinner.setSelection(dataAdapter.getPosition(orderStatus));
+                }
+
             }
-        }
+        };
 
-        OrderDetailsAdapter orderDetailsAdapter = new OrderDetailsAdapter(this, arrayList,isAdmin);
-        ListView listView = (ListView)findViewById(R.id.order_detail_list);
-        listView.setAdapter(orderDetailsAdapter);
-
-        TextView total = (TextView) this.findViewById(R.id.orderDetailTotal);
-        total.setText(order.getTotal()==null?"0":order.getTotal() + "$");
-
-        TextView invNum = (TextView) this.findViewById(R.id.inv_number);
-        invNum.setText(order.getInvoiceNumber());
-
-        TextView invDate = (TextView) this.findViewById(R.id.inv_date);
-        invDate.setText(order.getDate());
-
-        orderStatus = order.getStatus();
-
-        Spinner spinner = (Spinner) this.findViewById(R.id.inv_status);
-        spinner.setOnItemSelectedListener(this);
-
-        ArrayList<String> list = new ArrayList<String>();
-        list.add("Pending");
-        list.add("Submitted");
-        list.add("Cancelled");
-        list.add("Delivered");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        spinner.setAdapter(dataAdapter);
-        if (orderStatus!= null) {
-            spinner.setSelection(dataAdapter.getPosition(orderStatus));
-        }
-
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 2000);
     }
 
 
@@ -151,6 +182,68 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    public void SendOrder (View v){
+
+        ProductsMgr productsMgr  = new ProductsMgr(AdminActivity.dbName, AdminActivity.mongoClient);
+        SupplierMgr supplierMgr  = new SupplierMgr(AdminActivity.dbName, AdminActivity.mongoClient);
+
+        String s = "Invoice Number: " + order.getInvoiceNumber() + "\n";
+        s = s + "Creation Date: " + order.getDate() + "\n";
+        s = s + "Sending Date: " + new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()) + "\n";
+        s = s + "Email: " + order.getUserId() + "\n";
+        s = s + "Total: " + order.getTotal() + "$ \n\n";
+        s = s + "Products: " + "\n";
+
+        Document proList = order.getProducts();
+        String [] emails = new String[proList.size()];
+        int i = 0;
+        Set<String> list = proList.keySet();
+
+        for(String pro: list){
+
+            Document d  = (Document)proList.get(pro);
+            HashMap<String,ObjectId> proIns = new HashMap<>();
+            proIns.put("_id",new ObjectId((String)d.get("_id")));
+            ArrayList<Product> p = productsMgr.findDocumentById(proIns, new HashMap<String, Integer>(),1);
+
+            HashMap<String,ObjectId> supIns = new HashMap<>();
+            supIns.put("_id",new ObjectId(p.get(0).getUser()));
+
+            ArrayList<Supplier> supplier = supplierMgr.findDocumentById(supIns,new HashMap<String, Integer>(),1);
+            String supName = "No email";
+            if (supplier != null){
+                if (supplier.size()>0){
+                    supName = supplier.get(0).getEmail();
+                }
+            }
+
+            s = s + "Title: " + p.get(0).getTitle() + "\n";
+            s = s + "Code: " + p.get(0).getCode() + "\n";
+            s = s + "Supplier: " + supName + "\n";
+            s = s + "Price: " + p.get(0).getPrice().replace("$","") + "$ \n";
+            s = s + "Quantity: " + d.get("Qtity") + "\n\n";
+
+            if(!supName.equals("No email")){
+                emails[i] = supName;
+                i++;
+            }
+
+        }
+
+        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        emailIntent.setData(Uri.parse("mailto:"));
+        emailIntent.setType("text/plain");
+
+
+        emailIntent.putExtra(Intent.EXTRA_EMAIL  , emails);
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Order Num: " + order.getInvoiceNumber());
+        emailIntent.putExtra(Intent.EXTRA_TEXT   , s);
+        if (emailIntent.resolveActivity(getPackageManager()) != null) {
+            startActivity(emailIntent);
+        }
 
     }
 }

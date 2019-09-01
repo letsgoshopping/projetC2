@@ -77,6 +77,18 @@ public class UsersMgr {
         return res;
     }
 
+    public String deleteDocument (HashMap<String,String> id){
+
+        String res = "1";
+        try{
+            operations.deleteDocument(collection,id);
+        }catch(Exception e){
+            res = "-1";
+        }
+
+        return res;
+    }
+
     public ArrayList<User> findDocument (HashMap<String,String> values, HashMap<String,Integer> sorting, int limit){
 
         List <Document> res =  operations.findDocument(collection,values,sorting,limit);
@@ -84,7 +96,14 @@ public class UsersMgr {
 
         for (Document doc: res) {
             User pro = new User((String)doc.get("_id").toString(),
-                    (String)doc.get("Email"));
+                    (String)doc.get("Email"),
+                    (String)doc.get("ContractName"),
+                    (String)doc.get("PhoneCode"),
+                    (String)doc.get("PhoneNum"),
+                    (String)doc.get("Country"),
+                    (String)doc.get("City"),
+                    (String)doc.get("Street"),
+                    (String)doc.get("Floor"));
 
             user.add(pro);
 
@@ -101,7 +120,14 @@ public class UsersMgr {
 
         for (Document doc: res) {
             User pro = new User((String)doc.get("_id").toString(),
-                    (String)doc.get("Email"));
+                    (String)doc.get("Email"),
+                    (String)doc.get("ContractName"),
+                    (String)doc.get("PhoneCode"),
+                    (String)doc.get("PhoneNum"),
+                    (String)doc.get("Country"),
+                    (String)doc.get("City"),
+                    (String)doc.get("Street"),
+                    (String)doc.get("Floor"));
 
             product.add(pro);
 

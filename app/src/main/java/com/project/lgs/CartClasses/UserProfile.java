@@ -4,17 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,9 +35,11 @@ import com.project.lgs.ProblemActivity;
 import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
 import com.project.lgs.UsersClasses.User;
+import com.project.lgs.UsersClasses.UserAddress;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
+import org.w3c.dom.Text;
 
 import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
@@ -49,6 +54,7 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
     ArrayList<String> products = new ArrayList<>();
     Cart cart;
     int curPos;
+    static Context userProContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,51 +65,63 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
+        userProContext = this;
+        Runnable runnable = new Runnable() {
 
-        String userEmail = "-";
+            public void run() {
 
-        if (MainActivity.isSupp == false && MainActivity.userLogin != null){
+                CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-            userEmail = MainActivity.userLogin.getEmail();
+                String userEmail = "-";
 
-        }
+                if (MainActivity.isSupp == false && MainActivity.userLogin != null) {
+                    userEmail = MainActivity.userLogin.getEmail();
+                }
 
-        if (MainActivity.isSupp == true && MainActivity.supplierLogin != null){
+                if (MainActivity.isSupp == true && MainActivity.supplierLogin != null) {
+                    userEmail = MainActivity.supplierLogin.getEmail();
+                }
 
-            userEmail = MainActivity.supplierLogin.getEmail();
+                HashMap<String, String> cartIns = new HashMap<String, String>();
+                cartIns.put("User", userEmail);
 
-        }
+                ArrayList<Cart> carts = cartMgr.findDocument(cartIns, new HashMap<String, Integer>(), 5000);
 
-        HashMap<String, String> cartIns = new HashMap<String, String>();
-        cartIns.put("User", userEmail);
+                if (carts.size() == 1) {
+                    cart = carts.get(0);
 
-        ArrayList<Cart> carts = cartMgr.findDocument(cartIns, new HashMap<String, Integer>(), 5000);
+                    Document productList = cart.getProducts();
 
-        if (carts.size()==1) {
-            cart  = carts.get(0);
+                    ArrayList<Document> arrayList = new ArrayList<>();
 
-            Document productList  = cart.getProducts();
+                    Set<String> s = productList.keySet();
 
-            ArrayList<Document> arrayList = new ArrayList<>();
+                    for (String key : s) {
+                        Document d = (Document) productList.get(key);
+                        d.append("rowId", key);
+                        arrayList.add(d);
+                        products.add(key);
+                    }
 
-            Set<String> s = productList.keySet();
+                    TextView textView = findViewById(R.id.cartProBar);
+                    textView.setVisibility(View.GONE);
 
-            for ( String key :s){
-                Document d = (Document)productList.get(key);
-                d.append("rowId", key);
-                arrayList.add(d);
-                products.add(key);
+                    ListView cartList = findViewById(R.id.cart_list);
+                    cartList.setVisibility(View.VISIBLE);
+
+                    cartAdapter proAdapter = new cartAdapter(UserProfile.userProContext, arrayList, UserProfile.this);
+                    ListView listView = (ListView) findViewById(R.id.cart_list);
+                    listView.setAdapter(proAdapter);
+
+                    TextView total = (TextView) UserProfile.this.findViewById(R.id.cartTotal);
+                    total.setText(cart.getTotal() + "$");
+
+                }
             }
+        };
 
-            cartAdapter proAdapter = new cartAdapter(this, arrayList,this);
-            ListView listView = (ListView)findViewById(R.id.cart_list);
-            listView.setAdapter(proAdapter);
-
-            TextView total = (TextView) this.findViewById(R.id.cartTotal);
-            total.setText(cart.getTotal() + "$");
-
-        }
+            Handler handler =  new Handler();
+            handler.postDelayed(runnable, 2000);
     }
 
 
@@ -228,56 +246,45 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
             public void onClick(DialogInterface dialog, int which) {
                 switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
-                        /*ProductsMgr productsMgr  = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-                        String s = "Invoice Number: " + cart.getInvoiceNumber() + "\n";
-                        s = s + "Creation Date: " + cart.getDate() + "\n";
-                        s = s + "Sending Date: " + new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()) + "\n";
-                        s = s + "Email: " + cart.getUserId() + "\n";
-                        s = s + "Total: " + cart.getTotal() + "$ \n\n";
-                        s = s + "Products: " + "\n";*/
+                        if(MainActivity.userLogin.getConName()!= null && !MainActivity.userLogin.getConName().trim().equals("") &&
+                                MainActivity.userLogin.getPhoneCode()!= null && !MainActivity.userLogin.getPhoneCode().trim().equals("")&&
+                                MainActivity.userLogin.getPhoneNum()!= null && !MainActivity.userLogin.getPhoneNum().trim().equals("")&&
+                                MainActivity.userLogin.getCity()!= null && !MainActivity.userLogin.getCity().trim().equals("")&&
+                                MainActivity.userLogin.getStreet()!= null && !MainActivity.userLogin.getStreet().trim().equals("") &&
+                                MainActivity.userLogin.getFloor()!= null && !MainActivity.userLogin.getFloor().trim().equals("")) {
 
-                        Document proList = cart.getProducts();
-                        Document proListDoc = new Document();
-                        proListDoc.append("Products",proList);
+                            Document proList = cart.getProducts();
+                            Document proListDoc = new Document();
+                            proListDoc.append("Products", proList);
 
-                        /*Set<String> list = proList.keySet();
+                            OrdersMgr ordersMgr = new OrdersMgr(MainActivity.dbName, MainActivity.mongoClient);
+                            HashMap<String, String> orderDetails = new HashMap<>();
+                            orderDetails.put("InvoiceNumber", cart.getInvoiceNumber());
+                            orderDetails.put("Date", cart.getDate());
+                            orderDetails.put("User", cart.getUserId());
+                            orderDetails.put("Total", cart.getTotal());
+                            orderDetails.put("Status", "Pending");
+                            ordersMgr.insertDocument(proListDoc, orderDetails);
 
-                        for(String pro: list){
+                            CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-                            Document d  = (Document)proList.get(pro);
-                            HashMap<String,ObjectId> proIns = new HashMap<>();
-                            proIns.put("_id",new ObjectId((String)d.get("_id")));
-                            ArrayList<Product> p = productsMgr.findDocumentById(proIns, new HashMap<String, Integer>(),1);
+                            cartMgr.deleteDocument(new ObjectId(cart.getId()));
 
-                            s = s + "Title: " + p.get(0).getTitle() + "\n";
-                            s = s + "Code: " + p.get(0).getCode() + "\n";
-                            s = s + "Supplier: " + p.get(0).getUser() + "\n";
-                            s = s + "Price: " + p.get(0).getPrice().replace("$","") + "$ \n";
-                            s = s + "Quantity: " + d.get("Qtity") + "\n\n";
+                            finish();
+                            Intent i = new Intent(UserProfile.this, UserProfile.class);
+                            startActivity(i);
 
-                        }*/
+                            Toast toast = Toast.makeText(UserProfile.this, "Cart submitted", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }else{
 
+                            Intent i = new Intent(UserProfile.this, UserAddress.class);
+                            startActivity(i);
 
-                        OrdersMgr ordersMgr =  new OrdersMgr(MainActivity.dbName, MainActivity.mongoClient);
-                        HashMap<String,String>orderDetails = new HashMap<>();
-                        orderDetails.put("InvoiceNumber",cart.getInvoiceNumber());
-                        orderDetails.put("Date", cart.getDate());
-                        orderDetails.put("User", cart.getUserId());
-                        orderDetails.put("Total", cart.getTotal());
-                        orderDetails.put("Status","Pending");
-                        ordersMgr.insertDocument(proListDoc, orderDetails);
-
-                        CartMgr cartMgr = new CartMgr(MainActivity.dbName, MainActivity.mongoClient);
-
-                        cartMgr.deleteDocument(new ObjectId(cart.getId()));
-
-                        finish();
-                        Intent i = new Intent(UserProfile.this, UserProfile.class);
-                        startActivity(i);
-
-                        Toast toast = Toast.makeText(UserProfile.this, "Cart submitted", Toast.LENGTH_SHORT);
-                        toast.show();
+                            Toast toast = Toast.makeText(UserProfile.this, "Please fill your address info", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
 
                         break;
 

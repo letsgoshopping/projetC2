@@ -13,6 +13,8 @@ import com.mongodb.stitch.android.services.mongodb.remote.RemoteMongoCollection;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteDeleteResult;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteInsertOneResult;
 import com.mongodb.stitch.core.services.mongodb.remote.RemoteUpdateResult;
+import com.project.lgs.MainActivity;
+import com.project.lgs.UsersClasses.User;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -132,7 +134,7 @@ public class MongoOperations{
 
         RemoteMongoCollection mongoCollection = mongoClient.getDatabase(databaseName).getCollection(collection);
 
-        Document newDoc = new Document();
+        final Document newDoc = new Document();
 
         for (Entry<String, String> entry : values.entrySet()) {
             String key = entry.getKey();
@@ -141,20 +143,32 @@ public class MongoOperations{
             newDoc.append(key, val);
         }
 
-        final Task <RemoteInsertOneResult> insertTask = mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
-            @Override
-            public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
-                if (!task.isSuccessful()) {
-                    throw new Exception("Insertion failed");
-                }
 
-                return task;
+        final Task <RemoteInsertOneResult> insertTask = mongoCollection.insertOne(newDoc);
+        insertTask.addOnCompleteListener(new OnCompleteListener <RemoteInsertOneResult> () {
+            @Override
+            public void onComplete( Task <RemoteInsertOneResult> task) {
+                if (task.isSuccessful()) {
+                    Log.d("appp", String.format("successfully inserted item with id %s",
+                            task.getResult().getInsertedId()));
+
+                    User s = new User(task.getResult().getInsertedId().toString(),
+                            newDoc.getString("Email"),
+                            newDoc.getString("ContractName"),
+                            newDoc.getString("PhoneCode"),
+                            newDoc.getString("PhoneNum"),
+                            newDoc.getString("Country"),
+                            newDoc.getString("City"),
+                            newDoc.getString("Street"),
+                            newDoc.getString("Floor"));
+
+                    MainActivity.userLogin = s;
+
+                } else {
+                    Log.e("appp", "failed to insert document with: ", task.getException());
+                }
             }
         });
-
-       /* while (!insertTask.isComplete()){
-            Log.d("lala", "insertDocumentWait: ");
-        }*/
 
     }
 

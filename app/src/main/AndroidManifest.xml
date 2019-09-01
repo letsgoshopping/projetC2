@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OrdersClasses.OrderDetails"></activity>
+        <activity android:name=".menu_user"></activity>
+        <activity android:name=".UsersClasses.UserAddress" />
+        <activity android:name=".LoadingMainA" />
+        <activity android:name=".OrdersClasses.OrderDetails" />
         <activity android:name=".OrdersClasses.OrderHistory" />
         <activity android:name=".AdminClasses.AddSupplier" />
         <activity android:name=".AdminClasses.SuppliersManagement" />
