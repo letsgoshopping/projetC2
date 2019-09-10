@@ -1,11 +1,16 @@
 package com.project.lgs.AllProductsClasses;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.project.lgs.Database.ProductsMgr;
 import com.project.lgs.MainActivity;
@@ -19,39 +24,52 @@ import java.util.HashMap;
 public class AllProducts extends AppCompatActivity  implements AllProductsAdapter.ProductDetailsListener{
 
     ArrayList<Product> products;
+    static Context allProContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_all_products);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
+        allProContext =this;
 
-        String category = (String) getIntent().getStringExtra("Category");
+        Runnable runnable = new Runnable() {
 
-        ProductsMgr productMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
+            public void run() {
 
-        HashMap<String, String> prodIns = new HashMap<String, String>();
-        prodIns.put("Category", category);
+                String category = (String) getIntent().getStringExtra("Category");
 
-        HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
-        prodSort.put("PDate", 1);
+                ProductsMgr productMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-        products = productMgr.findDocument(prodIns, prodSort, 500);
+                HashMap<String, String> prodIns = new HashMap<String, String>();
+                prodIns.put("Category", category);
 
-        if (products.size()>0) {
+                HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
+                prodSort.put("PDate", 1);
 
-            setContentView(R.layout.activity_all_products);
-            AllProductsAdapter proAdapter = new AllProductsAdapter(this, products,this);
-            ListView listView = (ListView)findViewById(R.id.allpro_list);
-            listView.setAdapter(proAdapter);
+                products = productMgr.findDocument(prodIns, prodSort, 500);
 
-        }else{
+                TextView textView = findViewById(R.id.allProProBar);
+                textView.setVisibility(View.GONE);
 
-            setContentView(R.layout.activity_no_results);
-        }
+                ListView cartList = findViewById(R.id.allpro_list);
+                cartList.setVisibility(View.VISIBLE);
+
+
+                AllProductsAdapter proAdapter = new AllProductsAdapter(AllProducts.allProContext, products,AllProducts.this);
+                ListView listView = (ListView)findViewById(R.id.allpro_list);
+                listView.setAdapter(proAdapter);
+
+            }
+        };
+
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 500);
+
     }
 
     @Override

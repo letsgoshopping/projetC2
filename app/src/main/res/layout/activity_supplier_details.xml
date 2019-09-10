@@ -19,6 +19,13 @@
         android:paddingBottom="50dp"
         android:id="@+id/sup_detail_layout">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/supDetProBar"
+            android:visibility="visible"
+            android:layout_height="wrap_content"
+            android:text="Loading Cart ..."/>
+
 
         <TextView
             android:id="@+id/sup_det_name"

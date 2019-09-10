@@ -15,6 +15,13 @@
         android:textColor="@android:color/black"
         android:onClick="addCategory"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/catMgrProBar"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        android:text="Loading Categories ..."/>
+
     <ListView
         android:id="@+id/category_list"
         android:orientation="vertical"

@@ -60,7 +60,7 @@ public class MongoOperations{
                 newDoc.append(key, val);
             }
 
-             mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
+             Task insertTask = mongoCollection.insertOne(newDoc).continueWithTask(new Continuation<StitchUser, Task<StitchUser>>() {
                 @Override
                 public Task<StitchUser> then(Task<StitchUser> task) throws Exception {
                     if (!task.isSuccessful()) {
@@ -68,14 +68,14 @@ public class MongoOperations{
                     }
                     if(task.isSuccessful()){
                         String numMatched = task.getResult().getId();
-                        Log.d("appp", String.format("successfully inserted", numMatched));
+                        Log.d("lala", String.format("successfully inserted", numMatched));
                     }
 
                     return task;
                 }
             });
 
-
+            while(!insertTask.isComplete()){}
         }
 
         public void insertDocument (String collection, HashMap<String,String> values)throws Exception{

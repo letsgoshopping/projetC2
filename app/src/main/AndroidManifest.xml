@@ -37,11 +37,9 @@
             android:name=".ProductClasses.ProductFragment"
             android:label="Products" />
         <activity
-            android:name=".SearchClasses.NoResults"
-            android:parentActivityName=".MainActivity" />
+            android:name=".SearchClasses.NoResults"/>
         <activity
-            android:name=".SearchClasses.SearchActivity"
-            android:parentActivityName=".MainActivity">
+            android:name=".SearchClasses.SearchActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -51,8 +49,7 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity
-            android:name=".CartClasses.UserProfile"
-            android:parentActivityName=".MainActivity">
+            android:name=".CartClasses.UserProfile">
             <intent-filter>
                 <action android:name="android.intent.action.SENDTO" />
 

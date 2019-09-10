@@ -322,8 +322,16 @@ public class UserProfile extends AppCompatActivity implements cartAdapter.CartLi
 
     public void orderHistory (View v){
         Intent i = new Intent(this, OrderHistory.class);
-        i.putExtra("User",MainActivity.userLogin.getEmail());
-        startActivity(i);
+
+        if(MainActivity.isSupp == true && MainActivity.supplierLogin != null){
+            i.putExtra("User",MainActivity.supplierLogin.getEmail());
+            startActivity(i);
+        }
+        if(MainActivity.isSupp == false && MainActivity.userLogin != null){
+            i.putExtra("User",MainActivity.userLogin.getEmail());
+            startActivity(i);
+        }
+
     }
 
 }

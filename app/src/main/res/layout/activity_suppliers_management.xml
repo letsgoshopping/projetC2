@@ -11,10 +11,17 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Insert Category"
+        android:text="Insert Supplier"
         android:paddingBottom="10dp"
         android:textColor="@android:color/black"
         android:onClick="addSupplier"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/suppMgrProBar"
+        android:visibility="visible"
+        android:layout_height="wrap_content"
+        android:text="Loading Suppliers ..."/>
 
     <ListView
         android:id="@+id/supplier_list"

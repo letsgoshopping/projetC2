@@ -1112,6 +1112,8 @@ id adjust_height
 id adjust_width
 id alertTitle
 id all
+id allProProBar
+id allSuppProBar
 id allpro_list
 id allsup_list
 id always
@@ -1141,6 +1143,7 @@ id cart_pr_qtity
 id cart_pr_rowId
 id cart_pr_total
 id catId
+id catMgrProBar
 id catNameIns
 id categoryItem
 id category_list
@@ -1259,6 +1262,7 @@ id order_pr_total
 id order_status
 id order_sts
 id order_user
+id ordersProBar
 id outline
 id packed
 id pager
@@ -1273,6 +1277,8 @@ id pin
 id proCatIns
 id proCodeIns
 id proDescIns
+id proDetProBar
+id proListproBar
 id proPhotoIns
 id proPriceIns
 id proTitleIns
@@ -1290,6 +1296,7 @@ id progress_circular
 id progress_horizontal
 id promenu
 id radio
+id resultsProBar
 id right
 id right_icon
 id right_side
@@ -1342,6 +1349,7 @@ id submitCategory
 id submitProduct
 id submit_area
 id supDescIns
+id supDetProBar
 id supEmailIns
 id supNameIns
 id supPhoneIns
@@ -1354,6 +1362,7 @@ id sup_det_name
 id sup_det_phnumber
 id sup_detail_layout
 id sup_pro_list
+id suppMgrProBar
 id supplier_description
 id supplier_email
 id supplier_id

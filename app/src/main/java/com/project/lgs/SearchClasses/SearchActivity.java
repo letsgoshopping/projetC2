@@ -1,12 +1,17 @@
 package com.project.lgs.SearchClasses;
 
 import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.mongodb.BasicDBObject;
 import com.project.lgs.Database.ProductsMgr;
@@ -22,38 +27,51 @@ import java.util.regex.Pattern;
 public class SearchActivity extends AppCompatActivity implements SearchAdapter.ProductDetailsListener {
 
     ArrayList<Product> productArrayList;
+    static Context resultsContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_search);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        // Get the intent, verify the action and get the query
-        Intent intent = getIntent();
-        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY);
-            productArrayList = doMySearch(query);
+        resultsContext = this;
+        Runnable runnable = new Runnable() {
 
-            if (productArrayList.size()>0) {
+            public void run() {
 
-                setContentView(R.layout.activity_search);
-                SearchAdapter proAdapter = new SearchAdapter(this, productArrayList,this);
-                ListView listView = (ListView)findViewById(R.id.search_list);
-                listView.setAdapter(proAdapter);
+                Intent intent = getIntent();
+                if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+                    String query = intent.getStringExtra(SearchManager.QUERY);
+                    productArrayList = doMySearch(query);
 
-            }else{
+                    TextView textView = findViewById(R.id.resultsProBar);
+                    textView.setVisibility(View.GONE);
 
-                setContentView(R.layout.activity_no_results);
+                    if (productArrayList.size()>0) {
+
+                        SearchAdapter proAdapter = new SearchAdapter(SearchActivity.resultsContext, productArrayList,SearchActivity.this);
+                        ListView listView = (ListView)findViewById(R.id.search_list);
+                        listView.setAdapter(proAdapter);
+
+                    }else{
+
+                        setContentView(R.layout.activity_no_results);
+                    }
+
+                }
+                else
+                {
+                    setContentView(R.layout.activity_problem);
+                }
             }
+        };
 
-        }
-        else
-        {
-            setContentView(R.layout.activity_problem);
-        }
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 250);
 
 
     }

@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -46,52 +48,64 @@ public class OrderHistory extends AppCompatActivity implements OrderAdapter.Orde
 
     ArrayList<Order> orders;
     Boolean isAdmin = false;
+    static Context orderContext;
+    String user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_order_history);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary)); //status bar or the time bar at the top
         }
+        orderContext = this;
 
+        user = (String) getIntent().getStringExtra("User");
 
-        String user = (String) getIntent().getStringExtra("User");
+        Runnable runnable = new Runnable() {
 
-        if(user != null){
-            OrdersMgr ordersMgr= new OrdersMgr(MainActivity.dbName, MainActivity.mongoClient);
-            HashMap<String, String> orderIns = new HashMap<String, String>();
-            orderIns.put("User", user);
+            public void run() {
 
-            HashMap<String, Integer> orderSort = new HashMap<String, Integer>();
-            orderSort.put("Date", 1);
+                if(user != null){
+                    OrdersMgr ordersMgr= new OrdersMgr(MainActivity.dbName, MainActivity.mongoClient);
+                    HashMap<String, String> orderIns = new HashMap<String, String>();
+                    orderIns.put("User", user);
 
-            orders = ordersMgr.findDocument(orderIns, orderSort, 200);
+                    HashMap<String, Integer> orderSort = new HashMap<String, Integer>();
+                    orderSort.put("Date", 1);
 
-        }else{
+                    orders = ordersMgr.findDocument(orderIns, orderSort, 200);
 
-            isAdmin = true;
-            OrdersMgr ordersMgr= new OrdersMgr(AdminActivity.dbName, AdminActivity.mongoClient);
-            HashMap<String, String> orderIns = new HashMap<String, String>();
+                }else{
 
-            HashMap<String, Integer> orderSort = new HashMap<String, Integer>();
-            orderSort.put("Date", 1);
+                    isAdmin = true;
+                    OrdersMgr ordersMgr= new OrdersMgr(AdminActivity.dbName, AdminActivity.mongoClient);
+                    HashMap<String, String> orderIns = new HashMap<String, String>();
 
-            orders = ordersMgr.findDocument(orderIns, orderSort, 200);
+                    HashMap<String, Integer> orderSort = new HashMap<String, Integer>();
+                    orderSort.put("Date", 1);
 
-        }
+                    orders = ordersMgr.findDocument(orderIns, orderSort, 200);
 
-        if (orders.size()>0) {
+                }
 
-            setContentView(R.layout.activity_order_history);
-            OrderAdapter orderAdapter = new OrderAdapter(this, orders,this);
-            ListView listView = (ListView)findViewById(R.id.order_list);
-            listView.setAdapter(orderAdapter);
+                TextView textView = findViewById(R.id.ordersProBar);
+                textView.setVisibility(View.GONE);
 
-        }else{
+                if (orders.size()>0) {
 
-            setContentView(R.layout.activity_no_results);
-        }
+                    OrderAdapter orderAdapter = new OrderAdapter(OrderHistory.orderContext, orders,OrderHistory.this);
+                    ListView listView = (ListView)findViewById(R.id.order_list);
+                    listView.setAdapter(orderAdapter);
+
+                }
+
+            }
+        };
+
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 500);
     }
 
     @Override

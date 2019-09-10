@@ -28,6 +28,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.project.lgs.AdminClasses.AdminActivity;
+import com.project.lgs.AdminClasses.Email;
 import com.project.lgs.CartClasses.Cart;
 import com.project.lgs.CartClasses.UserProfile;
 import com.project.lgs.CartClasses.cartAdapter;
@@ -41,6 +42,7 @@ import com.project.lgs.MainActivity;
 import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.R;
 import com.project.lgs.SupplierClasses.Supplier;
+import com.project.lgs.UsersClasses.User;
 
 import org.bson.Document;
 import org.bson.types.ObjectId;
@@ -58,6 +60,7 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
     Boolean isAdmin;
     String orderStatus;
     static Context orderDetContext;
+    Email email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +78,7 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
 
                 order = (Order) getIntent().getSerializableExtra("Order");
                 isAdmin = (Boolean)getIntent().getBooleanExtra("isAdmin",false);
+                email = new Email(order, isAdmin);
 
                 if (isAdmin ==  true){
                     Button sendOrder = (Button) findViewById(R.id.order_sts);
@@ -105,7 +109,7 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
                 ListView cartList = findViewById(R.id.order_detail_list);
                 cartList.setVisibility(View.VISIBLE);
 
-                OrderDetailsAdapter orderDetailsAdapter = new OrderDetailsAdapter(OrderDetails.orderDetContext, arrayList,isAdmin);
+                OrderDetailsAdapter orderDetailsAdapter = new OrderDetailsAdapter(OrderDetails.orderDetContext, arrayList,isAdmin,email);
                 ListView listView = (ListView)findViewById(R.id.order_detail_list);
                 listView.setAdapter(orderDetailsAdapter);
 
@@ -187,44 +191,39 @@ public class OrderDetails extends AppCompatActivity implements AdapterView.OnIte
 
     public void SendOrder (View v){
 
-        ProductsMgr productsMgr  = new ProductsMgr(AdminActivity.dbName, AdminActivity.mongoClient);
-        SupplierMgr supplierMgr  = new SupplierMgr(AdminActivity.dbName, AdminActivity.mongoClient);
+        Order ordr = email.getOrder();
+        ArrayList<Product> proList = email.getProducts();
+        User user = email.getUser();
 
-        String s = "Invoice Number: " + order.getInvoiceNumber() + "\n";
-        s = s + "Creation Date: " + order.getDate() + "\n";
+        String s = "User Email: " + user.getEmail()+ "\n";
+        s = s + "Contract Name: " + user.getConName() + "\n";
+        s = s + "Phone Number: " + user.getPhoneCode() + user.getPhoneNum() +  "\n";
+        s = s + "Address: " + user.getCounty() + "," + user.getCity() +  "\n";
+        s = s + "     " + user.getStreet() + user.getFloor() + "\n\n";
+
+        s = s+ "Invoice Number: " + ordr.getInvoiceNumber() + "\n";
+        s = s + "Creation Date: " + ordr.getDate() + "\n";
         s = s + "Sending Date: " + new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(new Date()) + "\n";
-        s = s + "Email: " + order.getUserId() + "\n";
-        s = s + "Total: " + order.getTotal() + "$ \n\n";
+        s = s + "Email: " + ordr.getUserId() + "\n";
+        s = s + "Total: " + ordr.getTotal() + "$ \n\n";
         s = s + "Products: " + "\n";
 
-        Document proList = order.getProducts();
+
         String [] emails = new String[proList.size()];
         int i = 0;
-        Set<String> list = proList.keySet();
 
-        for(String pro: list){
+        for(Product pro: proList){
 
-            Document d  = (Document)proList.get(pro);
-            HashMap<String,ObjectId> proIns = new HashMap<>();
-            proIns.put("_id",new ObjectId((String)d.get("_id")));
-            ArrayList<Product> p = productsMgr.findDocumentById(proIns, new HashMap<String, Integer>(),1);
-
-            HashMap<String,ObjectId> supIns = new HashMap<>();
-            supIns.put("_id",new ObjectId(p.get(0).getUser()));
-
-            ArrayList<Supplier> supplier = supplierMgr.findDocumentById(supIns,new HashMap<String, Integer>(),1);
             String supName = "No email";
-            if (supplier != null){
-                if (supplier.size()>0){
-                    supName = supplier.get(0).getEmail();
-                }
+            if (pro.getSupEmail() != null){
+                    supName = pro.getSupEmail();
             }
 
-            s = s + "Title: " + p.get(0).getTitle() + "\n";
-            s = s + "Code: " + p.get(0).getCode() + "\n";
+            s = s + "Title: " + pro.getTitle() + "\n";
+            s = s + "Code: " + pro.getCode() + "\n";
             s = s + "Supplier: " + supName + "\n";
-            s = s + "Price: " + p.get(0).getPrice().replace("$","") + "$ \n";
-            s = s + "Quantity: " + d.get("Qtity") + "\n\n";
+            s = s + "Price: " + pro.getPrice().replace("$","") + "$ \n";
+            s = s + "Quantity: " + pro.getOrderedQtity() + "\n\n";
 
             if(!supName.equals("No email")){
                 emails[i] = supName;

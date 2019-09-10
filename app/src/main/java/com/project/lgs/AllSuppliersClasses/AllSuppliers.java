@@ -1,11 +1,16 @@
 package com.project.lgs.AllSuppliersClasses;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Handler;
+import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.MainActivity;
@@ -19,37 +24,51 @@ import java.util.HashMap;
 public class AllSuppliers extends AppCompatActivity implements AllSuppliersAdapter.SupplierDetailsListener {
 
     ArrayList<Supplier> suppliers;
+    static Context allSuppContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_all_suppliers);
 
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimary)); //status bar or the time bar at the top
         }
+        allSuppContext = this;
 
+        Runnable runnable = new Runnable() {
 
-        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+            public void run() {
 
-        HashMap<String, String> prodIns = new HashMap<String, String>();
+                SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-        HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
-        prodSort.put("Name", 1);
+                HashMap<String, String> prodIns = new HashMap<String, String>();
 
-        suppliers = supplierMgr.findDocument(prodIns, prodSort, 500);
+                HashMap<String, Integer> prodSort = new HashMap<String, Integer>();
+                prodSort.put("Name", 1);
 
-        if (suppliers.size() > 0) {
+                suppliers = supplierMgr.findDocument(prodIns, prodSort, 500);
 
-            setContentView(R.layout.activity_all_suppliers);
-            AllSuppliersAdapter proAdapter = new AllSuppliersAdapter(this, suppliers, this);
-            ListView listView = (ListView) findViewById(R.id.allsup_list);
-            listView.setAdapter(proAdapter);
+                if (suppliers.size() > 0) {
 
-        } else {
+                    TextView textView = findViewById(R.id.allSuppProBar);
+                    textView.setVisibility(View.GONE);
 
-            setContentView(R.layout.activity_no_results);
-        }
+                    ListView cartList = findViewById(R.id.allsup_list);
+                    cartList.setVisibility(View.VISIBLE);
+
+                    AllSuppliersAdapter proAdapter = new AllSuppliersAdapter(AllSuppliers.allSuppContext, suppliers, AllSuppliers.this);
+                    ListView listView = (ListView) findViewById(R.id.allsup_list);
+                    listView.setAdapter(proAdapter);
+
+                }
+
+            }
+        };
+
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 500);
     }
 
     @Override

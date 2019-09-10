@@ -3,11 +3,14 @@ package com.project.lgs.AdminClasses;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.project.lgs.CategoryClasses.Category;
@@ -20,6 +23,7 @@ import java.util.HashMap;
 public class CategoriesManagement extends AppCompatActivity implements CategoryAdapter.CategoryListener{
 
     ArrayList<Category> cat = new ArrayList<>();
+    static Context catContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +33,26 @@ public class CategoriesManagement extends AppCompatActivity implements CategoryA
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
+        catContext = this;
 
-        CategoriesMgr categoriesMgr = new CategoriesMgr(AdminActivity.dbName, AdminActivity.mongoClient);
-        cat = categoriesMgr.findDocument(new HashMap<String, String>(), new HashMap<String, Integer>());
+        Runnable runnable = new Runnable() {
 
-        CategoryAdapter categoryAdapter = new CategoryAdapter(this, cat,this);
-        ListView listView = (ListView)findViewById(R.id.category_list);
-        listView.setAdapter(categoryAdapter);
+            public void run() {
+
+                CategoriesMgr categoriesMgr = new CategoriesMgr(AdminActivity.dbName, AdminActivity.mongoClient);
+                cat = categoriesMgr.findDocument(new HashMap<String, String>(), new HashMap<String, Integer>());
+
+                TextView textView = findViewById(R.id.catMgrProBar);
+                textView.setVisibility(View.GONE);
+
+                CategoryAdapter categoryAdapter = new CategoryAdapter(CategoriesManagement.catContext, cat,CategoriesManagement.this);
+                ListView listView = (ListView)findViewById(R.id.category_list);
+                listView.setAdapter(categoryAdapter);
+            }
+        };
+
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 250);
     }
 
     public void addCategory (View v){

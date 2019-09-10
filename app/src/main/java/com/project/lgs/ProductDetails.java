@@ -1,6 +1,7 @@
 package com.project.lgs;
 
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import androidx.core.content.ContextCompat;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,6 +37,7 @@ public class ProductDetails extends AppCompatActivity {
 
     int qtity = 0;
     Product curPro;
+    static Context proDetContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,54 +48,69 @@ public class ProductDetails extends AppCompatActivity {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        Product currentProduct = (Product) getIntent().getSerializableExtra("Product");
-        curPro = currentProduct;
+        proDetContext = this;
 
-        String supName = "No Supplier";
+        Runnable runnable = new Runnable() {
 
-        SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
-        HashMap<String, ObjectId> userIns = new HashMap<>();
-        userIns.put("_id", new ObjectId(currentProduct.getUser()));
-        ArrayList<Supplier> sup = supplierMgr.findDocumentById(userIns, new HashMap<String, Integer>(), 1);
-        if (sup.size() > 0) {
-            supName = sup.get(0).getName();
-        }
+            public void run() {
 
-        TextView proTitle  = (TextView) this.findViewById(R.id.detail_title);
-        proTitle.setText(currentProduct.getTitle());
+                Product currentProduct = (Product) getIntent().getSerializableExtra("Product");
+                curPro = currentProduct;
 
-        TextView proRat  = (TextView) this.findViewById(R.id.detail_rating);
-        proRat.setText(currentProduct.getCode());
+                String supName = "No Supplier";
 
-        TextView proPrice  = (TextView) this.findViewById(R.id.detail_price);
-        proPrice.setText(currentProduct.getPrice() + "$");
+                SupplierMgr supplierMgr = new SupplierMgr(MainActivity.dbName, MainActivity.mongoClient);
+                HashMap<String, ObjectId> userIns = new HashMap<>();
+                userIns.put("_id", new ObjectId(currentProduct.getUser()));
+                ArrayList<Supplier> sup = supplierMgr.findDocumentById(userIns, new HashMap<String, Integer>(), 1);
+                if (sup.size() > 0) {
+                    supName = sup.get(0).getName();
+                }
 
-        TextView proDesc  = (TextView) this.findViewById(R.id.detail_description);
-        proDesc.setText(currentProduct.getDescription());
+                TextView textView = findViewById(R.id.proDetProBar);
+                textView.setVisibility(View.GONE);
 
-        byte[] img = currentProduct.getImage();
-        ImageView proImg  = (ImageView) this.findViewById(R.id.detail_image);
-        if (img == null){
-            proImg.setImageResource(R.drawable.nopic);
-        }
-        else {
-            Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
-            proImg.setImageBitmap(bmp);
-        }
+                TextView proTitle  = (TextView) findViewById(R.id.detail_title);
+                proTitle.setText(currentProduct.getTitle());
 
-        TextView proUser = (TextView) this.findViewById(R.id.detail_user);
-        proUser.setText(supName);
+                TextView proRat  = (TextView) findViewById(R.id.detail_rating);
+                proRat.setText(currentProduct.getCode());
 
-        if(MainActivity.isSupp == true &&
-                MainActivity.supplierLogin != null &&
-                currentProduct.getUser().equals(MainActivity.supplierLogin.getId())){
+                TextView proPrice  = (TextView) findViewById(R.id.detail_price);
+                proPrice.setText(currentProduct.getPrice() + "$");
 
-            this.findViewById(R.id.cartLayout).setVisibility(View.INVISIBLE);
-            this.findViewById(R.id.addToCart).setVisibility(View.INVISIBLE);
-        }
+                TextView proDesc  = (TextView) findViewById(R.id.detail_description);
+                proDesc.setText(currentProduct.getDescription());
 
-        TextView proDate = (TextView) this.findViewById(R.id.detail_date);
-        proDate.setText(currentProduct.getPublishDate());
+                byte[] img = currentProduct.getImage();
+                ImageView proImg  = (ImageView) findViewById(R.id.detail_image);
+                if (img == null){
+                    proImg.setImageResource(R.drawable.nopic);
+                }
+                else {
+                    Bitmap bmp = BitmapFactory.decodeByteArray(img, 0, img.length);
+                    proImg.setImageBitmap(bmp);
+                }
+
+                TextView proUser = (TextView) findViewById(R.id.detail_user);
+                proUser.setText(supName);
+
+                if(MainActivity.isSupp == true &&
+                        MainActivity.supplierLogin != null &&
+                        currentProduct.getUser().equals(MainActivity.supplierLogin.getId())){
+
+                    findViewById(R.id.cartLayout).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.addToCart).setVisibility(View.INVISIBLE);
+                }
+
+                TextView proDate = (TextView) findViewById(R.id.detail_date);
+                proDate.setText(currentProduct.getPublishDate());
+
+            }
+        };
+
+        Handler handler =  new Handler();
+        handler.postDelayed(runnable, 500);
 
 
     }

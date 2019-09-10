@@ -3,9 +3,11 @@ package com.project.lgs.SupplierClasses;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -29,34 +31,47 @@ public class ProductList extends AppCompatActivity implements ProductListAdapter
     ArrayList<Product> products = new ArrayList<>();
     int curPos;
     Bundle savedInstanceState;
+    static Context proListContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.savedInstanceState = savedInstanceState;
+        setContentView(R.layout.activity_product_list);
 
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().setStatusBarColor(ContextCompat.getColor(this,R.color.colorPrimary)); //status bar or the time bar at the top
         }
 
-        ProductsMgr productsMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
+        proListContext = this;
 
-        HashMap<String,String> prodIns = new HashMap<>();
-        prodIns.put("User",MainActivity.supplierLogin.getId());
+        Runnable runnable = new Runnable() {
 
-        products = productsMgr.findDocument(prodIns,new HashMap<String, Integer>(),50);
+            public void run() {
 
-        if (products.size()>0) {
+                ProductsMgr productsMgr = new ProductsMgr(MainActivity.dbName, MainActivity.mongoClient);
 
-            setContentView(R.layout.activity_product_list);
-            ProductListAdapter proAdapter = new ProductListAdapter(this, products,this);
-            ListView listView = (ListView)findViewById(R.id.sup_pro_list);
-            listView.setAdapter(proAdapter);
+                HashMap<String,String> prodIns = new HashMap<>();
+                prodIns.put("User",MainActivity.supplierLogin.getId());
 
-        }else{
+                products = productsMgr.findDocument(prodIns,new HashMap<String, Integer>(),50);
 
-            setContentView(R.layout.activity_product_list);
-        }
+                TextView textView = findViewById(R.id.proListproBar);
+                textView.setVisibility(View.GONE);
+
+                if (products.size()>0) {
+
+                    ProductListAdapter proAdapter = new ProductListAdapter(ProductList.proListContext, products,ProductList.this);
+                    ListView listView = (ListView)findViewById(R.id.sup_pro_list);
+                    listView.setAdapter(proAdapter);
+
+                }
+
+            }
+        };
+
+            Handler handler =  new Handler();
+            handler.postDelayed(runnable, 500);
 
     }
 

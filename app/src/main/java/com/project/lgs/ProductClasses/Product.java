@@ -14,6 +14,8 @@ public class Product implements Serializable {
     private String publishDate;
     private String category;
     private String code;
+    private String orderedQtity;
+    private String supEmail;
 
 
     public Product(){}
@@ -128,6 +130,22 @@ public class Product implements Serializable {
 
     public void setCode(String id) {
         this.code = code;
+    }
+
+    public String getOrderedQtity() {
+        return orderedQtity;
+    }
+
+    public void setOrderedQtity(String orderedQtity) {
+        this.orderedQtity = orderedQtity;
+    }
+
+    public String getSupEmail() {
+        return supEmail;
+    }
+
+    public void setSupEmail(String supEmail) {
+        this.supEmail = supEmail;
     }
 
 

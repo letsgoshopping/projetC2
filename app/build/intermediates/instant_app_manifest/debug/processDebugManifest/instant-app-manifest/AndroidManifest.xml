@@ -46,12 +46,8 @@
         <activity
             android:name="com.project.lgs.ProductClasses.ProductFragment"
             android:label="Products" />
-        <activity
-            android:name="com.project.lgs.SearchClasses.NoResults"
-            android:parentActivityName="com.project.lgs.MainActivity" />
-        <activity
-            android:name="com.project.lgs.SearchClasses.SearchActivity"
-            android:parentActivityName="com.project.lgs.MainActivity" >
+        <activity android:name="com.project.lgs.SearchClasses.NoResults" />
+        <activity android:name="com.project.lgs.SearchClasses.SearchActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -60,9 +56,7 @@
                 android:name="android.app.searchable"
                 android:resource="@xml/searchable" />
         </activity>
-        <activity
-            android:name="com.project.lgs.CartClasses.UserProfile"
-            android:parentActivityName="com.project.lgs.MainActivity" >
+        <activity android:name="com.project.lgs.CartClasses.UserProfile" >
             <intent-filter>
                 <action android:name="android.intent.action.SENDTO" />
 

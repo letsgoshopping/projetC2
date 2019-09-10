@@ -1,6 +1,7 @@
 package com.project.lgs.OrdersClasses;
 
 import android.content.Context;
+import android.net.wifi.WifiEnterpriseConfig;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.project.lgs.AdminClasses.AdminActivity;
+import com.project.lgs.AdminClasses.Email;
 import com.project.lgs.Database.ProductsMgr;
 import com.project.lgs.MainActivity;
 import com.project.lgs.ProductClasses.Product;
@@ -23,11 +25,13 @@ import java.util.HashMap;
 public class OrderDetailsAdapter extends ArrayAdapter<Document> {
 
     Boolean isAdmin;
+    Email email;
 
-    public OrderDetailsAdapter(Context context, ArrayList<Document> d, Boolean isAdmin){
+    public OrderDetailsAdapter(Context context, ArrayList<Document> d, Boolean isAdmin, Email email){
 
         super(context,0,d);
         this.isAdmin = isAdmin;
+        this.email = email;
     }
 
     @Override
@@ -57,6 +61,13 @@ public class OrderDetailsAdapter extends ArrayAdapter<Document> {
         ArrayList<Product> p = productsMgr.findDocumentById(proSearch,new HashMap<String, Integer>(),1);
 
         Product currentProduct = p.get(0);
+
+        if (isAdmin ==  true){
+
+            currentProduct.setOrderedQtity((String)selectedProduct.get("Qtity"));
+            email.addProduct(currentProduct);
+
+        }
 
         TextView proRowId  = (TextView) searchView.findViewById(R.id.order_pr_rowId);
         proRowId.setText((String)selectedProduct.get("rowId"));
