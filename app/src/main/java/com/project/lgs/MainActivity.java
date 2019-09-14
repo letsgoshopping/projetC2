@@ -24,6 +24,7 @@ import com.project.lgs.Database.OrdersMgr;
 import com.project.lgs.Database.ProductsMgr;
 import com.project.lgs.Database.SupplierMgr;
 import com.project.lgs.Database.UsersMgr;
+import com.project.lgs.ProductClasses.Product;
 import com.project.lgs.SearchClasses.SearchActivity;
 import com.project.lgs.SupplierClasses.Supplier;
 import com.project.lgs.SupplierClasses.SupplierMenu;
@@ -31,6 +32,7 @@ import com.project.lgs.UsersClasses.User;
 
 import org.bson.types.ObjectId;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -90,13 +92,11 @@ public class MainActivity extends AppCompatActivity{
                     tabLayout = findViewById(R.id.tabs);
                     tabLayout.setupWithViewPager(viewPager);
 
-
                 }
             };
 
             Handler handler =  new Handler();
             handler.postDelayed(runnable, 2000);
-
         }
     }
 

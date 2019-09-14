@@ -75,7 +75,7 @@ public class MongoOperations{
                 }
             });
 
-            while(!insertTask.isComplete()){}
+
         }
 
         public void insertDocument (String collection, HashMap<String,String> values)throws Exception{
