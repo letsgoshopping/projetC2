@@ -23,4 +23,4 @@ Etapes de développement		: 1.Definition du besoin
 						      6.Deploiement
 						      7.Maintenance
 
-Le Ficher "Docuemnts" contients les documents nécessaire à l'analyse du projet
+Le Ficher "Documents" contients les documents nécessaire à l'analyse du projet
