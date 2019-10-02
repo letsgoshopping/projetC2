@@ -1,0 +1,47 @@
+Definition du besoin:
+
+La companie nommée 'Let's Go Shopping' nous a contacté pour nous postuler la demande suivante:
+
+Demande  : Une application mobile pour vendre et acheter des produits en ligne.
+Secteur  : Juste au Liban
+Cibles   : Tout fournisseur voulant proposer ses produits en ligne pour les vendre
+		   Toutes personnes ayant un téléphone mobile pour acheter les produits proposés.
+		   
+
+Un produit:
+	1. Possède une photo, un nom, date de publication, un fournisseur, code, prix (en $), description
+	2. Appartient à une categorie
+	
+Une Commande:
+	1. Possède un status, une liste de produits, quantité ordonnée pour chaque produit, un total (en $), un numéro 
+	2. Chaque commande est envoyée par email à tous les fournisseurs responsables pour préparer la commande.
+	
+Un Client:
+	1. Doit créer un compte pour accéder à l'application.
+	2. Peut faire des commandes
+	3. Voit toutes les commandes qu'il précédemment faites avec le status de chacune.
+	4. Possède un profile où il décrit son adresse: nom, numéro de téléphone, ville, rue, appartement, étage
+
+Le fournisseur:
+	1. Possède un compte
+	2. Peut publier ses produits
+	2. Possède un profile et peut modifier ses informations
+	3. Les informations d'un fournisseur: nom, description, numéro de téléphone, email, une photo
+    4. Doit voir la liste de ses produits publiés
+	5. Peut commander d'autres fournisseurs
+	6. Voit l'historique des commandes qu'il a faitess
+	7. Recoit des emails des commandes faits par les clients 
+	
+Let's Go Shopping (Admin):
+	1. Possède un compte Admin 
+	2. Peut modifier et ajouter des categories
+	3. Crée les fournisseurs
+	4. Peut voir toutes les commandes faites à travers l'application avec tous les détails.	
+	5. Changer le statut de chaque commande
+
+NB:
+Avoir un compte est obligatoire pour accéder à l'application. 
+Les fournisseurs doivent êtres visibles aux clients pour leurs permetter de les contacter si besoin.
+L'application doit montrer toutes les categories. Dans chaque categorie, doit figurer tous les produits relatifs
+A chaque ajout d'une nouvelle categorie, cette dernière doit automatiquement être visible sur l'application
+
