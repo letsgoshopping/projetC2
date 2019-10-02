@@ -23,12 +23,4 @@ Etapes de développement		: 1.Definition du besoin
 						      6.Deploiement
 						      7.Maintenance
 
-Bref explication: V1.0.
-Un utilisateur peut utliser son compte google pour se connecter.
-Il a accès aux produits à vendre et aux fournisseurs et peut les contacter. 
-Les produits sont classés par categories et appartiennent à un fournisseur.
-Une fois un produit selectionné, il peut l'ajouter à son panier.
-Le panier, lorsqu'il est près, une commande est envoyée par email.
-Le Paiement ne se fait pas en ligne (pour V1.0) mais au moment de la reception des produits ordonnés.
-Un fournisseur gère son profil où il affiche ses informations (numéro de téléphone, email, description ...) et la liste de ses produits.
-C'est l'utilisateur Admin qui crée un fournisseur.
+Le Ficher "Docuemnts" contients les documents nécessaire à l'analyse du projet
