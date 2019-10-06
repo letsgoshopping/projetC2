@@ -27,7 +27,7 @@ Le fournisseur:
 	2. Peut publier ses produits
 	2. Possède un profile et peut modifier ses informations
 	3. Les informations d'un fournisseur: nom, description, numéro de téléphone, email, une photo
-    4. Doit voir la liste de ses produits publiés
+    	4. Doit voir la liste de ses produits publiés
 	5. Peut commander d'autres fournisseurs
 	6. Voit l'historique des commandes qu'il a faitess
 	7. Recoit des emails des commandes faits par les clients 
@@ -38,6 +38,7 @@ Let's Go Shopping (Admin):
 	3. Crée les fournisseurs
 	4. Peut voir toutes les commandes faites à travers l'application avec tous les détails.	
 	5. Changer le statut de chaque commande
+	6. Envoie les commandes à ses fournisseurs
 
 NB:
 Avoir un compte est obligatoire pour accéder à l'application. 
